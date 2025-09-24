@@ -52,32 +52,36 @@
     "protein_chunk_049.json.gz",
     "protein_chunk_050.json.gz",
     "protein_chunk_051.json.gz",
-    "protein_chunk_052.json.gz"
+    "protein_chunk_052.json.gz",
+    "protein_chunk_053.json.gz",
+    "protein_chunk_054.json.gz",
+    "protein_chunk_055.json.gz",
+    "protein_chunk_056.json.gz"
   ],
   "chunk_size": 10000,
-  "total_chunks": 53,
+  "total_chunks": 57,
   "summary_stats": {
-    "total_proteins": 525225,
-    "druggable_proteins": 525223,
-    "high_priority": 455636,
-    "excellent_quality": 372777,
+    "total_proteins": 567992,
+    "druggable_proteins": 567990,
+    "high_priority": 492759,
+    "excellent_quality": 415544,
     "very_good_quality": 81053,
     "good_quality": 71395,
-    "avg_druglikeness": 0.8195413394213003,
-    "avg_quantum_coherence": 0.5449404694843468,
-    "avg_validation_score": 0.9440717298023793
+    "avg_druglikeness": 0.8195289722335005,
+    "avg_quantum_coherence": 0.5660234869862457,
+    "avg_validation_score": 0.948282853079792
   },
   "export_metadata": {
-    "export_date": "2025-09-23T06:26:06.944025",
+    "export_date": "2025-09-24T05:32:10.546499",
     "source": "Complete Neo4j FoT Dataset - Chunked for GitHub",
-    "total_records": 525225,
+    "total_records": 567992,
     "chunk_strategy": "10000 proteins per chunk",
     "quality_distribution": {
-      "excellent": 372777,
+      "excellent": 415544,
       "very_good": 81053,
       "good": 71395,
-      "druggable": 525223,
-      "high_priority": 455636
+      "druggable": 567990,
+      "high_priority": 492759
     }
   },
   "high_priority_chunks": [
@@ -172,6 +176,13 @@
     "high_priority_chunk_088.json.gz",
     "high_priority_chunk_089.json.gz",
     "high_priority_chunk_090.json.gz",
-    "high_priority_chunk_091.json.gz"
+    "high_priority_chunk_091.json.gz",
+    "high_priority_chunk_092.json.gz",
+    "high_priority_chunk_093.json.gz",
+    "high_priority_chunk_094.json.gz",
+    "high_priority_chunk_095.json.gz",
+    "high_priority_chunk_096.json.gz",
+    "high_priority_chunk_097.json.gz",
+    "high_priority_chunk_098.json.gz"
   ]
 }
