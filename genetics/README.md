@@ -184,7 +184,7 @@ virtue_scores = simulator.calculate_virtue_scores()
 ## 🔗 **Integration with FoT System**
 
 ### **Data Compatibility**
-- Uses same chunked JSON.gz data from 262,792 protein discoveries
+- Uses same chunked JSON.gz data from 567,992 protein discoveries
 - Extends existing proteins with genetics context
 - Preserves all original protein analysis capabilities
 

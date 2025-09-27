@@ -29,7 +29,7 @@ def export_chunked_dataset():
         print("📊 Querying ALL discoveries from Neo4j...")
         
         # Check for new discoveries since last export
-        last_export_time = "2025-09-18T08:47:28.829671"
+        last_export_time = "2025-09-24T05:32:10.546499"
         
         new_discoveries_query = """
         MATCH (d:Discovery)

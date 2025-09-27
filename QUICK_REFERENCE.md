@@ -2,11 +2,11 @@
 
 ## 🚀 Getting Started (30 seconds)
 1. **Access:** Open dashboard URL or run `python3 -m streamlit run streamlit_app.py --server.port 8512`
-2. **Wait:** See "Loading CHUNKED dataset: 251,941 proteins" in sidebar
+2. **Wait:** See "Loading CHUNKED dataset: 567,992 proteins" in sidebar
 3. **Explore:** Start with 🏠 Dashboard Overview
 
 ## 📊 Key Numbers to Know
-- **Total Proteins:** 251,941 discoveries
+- **Total Proteins:** 567,992 discoveries
 - **🌟 Excellent:** 99,493 proteins (≥0.9 validation)
 - **⭐ Very Good:** 81,053 proteins (0.8-0.9 validation)  
 - **✅ Good:** 71,395 proteins (0.7-0.8 validation)

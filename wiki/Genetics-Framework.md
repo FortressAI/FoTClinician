@@ -472,7 +472,7 @@ The `genetics_streamlit_app.py` provides an interactive interface for:
 
 ### **Data Integration Strategy**
 
-The genetics app **extends** the existing 262,792 protein discoveries rather than replacing them:
+The genetics app **extends** the existing 567,992 protein discoveries rather than replacing them:
 
 ```python
 def enhance_proteins_with_genetics(proteins):
@@ -578,7 +578,7 @@ The genetics framework **complements** rather than replaces the existing protein
 
 - **Protein App (port 8512):** Focus on protein structure, vQbit analysis, discovery validation
 - **Genetics App (port 8513):** Extended genetics context, regulatory networks, therapeutic optimization
-- **Shared Data:** Both apps use the same 262,792 protein discoveries from chunked JSON.gz files
+- **Shared Data:** Both apps use the same 567,992 protein discoveries from chunked JSON.gz files
 - **Neo4j Integration:** Enhanced schema supports both protein and genetics analysis
 
 ---

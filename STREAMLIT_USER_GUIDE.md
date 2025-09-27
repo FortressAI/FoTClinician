@@ -13,11 +13,11 @@
 
 ## 🎯 What is this Dashboard?
 
-The **Field of Truth Protein Discovery Dashboard** is a web application that lets you explore **251,941 quantum-discovered protein sequences** with advanced analytics and visualizations. 
+The **Field of Truth Protein Discovery Dashboard** is a web application that lets you explore **567,992 quantum-discovered protein sequences** with advanced analytics and visualizations. 
 
 ### **What makes this special?**
 - **Quantum-Enhanced Discovery:** Proteins discovered using Field of Truth (FoT) quantum algorithms
-- **Complete Dataset:** All 251,941 discoveries with no arbitrary limits
+- **Complete Dataset:** All 567,992 discoveries with no arbitrary limits
 - **Interactive Analysis:** 2D/3D visualizations for each protein
 - **Quality-Based Filtering:** Focus on Excellent, Very Good, or Good quality proteins
 - **Real Scientific Data:** No mock data - every protein is a real discovery
@@ -41,7 +41,7 @@ The **Field of Truth Protein Discovery Dashboard** is a web application that let
 ### **First Time Loading**
 - You'll see **"Loading CHUNKED dataset (all discoveries preserved)..."** in the sidebar
 - Loading progress shows: **"Loading X/26 chunks (Y proteins)"**
-- Complete message: **"Loaded COMPLETE CHUNKED dataset: 251,941 proteins"**
+- Complete message: **"Loaded COMPLETE CHUNKED dataset: 567,992 proteins"**
 - **Total load time:** 10-30 seconds depending on connection
 
 ---
@@ -64,7 +64,7 @@ The dashboard has **4 main sections** accessible from the sidebar:
 ### **1. Dashboard Overview**
 
 #### **What you see immediately:**
-- **Total Proteins:** 251,941 
+- **Total Proteins:** 567,992 
 - **Quality Distribution:**
   - 🌟 **Excellent (≥0.9):** ~99,493 proteins (39.5%)
   - ⭐ **Very Good (0.8-0.9):** ~81,053 proteins (32.2%)
@@ -304,4 +304,4 @@ Solution:
 
 ---
 
-**🧬 Happy Protein Discovery! Your dashboard contains 251,941 quantum-discovered proteins ready for exploration and analysis! ✨**
+**🧬 Happy Protein Discovery! Your dashboard contains 567,992 quantum-discovered proteins ready for exploration and analysis! ✨**
