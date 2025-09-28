@@ -1,0 +1,28 @@
+# Streamlit Cloud Requirements
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+
+# Visualization and dashboards
+streamlit>=1.28.0
+plotly>=5.17.0
+
+# Chemistry libraries (minimal for cloud)
+# Note: RDKit works on Streamlit Cloud with conda-forge
+rdkit>=2023.9.1
+stmol>=0.0.9
+py3Dmol>=2.0.4
+ipython_genutils>=0.2.0
+
+# Basic data processing
+pydantic>=2.4.0
+pyyaml>=6.0.1
+requests>=2.31.0
+
+# Graph database connection
+neo4j>=5.13.0
+
+# For the quantum substrate
+# Note: C extensions won't work on Streamlit Cloud
+# but the Python fallback will work

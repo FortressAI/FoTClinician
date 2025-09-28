@@ -234,7 +234,7 @@ We welcome contributions that maintain scientific integrity:
 - Transparent uncertainty quantification
 - Safety and ethics improvements
 
-### ❌ **Rejected Contributions** 
+### ❌ **Rejected Contributions**
 - Simulated or fake experimental results
 - Exaggerated therapeutic claims
 - Hidden limitations or uncertainties

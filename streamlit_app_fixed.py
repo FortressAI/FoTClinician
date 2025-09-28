@@ -332,7 +332,7 @@ def main():
         engine = get_quantum_engine()
         if engine:
             st.success("✅ Quantum Substrate Active")
-            st.metric("🌌 Hilbert Dimension", engine.hilbert_dimension)
+            st.metric("🌌 Hilbert Dimension", engine.hilbert_dim)
             st.metric("🚀 GPU Acceleration", "Yes" if engine.gpu_acceleration else "No")
         else:
             st.error("❌ Quantum Engine Offline")
@@ -646,7 +646,7 @@ def main():
             
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.metric("Hilbert Dimension", engine.hilbert_dimension)
+                st.metric("Hilbert Dimension", engine.hilbert_dim)
             with col2:
                 st.metric("Property Operators", len(ChemistryPropertyType))
             with col3:

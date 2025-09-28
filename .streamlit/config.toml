@@ -1,17 +1,20 @@
 [global]
-dataFrameSerialization = "legacy"
+developmentMode = false
+showWarningOnDirectExecution = false
+
+[server]
+headless = true
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 200
 
 [theme]
-primaryColor = "#667eea"
+primaryColor = "#3498db"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f0f2f6"
 textColor = "#262730"
 font = "sans serif"
-
-[server]
-headless = true
-enableCORS = false
-port = 8501
 
 [browser]
 gatherUsageStats = false

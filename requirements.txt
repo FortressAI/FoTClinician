@@ -8,6 +8,9 @@ scipy>=1.11.0
 streamlit>=1.28.0
 plotly>=5.17.0
 matplotlib>=3.8.0
+stmol>=0.0.9
+py3Dmol>=2.0.4
+ipython_genutils>=0.2.0
 seaborn>=0.13.0
 
 # Chemistry core libraries
@@ -29,7 +32,7 @@ sparqlwrapper>=2.0.0
 owlready2>=0.45
 networkx>=3.1
 
-# Machine learning for chemistry
+# Machine learning for chemistry and MPS GPU acceleration
 torch>=2.1.0
 # pytorch-lightning>=2.1.0  # Uncomment if needed
 # dgl>=1.1.2  # Uncomment for graph neural networks

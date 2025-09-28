@@ -31,8 +31,8 @@ class AKG:
         self.config = config or {
             'neo4j': {
                 'uri': 'bolt://localhost:7687',
-                'user': 'neo4j',
-                'password': 'fotchemistry123'
+                'user': 'neo4j', 
+                'password': 'fotquantum'
             },
             'graphdb': {
                 'uri': 'http://localhost:7200',
@@ -44,13 +44,15 @@ class AKG:
             }
         }
         
-        # Initialize Neo4j connection
+        # Initialize Neo4j connection (connect to EXISTING instance)
         try:
             self.neo4j_driver = GraphDatabase.driver(
                 self.config['neo4j']['uri'],
                 auth=(self.config['neo4j']['user'], self.config['neo4j']['password'])
             )
-            logger.info("✅ Connected to Neo4j")
+            logger.info("✅ Connected to EXISTING Neo4j instance")
+            # Ensure chemistry schema with safe namespacing
+            self._ensure_safe_chemistry_schema()
         except Exception as e:
             logger.warning(f"⚠️ Neo4j connection failed: {e}")
             self.neo4j_driver = None
@@ -62,6 +64,30 @@ class AKG:
             'Accept': 'application/json'
         })
     
+    def _ensure_safe_chemistry_schema(self):
+        """Create chemistry schema with FoTChem namespace (SAFE for existing apps)"""
+        if not self.neo4j_driver:
+            return
+            
+        with self.neo4j_driver.session() as session:
+            # Create constraints for chemistry entities (isolated namespace)
+            # Uses FoTChem_ prefix to avoid conflicts with protein/fluid schemas
+            constraints = [
+                "CREATE CONSTRAINT FoTChem_molecule_id IF NOT EXISTS FOR (m:FoTChem_Molecule) REQUIRE m.id IS UNIQUE",
+                "CREATE CONSTRAINT FoTChem_claim_id IF NOT EXISTS FOR (c:FoTChem_Claim) REQUIRE c.id IS UNIQUE", 
+                "CREATE CONSTRAINT FoTChem_verdict_id IF NOT EXISTS FOR (v:FoTChem_Verdict) REQUIRE v.id IS UNIQUE",
+                "CREATE CONSTRAINT FoTChem_discovery_id IF NOT EXISTS FOR (d:FoTChem_Discovery) REQUIRE d.id IS UNIQUE",
+                "CREATE CONSTRAINT FoTChem_campaign_id IF NOT EXISTS FOR (camp:FoTChem_Campaign) REQUIRE camp.id IS UNIQUE"
+            ]
+            
+            for constraint in constraints:
+                try:
+                    session.run(constraint)
+                    logger.debug(f"✅ Created constraint: {constraint}")
+                except Exception as e:
+                    # Constraint might already exist, that's fine
+                    logger.debug(f"Constraint exists or failed: {e}")
+    
     def health_check(self) -> Dict[str, bool]:
         """Check health of all AKG components."""
         health = {}
@@ -69,7 +95,7 @@ class AKG:
         # Neo4j health
         health['neo4j'] = self.neo4j_health()
         
-        # GraphDB health
+        # GraphDB health  
         health['graphdb'] = self.graphdb_health()
         
         # Fuseki health
@@ -134,15 +160,15 @@ class AKG:
             raise
     
     def _store_verdict_neo4j(self, verdict_id: str, verdict: Dict[str, Any], timestamp: str):
-        """Store verdict in Neo4j property graph."""
+        """Store verdict in Neo4j property graph (SAFE namespace)."""
         if not self.neo4j_driver:
             logger.warning("Neo4j not available, skipping storage")
             return
         
         with self.neo4j_driver.session() as session:
-            # Create verdict node
+            # Create verdict node with FoTChem namespace (SAFE for existing apps)
             session.run("""
-                CREATE (v:Verdict {
+                CREATE (v:FoTChem_Verdict {
                     id: $verdict_id,
                     status: $status,
                     confidence: $confidence,
@@ -167,7 +193,7 @@ class AKG:
                 raw_data=json.dumps(verdict)
             )
             
-            logger.debug(f"✅ Stored verdict in Neo4j: {verdict_id}")
+            logger.debug(f"✅ Stored verdict in Neo4j (FoTChem namespace): {verdict_id}")
     
     def _store_verdict_rdf(self, verdict_id: str, verdict: Dict[str, Any], timestamp: str):
         """Store verdict in GraphDB as RDF triples."""
@@ -206,14 +232,14 @@ class AKG:
             logger.warning(f"⚠️ GraphDB storage failed: {e}")
     
     def query_new_molecules(self, since: datetime) -> List[Dict[str, Any]]:
-        """Query for new molecules since timestamp."""
+        """Query for new chemistry molecules since timestamp (SAFE namespace)."""
         if not self.neo4j_driver:
             return []
         
         try:
             with self.neo4j_driver.session() as session:
                 result = session.run("""
-                    MATCH (m:Molecule)
+                    MATCH (m:FoTChem_Molecule)
                     WHERE m.created >= $since
                     RETURN m.id as id, m.smiles as smiles, m.inchi as inchi, 
                            m.created as created
@@ -315,9 +341,9 @@ class AKG:
         
         try:
             with self.neo4j_driver.session() as session:
-                # Total verdicts by status
+                # Total verdicts by status (SAFE namespace)
                 result = session.run("""
-                    MATCH (v:Verdict)
+                    MATCH (v:FoTChem_Verdict)
                     RETURN v.status as status, count(v) as count
                 """)
                 
@@ -334,9 +360,9 @@ class AKG:
                     
                     stats['total_discoveries'] += count
                 
-                # Recent discoveries
+                # Recent discoveries (SAFE namespace)
                 result = session.run("""
-                    MATCH (v:Verdict)
+                    MATCH (v:FoTChem_Verdict)
                     WHERE v.status = 'truth'
                     RETURN v.id as id, v.reasoning as reasoning, v.timestamp as timestamp
                     ORDER BY v.timestamp DESC
@@ -376,6 +402,188 @@ class AKG:
         except Exception as e:
             logger.warning(f"SPARQL query failed: {e}")
             return []
+    
+    def store_claim(self, claim: Dict[str, Any]) -> str:
+        """Store a new chemistry claim (SAFE namespace)"""
+        claim_id = claim.get('id', str(uuid.uuid4()))
+        
+        if not self.neo4j_driver:
+            logger.warning("Neo4j not available, skipping claim storage")
+            return claim_id
+            
+        with self.neo4j_driver.session() as session:
+            result = session.run("""
+                CREATE (c:FoTChem_Claim {
+                    id: $claim_id,
+                    objective: $objective,
+                    status: 'active',
+                    virtue_weighting: $virtue_weighting,
+                    collapse_rules: $collapse_rules,
+                    created_at: datetime(),
+                    campaign: $campaign
+                })
+                RETURN c.id as claim_id
+            """, 
+                claim_id=claim_id,
+                objective=claim.get('objective', ''),
+                virtue_weighting=json.dumps(claim.get('virtue_weighting', {})),
+                collapse_rules=json.dumps(claim.get('collapse_rules', {})),
+                campaign=claim.get('campaign', 'unknown')
+            )
+            
+            logger.info(f"📝 Stored chemistry claim: {claim_id}")
+            return result.single()['claim_id']
+            
+    def get_claims(self, status: Optional[str] = None, campaign: Optional[str] = None) -> List[Dict]:
+        """Retrieve chemistry claims (SAFE namespace)"""
+        if not self.neo4j_driver:
+            return []
+            
+        with self.neo4j_driver.session() as session:
+            where_clause = "WHERE 1=1"
+            params = {}
+            
+            if status:
+                where_clause += " AND c.status = $status"
+                params['status'] = status
+                
+            if campaign:
+                where_clause += " AND c.campaign = $campaign" 
+                params['campaign'] = campaign
+                
+            result = session.run(f"""
+                MATCH (c:FoTChem_Claim)
+                {where_clause}
+                RETURN c.id as id, c.objective as objective, c.status as status,
+                       c.virtue_weighting as virtue_weighting, c.collapse_rules as collapse_rules,
+                       c.created_at as created_at, c.campaign as campaign
+                ORDER BY c.created_at DESC
+            """, **params)
+            
+            claims = []
+            for record in result:
+                claim = dict(record)
+                # Parse JSON fields
+                claim['virtue_weighting'] = json.loads(claim['virtue_weighting'] or '{}')
+                claim['collapse_rules'] = json.loads(claim['collapse_rules'] or '{}')
+                claims.append(claim)
+                
+            return claims
+            
+    def store_evidence(self, claim_id: str, evidence: Dict[str, Any]) -> str:
+        """Store evidence for a chemistry claim (SAFE namespace)"""
+        evidence_id = str(uuid.uuid4())
+        
+        if not self.neo4j_driver:
+            logger.warning("Neo4j not available, skipping evidence storage")
+            return evidence_id
+        
+        with self.neo4j_driver.session() as session:
+            session.run("""
+                MATCH (c:FoTChem_Claim {id: $claim_id})
+                CREATE (e:FoTChem_Evidence {
+                    id: $evidence_id,
+                    metrics: $metrics,
+                    uncertainty: $uncertainty,
+                    virtue_vector: $virtue_vector,
+                    generated_at: datetime(),
+                    agent_type: $agent_type
+                })
+                CREATE (c)-[:HAS_EVIDENCE]->(e)
+            """,
+                claim_id=claim_id,
+                evidence_id=evidence_id,
+                metrics=json.dumps(evidence.get('metrics', {})),
+                uncertainty=evidence.get('uncertainty', 1.0),
+                virtue_vector=json.dumps(evidence.get('virtue_vector', [])),
+                agent_type=evidence.get('agent_type', 'unknown')
+            )
+            
+        logger.info(f"📊 Stored evidence: {evidence_id} for claim: {claim_id}")
+        return evidence_id
+        
+    def collapse_claim(self, claim_id: str, verdict: str, virtues: List[float], evidence: Dict) -> bool:
+        """Collapse a claim to truth/refute/needs-evidence (SAFE namespace)"""
+        if not self.neo4j_driver:
+            logger.warning("Neo4j not available, skipping claim collapse")
+            return False
+            
+        with self.neo4j_driver.session() as session:
+            session.run("""
+                MATCH (c:FoTChem_Claim {id: $claim_id})
+                SET c.status = $verdict,
+                    c.final_virtues = $virtues,
+                    c.collapsed_at = datetime(),
+                    c.final_evidence = $evidence
+                CREATE (d:FoTChem_Discovery {
+                    id: $discovery_id,
+                    claim_id: $claim_id,
+                    verdict: $verdict,
+                    virtues: $virtues,
+                    discovered_at: datetime()
+                })
+                CREATE (c)-[:COLLAPSED_TO]->(d)
+            """,
+                claim_id=claim_id,
+                verdict=verdict,
+                virtues=virtues,
+                evidence=json.dumps(evidence),
+                discovery_id=str(uuid.uuid4())
+            )
+            
+        logger.info(f"🎯 Collapsed claim {claim_id} to {verdict}")
+        return True
+        
+    def export_for_streamlit(self, output_file: str = "results/chemistry_discoveries.json"):
+        """Export chemistry data for Streamlit dashboard (Git-trackable)"""
+        import os
+        os.makedirs("results", exist_ok=True)
+        
+        if not self.neo4j_driver:
+            logger.warning("Neo4j not available, creating empty export")
+            empty_data = {
+                "export_timestamp": datetime.now().isoformat(),
+                "total_discoveries": 0,
+                "discoveries": []
+            }
+            with open(output_file, 'w') as f:
+                json.dump(empty_data, f, indent=2)
+            return empty_data
+        
+        with self.neo4j_driver.session() as session:
+            # Get all chemistry discoveries with claims and evidence (SAFE namespace)
+            result = session.run("""
+                MATCH (d:FoTChem_Discovery)
+                OPTIONAL MATCH (d)<-[:COLLAPSED_TO]-(c:FoTChem_Claim)
+                OPTIONAL MATCH (c)-[:HAS_EVIDENCE]->(e:FoTChem_Evidence)
+                RETURN d, c, collect(e) as evidence
+                ORDER BY d.discovered_at DESC
+            """)
+            
+            export_data = {
+                "export_timestamp": datetime.now().isoformat(),
+                "total_discoveries": 0,
+                "discoveries": []
+            }
+            
+            for record in result:
+                discovery = dict(record['d']) if record['d'] else {}
+                claim = dict(record['c']) if record['c'] else {}
+                evidence_list = [dict(e) for e in record['evidence']] if record['evidence'] else []
+                
+                export_data["discoveries"].append({
+                    "discovery": discovery,
+                    "claim": claim,
+                    "evidence": evidence_list
+                })
+                
+            export_data["total_discoveries"] = len(export_data["discoveries"])
+            
+            with open(output_file, 'w') as f:
+                json.dump(export_data, f, indent=2, default=str)
+                
+            logger.info(f"📁 Exported {export_data['total_discoveries']} discoveries to {output_file}")
+            return export_data
     
     def close(self):
         """Close all connections."""
