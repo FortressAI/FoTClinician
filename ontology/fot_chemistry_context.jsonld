@@ -1,0 +1,238 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@base": "http://fieldoftruth.org/ontology/chemistry#",
+    "@vocab": "http://fieldoftruth.org/ontology/chemistry#",
+    
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "chebi": "http://purl.obolibrary.org/obo/CHEBI_",
+    "rxno": "http://purl.obolibrary.org/obo/RXNO_",
+    "chmo": "http://purl.obolibrary.org/obo/CHMO_",
+    
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    
+    "Agent": {
+      "@id": "Agent",
+      "@type": "@id"
+    },
+    "BellState": {
+      "@id": "BellState",
+      "@type": "@id"
+    },
+    "ChemicalEntity": {
+      "@id": "ChemicalEntity",
+      "@type": "@id"
+    },
+    "Claim": {
+      "@id": "Claim",
+      "@type": "@id"
+    },
+    "Condition": {
+      "@id": "Condition",
+      "@type": "@id"
+    },
+    "Dataset": {
+      "@id": "Dataset",
+      "@type": "@id"
+    },
+    "Evidence": {
+      "@id": "Evidence",
+      "@type": "@id"
+    },
+    "Hazard": {
+      "@id": "Hazard",
+      "@type": "@id"
+    },
+    "Measurement": {
+      "@id": "Measurement",
+      "@type": "@id"
+    },
+    "Model": {
+      "@id": "Model",
+      "@type": "@id"
+    },
+    "Molecule": {
+      "@id": "Molecule",
+      "@type": "@id"
+    },
+    "Protocol": {
+      "@id": "Protocol",
+      "@type": "@id"
+    },
+    "Reaction": {
+      "@id": "Reaction",
+      "@type": "@id"
+    },
+    "VQbitState": {
+      "@id": "VQbitState",
+      "@type": "@id"
+    },
+    
+    "hasComponent": {
+      "@id": "hasComponent",
+      "@type": "@id"
+    },
+    "hasCondition": {
+      "@id": "hasCondition",
+      "@type": "@id"
+    },
+    "hasEvidence": {
+      "@id": "hasEvidence",
+      "@type": "@id"
+    },
+    "hasMeasurement": {
+      "@id": "hasMeasurement",
+      "@type": "@id"
+    },
+    "hasProduct": {
+      "@id": "hasProduct",
+      "@type": "@id"
+    },
+    "hasReactant": {
+      "@id": "hasReactant",
+      "@type": "@id"
+    },
+    "hasQuantumState": {
+      "@id": "hasQuantumState",
+      "@type": "@id"
+    },
+    "isEntangledWith": {
+      "@id": "isEntangledWith",
+      "@type": "@id"
+    },
+    "validatedBy": {
+      "@id": "validatedBy",
+      "@type": "@id"
+    },
+    
+    "hasCoherence": {
+      "@id": "hasCoherence",
+      "@type": "xsd:double"
+    },
+    "hasConfidence": {
+      "@id": "hasConfidence",
+      "@type": "xsd:double"
+    },
+    "hasFidelity": {
+      "@id": "hasFidelity",
+      "@type": "xsd:double"
+    },
+    "hasInChI": {
+      "@id": "hasInChI",
+      "@type": "xsd:string"
+    },
+    "hasSMILES": {
+      "@id": "hasSMILES",
+      "@type": "xsd:string"
+    },
+    "hasTemperature": {
+      "@id": "hasTemperature",
+      "@type": "xsd:double"
+    },
+    "hasVirtueWeight": {
+      "@id": "hasVirtueWeight",
+      "@type": "xsd:double"
+    },
+    "hasYield": {
+      "@id": "hasYield",
+      "@type": "xsd:double"
+    },
+    
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "name": "foaf:name",
+    "homepage": "foaf:homepage",
+    
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    
+    "chemblId": {
+      "@id": "http://rdf.ebi.ac.uk/terms/chembl#chemblId",
+      "@type": "xsd:string"
+    },
+    "pubchemCid": {
+      "@id": "http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID",
+      "@type": "xsd:integer"
+    },
+    "molecularFormula": {
+      "@id": "http://semanticscience.org/resource/CHEMINF_000042",
+      "@type": "xsd:string"
+    },
+    "molecularWeight": {
+      "@id": "http://semanticscience.org/resource/CHEMINF_000198",
+      "@type": "xsd:double"
+    },
+    
+    "doi": {
+      "@id": "http://purl.org/ontology/bibo/doi",
+      "@type": "xsd:string"
+    },
+    "orcid": {
+      "@id": "http://purl.org/spar/datacite/orcid",
+      "@type": "xsd:string"
+    },
+    "license": {
+      "@id": "http://purl.org/dc/terms/license",
+      "@type": "@id"
+    },
+    "created": {
+      "@id": "http://purl.org/dc/terms/created",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "http://purl.org/dc/terms/modified",
+      "@type": "xsd:dateTime"
+    },
+    "creator": {
+      "@id": "http://purl.org/dc/terms/creator",
+      "@type": "@id"
+    },
+    
+    "unit": {
+      "@id": "qudt:unit",
+      "@type": "@id"
+    },
+    "value": {
+      "@id": "qudt:numericValue",
+      "@type": "xsd:double"
+    },
+    "uncertainty": {
+      "@id": "qudt:standardUncertainty",
+      "@type": "xsd:double"
+    }
+  }
+}
