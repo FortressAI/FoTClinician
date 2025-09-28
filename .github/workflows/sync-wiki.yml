@@ -1,0 +1,63 @@
+name: Sync Wiki Documentation
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone wiki repository
+        run: |
+          git clone https://github.com/${{ github.repository }}.wiki.git wiki
+
+      - name: Sync documentation
+        run: |
+          # Copy all markdown files from docs to wiki
+          cp docs/*.md wiki/
+          
+          # Navigate to wiki directory
+          cd wiki
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add all changes
+          git add .
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            # Commit and push changes
+            git commit -m "📚 Auto-sync wiki documentation from main repository
+
+            Updated from commit: ${{ github.sha }}
+            Triggered by: ${{ github.event_name }}
+            
+            This update includes all changes from the docs/ directory
+            in the main FoTChemistry repository."
+            
+            git push
+            echo "Wiki documentation updated successfully!"
+          fi
+
+      - name: Verify wiki update
+        run: |
+          echo "Wiki synchronization completed."
+          echo "The following files were processed:"
+          ls -la docs/

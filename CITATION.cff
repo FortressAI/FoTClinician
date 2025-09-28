@@ -11,7 +11,7 @@ authors:
   - family-names: "Gillespie"
     given-names: "Richard"
     orcid: "https://orcid.org/0000-0000-0000-0000"
-    email: "richard@fieldoftruth.org"
+    email: "richard@fortress.ai"
     affiliation: "Field of Truth Research"
   - name: "FoT Research Team"
     email: "research@fieldoftruth.org"
@@ -20,8 +20,8 @@ date-released: "2025-09-28"
 url: "https://github.com/FortressAI/FoTChemistry"
 repository-code: "https://github.com/FortressAI/FoTChemistry"
 repository-artifact: "https://zenodo.org/record/XXXXXX"
-license: "Apache-2.0"
-license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+license: "MIT (Educational/Research) - Commercial License Required"
+license-url: "https://github.com/FortressAI/FoTChemistry/blob/main/LICENSE"
 keywords:
   - "chemistry"
   - "knowledge graph"
@@ -59,7 +59,7 @@ references:
 contact:
   - family-names: "Gillespie"
     given-names: "Richard"
-    email: "richard@fieldoftruth.org"
+    email: "richard@fortress.ai"
     orcid: "https://orcid.org/0000-0000-0000-0000"
 preferred-citation:
   type: "software"

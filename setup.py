@@ -36,9 +36,9 @@ VERSION = "0.1.0"
 DESCRIPTION = "Field of Truth open lab notebook and truth ledger for chemistry"
 LONG_DESCRIPTION = read_file("README.md") if os.path.exists("README.md") else DESCRIPTION
 AUTHOR = "FoT Research Team"
-AUTHOR_EMAIL = "research@fieldoftruth.org"
+AUTHOR_EMAIL = "richard@fortress.ai"
 URL = "https://github.com/FortressAI/FoTChemistry"
-LICENSE = "Apache-2.0"
+LICENSE = "MIT (Educational/Research) - Commercial License Required"
 
 # Package requirements
 INSTALL_REQUIRES = read_requirements("requirements.txt")

@@ -3,7 +3,7 @@
 [![Field of Truth](https://img.shields.io/badge/Field%20of%20Truth-Validated-green.svg)](https://github.com/FortressAI/FoTChemistry)
 [![No Simulations](https://img.shields.io/badge/No-Simulations-red.svg)](https://github.com/FortressAI/FoTChemistry)
 [![Open Science](https://img.shields.io/badge/Open-Science-blue.svg)](https://github.com/FortressAI/FoTChemistry)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: Dual](https://img.shields.io/badge/License-MIT%20(Edu%2FResearch)%20%7C%20Commercial-blue.svg)](https://github.com/FortressAI/FoTChemistry/blob/main/LICENSE)
 
 ## 🎯 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
 
@@ -39,7 +39,7 @@ An **Agentic Knowledge Graph (AKG)** for chemistry that includes:
 ```
 FoTChemistry/
 ├── README.md                          # This file
-├── LICENSE                            # Apache-2.0 for code
+├── LICENSE                            # Dual license (MIT for edu/research, commercial license required)
 ├── CITATION.cff                       # Citation metadata
 ├── CODE_OF_CONDUCT.md                 # Community guidelines  
 ├── CONTRIBUTING.md                    # Contribution guidelines
@@ -139,7 +139,7 @@ FoTChemistry/
 ## 🗓️ **6-Week Roadmap (v0.1)**
 
 ### **Week 1–2: Foundation**
-- ✅ Scaffold repo structure, choose licenses (Apache-2.0 for code, CC-BY-4.0 for data)
+- ✅ Scaffold repo structure, choose licenses (Dual: MIT for edu/research, commercial license required)
 - ✅ Stand up graph stack; commit initial FoT-Chem ontology + JSON-LD context
 - ✅ CI for linting, tests, SPARQL validation, docs
 
@@ -245,9 +245,19 @@ We welcome contributions that maintain scientific integrity:
 
 ## 📜 **License**
 
-- **Code**: Apache License 2.0 - See LICENSE file
-- **Data**: CC-BY-4.0 for maximum reusability
-- **Documentation**: CC-BY-4.0
+**DUAL LICENSE MODEL:**
+
+- **Educational/Research Use**: MIT License (free for academic institutions, non-profit research, personal educational projects)
+- **Commercial Use**: Requires separate commercial license - Contact richard@fortress.ai
+
+**What requires a commercial license:**
+- Use by for-profit companies or organizations
+- Integration into commercial products or services
+- Revenue-generating activities
+- Consulting work for clients
+- Proprietary research for commercial advantage
+
+**Attribution required for all uses.** See [LICENSE](LICENSE) for full terms.
 
 ---
 
