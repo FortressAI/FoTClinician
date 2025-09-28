@@ -1,19 +1,6 @@
-# System packages needed for Streamlit Cloud deployment
-# Required for RDKit and quantum chemistry libraries
-
-# Development tools for compiling C extensions
-gcc
-g++
-make
-cmake
-
-# Linear algebra libraries
-libblas-dev
-liblapack-dev
-libatlas-base-dev
-gfortran
-
-# Additional libraries for chemistry
-libxml2-dev
-libxslt1-dev
-zlib1g-dev
+# System packages for Streamlit Cloud
+# Required for RDKit and chemistry libraries
+build-essential
+libxrender1
+libxext6
+libsm6

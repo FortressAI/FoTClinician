@@ -64,16 +64,108 @@ st.set_page_config(
 
 @st.cache_data
 def load_discovery_data():
-    """Load discovery data from file export"""
-    export_file = "results/chemistry_discoveries.json"
-    if os.path.exists(export_file):
-        try:
-            with open(export_file, 'r') as f:
-                data = json.load(f)
-            return data
-        except Exception as e:
-            st.error(f"❌ Failed to load discovery data: {e}")
-    return None
+    """Load discovery data with cloud/local detection and fallback options."""
+    
+    # Detect deployment environment
+    is_cloud_deployment = (
+        os.environ.get('STREAMLIT_SHARING') == '1' or
+        os.environ.get('STREAMLIT_CLOUD') == '1' or
+        'streamlit.io' in os.environ.get('HOSTNAME', '') or
+        not os.path.exists('akg/client.py')  # Local AKG not available
+    )
+    
+    if is_cloud_deployment:
+        st.info("☁️ Cloud deployment detected - using static data snapshot")
+        
+        # Try cloud snapshot first
+        for snapshot_file in ['cloud_data_snapshot.json', 'demo_data.json']:
+            if os.path.exists(snapshot_file):
+                try:
+                    with open(snapshot_file, 'r') as f:
+                        data = json.load(f)
+                    st.success(f"📦 Loaded {data.get('discovery_summary', {}).get('total_discoveries', 0)} molecules from {snapshot_file}")
+                    return data
+                except Exception as e:
+                    st.warning(f"⚠️ Failed to load {snapshot_file}: {e}")
+        
+        # Fallback to embedded demo data for cloud
+        st.info("🎯 Using embedded demo data for cloud deployment")
+        return create_demo_data()
+    
+    else:
+        st.info("🏠 Local deployment detected - using live data")
+        
+        # Try to load from local results file  
+        export_file = "results/chemistry_discoveries.json"
+        if os.path.exists(export_file):
+            try:
+                with open(export_file, 'r') as f:
+                    data = json.load(f)
+                st.success(f"📂 Loaded {data.get('total_discoveries', 0)} molecules from local results")
+                return data
+            except Exception as e:
+                st.warning(f"⚠️ Failed to load local results: {e}")
+        
+        # Fallback to demo data
+        st.info("🎯 Loading demo discovery data")
+        return create_demo_data()
+
+def create_demo_data():
+    """Create embedded demo data for cloud deployment."""
+    from datetime import datetime
+    
+    demo_molecules = [
+        {
+            "id": "demo_001",
+            "smiles": "CCCO",
+            "name": "Propanol",
+            "score": 0.786,
+            "drug_likeness": {"passes_lipinski": True, "score": 0.85},
+            "safety_score": 0.92,
+            "quantum_coherence": 0.74,
+            "timestamp": datetime.now().isoformat(),
+            "properties": {
+                "formula": "C3H8O",
+                "molecular_weight": 60.1,
+                "logp": 0.25,
+                "tpsa": 20.23,
+                "hbd": 1,
+                "hba": 1
+            }
+        },
+        {
+            "id": "demo_002", 
+            "smiles": "c1ccc(-c2ccccc2)cc1",
+            "name": "Biphenyl",
+            "score": 0.754,
+            "drug_likeness": {"passes_lipinski": True, "score": 0.78},
+            "safety_score": 0.88,
+            "quantum_coherence": 0.71,
+            "timestamp": datetime.now().isoformat(),
+            "properties": {
+                "formula": "C12H10",
+                "molecular_weight": 154.2,
+                "logp": 3.76,
+                "tpsa": 0.0,
+                "hbd": 0,
+                "hba": 0
+            }
+        }
+    ]
+    
+    return {
+        "discoveries": demo_molecules,
+        "total_discoveries": len(demo_molecules),
+        "statistics": {
+            "total_molecules": len(demo_molecules),
+            "avg_score": sum(m["score"] for m in demo_molecules) / len(demo_molecules),
+            "max_score": max(m["score"] for m in demo_molecules),
+            "total_reactions": 0,
+            "total_measurements": 0,
+            "active_claims": 0
+        },
+        "recent_molecules": demo_molecules
+    }
 
 def render_molecule_2d(smiles: str):
     """Generate 2D molecular structure as SVG"""

@@ -1,20 +1,17 @@
 [global]
-developmentMode = false
-showWarningOnDirectExecution = false
+# Configuration for Streamlit Cloud
+dataFrameSerialization = "legacy"
 
 [server]
-headless = true
-port = 8501
+# Performance settings for cloud deployment
+maxUploadSize = 200
 enableCORS = false
 enableXsrfProtection = false
-maxUploadSize = 200
 
 [theme]
-primaryColor = "#3498db"
+# FoTChemistry theme
+primaryColor = "#1f77b4"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f0f2f6"
 textColor = "#262730"
 font = "sans serif"
-
-[browser]
-gatherUsageStats = false
