@@ -170,12 +170,13 @@ def create_demo_data():
 def render_molecule_2d(smiles: str):
     """Generate 2D molecular structure as SVG"""
     if not HAS_RDKIT or not smiles:
-        return None
+        # Return a text-based fallback
+        return f'<div style="text-align: center; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;"><h3>Molecular Structure</h3><p style="font-family: monospace; font-size: 18px;">{smiles}</p><p style="color: #666;">2D visualization requires RDKit</p></div>'
     
     try:
         mol = Chem.MolFromSmiles(smiles)
         if mol is None:
-            return None
+            return f'<div style="text-align: center; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fff3cd;"><h3>Invalid SMILES</h3><p style="font-family: monospace;">{smiles}</p></div>'
         
         drawer = rdMolDraw2D.MolDraw2DSVG(400, 400)
         drawer.SetFontSize(16)
@@ -185,8 +186,7 @@ def render_molecule_2d(smiles: str):
         
         return svg
     except Exception as e:
-        st.error(f"❌ 2D structure generation failed: {e}")
-        return None
+        return f'<div style="text-align: center; padding: 20px; border: 1px solid #f8d7da; border-radius: 5px; background-color: #f8d7da;"><h3>Visualization Error</h3><p style="font-family: monospace;">{smiles}</p><p style="color: #721c24;">Error: {e}</p></div>'
 
 def render_molecule_3d(smiles: str):
     """Generate 3D molecular structure"""
