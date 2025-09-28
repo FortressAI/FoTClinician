@@ -235,10 +235,24 @@ def create_demo_data():
         "recent_molecules": demo_molecules
     }
 
-def render_molecule_2d(smiles: str, width=400, height=400):
-    """Render 2D molecular structure using RDKit"""
-    if not HAS_RDKIT or not smiles:
+def render_molecule_2d(smiles: str, width=400, height=400, molecule_data=None):
+    """Render 2D molecular structure using pre-generated data or RDKit"""
+    if not smiles:
         return create_molecule_placeholder(smiles, "2D Structure", width, height)
+    
+    # Try pre-generated visualization first (for cloud deployment)
+    if molecule_data and 'visualization_2d' in molecule_data:
+        viz_data = molecule_data['visualization_2d']
+        if viz_data.get('svg'):
+            svg_content = viz_data['svg']
+            # Clean SVG (remove XML declaration)
+            if svg_content.startswith('<?xml'):
+                svg_content = svg_content[svg_content.find('<svg'):]
+            return svg_content
+    
+    # Fallback to live RDKit generation (local only)
+    if not HAS_RDKIT:
+        return create_molecule_placeholder(smiles, "2D Structure - RDKit Required", width, height)
     
     try:
         # Parse SMILES
@@ -277,14 +291,55 @@ def render_molecule_2d(smiles: str, width=400, height=400):
         st.error(f"Error generating 2D structure for {smiles}: {str(e)}")
         return create_molecule_placeholder(smiles, "2D Structure Error", width, height)
 
-def render_molecule_3d(smiles: str, height=400):
-    """Render 3D molecular structure using stmol and py3Dmol"""
+def render_molecule_3d(smiles: str, height=400, molecule_data=None):
+    """Render 3D molecular structure using pre-generated data, stmol and py3Dmol"""
     if not smiles:
         st.write("No SMILES provided for 3D rendering")
         return False
     
+    # Try pre-generated 3D data first (for cloud deployment)
+    if molecule_data and 'visualization_3d' in molecule_data:
+        viz_data = molecule_data['visualization_3d']
+        if viz_data.get('molblock'):
+            molblock = viz_data['molblock']
+            
+            # Try stmol first (best for cloud)
+            if HAS_STMOL and HAS_PY3DMOL:
+                try:
+                    # Create py3Dmol viewer and pass to stmol
+                    viewer = py3Dmol.view(width=400, height=height)
+                    viewer.addModel(molblock, 'mol')
+                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
+                    viewer.setBackgroundColor('white')
+                    viewer.zoomTo()
+                    stmol.showmol(viewer, height=height, width=400)
+                    return True
+                except Exception as e:
+                    st.warning(f"stmol failed: {str(e)}")
+            
+            # Try py3Dmol with HTML
+            if HAS_PY3DMOL:
+                try:
+                    viewer_html = f"""
+                    <div id="3dmol_viewer" style="width: 400px; height: {height}px; background: white; border: 1px solid #ddd; border-radius: 8px;"></div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/1.8.0/3Dmol-min.js"></script>
+                    <script>
+                    let viewer = $3Dmol.createViewer('3dmol_viewer');
+                    viewer.addModel(`{molblock}`, 'mol');
+                    viewer.setStyle({{'stick': {{'radius': 0.1}}, 'sphere': {{'scale': 0.3}}}});
+                    viewer.setBackgroundColor('white');
+                    viewer.zoomTo();
+                    viewer.render();
+                    </script>
+                    """
+                    components.html(viewer_html, height=height)
+                    return True
+                except Exception as e:
+                    st.warning(f"py3Dmol failed: {str(e)}")
+    
+    # Fallback to live RDKit generation (local only)
     if not HAS_RDKIT:
-        st.write("RDKit required for 3D molecular generation")
+        st.info("💡 3D visualization available with pre-generated data or RDKit installation")
         return False
     
     try:
@@ -465,13 +520,13 @@ def display_molecule_detail(molecule):
         
         # 2D Structure
         st.markdown("**2D Structure:**")
-        svg_2d = render_molecule_2d(smiles)
+        svg_2d = render_molecule_2d(smiles, molecule_data=molecule)
         if svg_2d:
             components.html(svg_2d, height=400, width=400)
         
         # 3D Structure
         st.markdown("**3D Interactive Structure:**")
-        if not render_molecule_3d(smiles):
+        if not render_molecule_3d(smiles, molecule_data=molecule):
             # Show fallback placeholder
             st.markdown(create_molecule_placeholder(smiles, "3D Structure", 400, 300), unsafe_allow_html=True)
 
