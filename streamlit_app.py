@@ -25,7 +25,8 @@ sys.path.append('agents/alchemist')
 HAS_AKG = False
 HAS_QUANTUM = False  
 HAS_RDKIT = False
-HAS_3D_VIZ = False
+HAS_STMOL = False
+HAS_PY3DMOL = False
 
 try:
     from client import AKG
@@ -50,6 +51,12 @@ except ImportError:
 try:
     import stmol
     HAS_STMOL = True
+except ImportError:
+    pass
+
+try:
+    import py3Dmol
+    HAS_PY3DMOL = True
 except ImportError:
     pass
 
@@ -218,7 +225,7 @@ def render_molecule_2d(molecule_data: dict):
         '''
 
 def render_molecule_3d(molecule_data: dict):
-    """Render 3D molecular structure using stmol and pre-generated data"""
+    """Render 3D molecular structure using stmol/py3Dmol and pre-generated data"""
     smiles = molecule_data.get('smiles', '')
     if not smiles:
         return None
@@ -226,21 +233,37 @@ def render_molecule_3d(molecule_data: dict):
     # Try pre-generated 3D data first
     if 'visualization_3d' in molecule_data:
         viz_data = molecule_data['visualization_3d']
-        if viz_data.get('has_3d') and viz_data.get('molblock') and HAS_STMOL:
-            try:
-                # Use stmol to render the pre-generated MOL block
-                molblock = viz_data['molblock']
-                stmol.showmol(molblock, height=400, width=400)
-                return True  # Stmol displays directly
-            except Exception as e:
-                st.warning(f"Stmol visualization failed: {e}")
+        if viz_data.get('has_3d') and viz_data.get('molblock'):
+            molblock = viz_data['molblock']
+            
+            # Try stmol first (preferred for Streamlit Cloud)
+            if HAS_STMOL:
+                try:
+                    stmol.showmol(molblock, height=400, width=400)
+                    return True
+                except Exception as e:
+                    st.warning(f"Stmol visualization failed: {e}")
+            
+            # Try py3Dmol as alternative
+            if HAS_PY3DMOL:
+                try:
+                    viewer = py3Dmol.view(width=400, height=400)
+                    viewer.addModel(molblock, 'mol')
+                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
+                    viewer.setBackgroundColor('white')
+                    viewer.zoomTo()
+                    stmol.showmol(viewer, height=400, width=400)
+                    return True
+                except Exception as e:
+                    st.warning(f"Py3Dmol visualization failed: {e}")
+        
         elif viz_data.get('html'):
             # Use pre-generated HTML fallback
             st.components.v1.html(viz_data['html'], height=400)
             return True
     
-    # Fallback to live generation if RDKit + stmol available
-    if HAS_RDKIT and HAS_STMOL:
+    # Fallback to live generation if RDKit available
+    if HAS_RDKIT:
         try:
             mol = Chem.MolFromSmiles(smiles)
             if mol is not None:
@@ -249,8 +272,22 @@ def render_molecule_3d(molecule_data: dict):
                 AllChem.UFFOptimizeMolecule(mol)
                 
                 molblock = Chem.MolToMolBlock(mol)
-                stmol.showmol(molblock, height=400, width=400)
-                return True
+                
+                # Try stmol first
+                if HAS_STMOL:
+                    stmol.showmol(molblock, height=400, width=400)
+                    return True
+                
+                # Try py3Dmol alternative
+                if HAS_PY3DMOL:
+                    viewer = py3Dmol.view(width=400, height=400)
+                    viewer.addModel(molblock, 'mol')
+                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
+                    viewer.setBackgroundColor('white')
+                    viewer.zoomTo()
+                    stmol.showmol(viewer, height=400, width=400)
+                    return True
+                
         except Exception as e:
             st.warning(f"Live 3D generation failed: {e}")
     
@@ -382,7 +419,17 @@ def main():
         
         st.markdown("**🧬 Advanced Features:**")
         st.markdown("✅ 2D Molecular Structures (Pre-generated)")
-        st.markdown(f"{'✅' if HAS_STMOL else '📊'} 3D Visualization {'(Stmol)' if HAS_STMOL else '(Static)'}")
+        
+        # 3D visualization status
+        if HAS_STMOL and HAS_PY3DMOL:
+            st.markdown("✅ 3D Visualization (Stmol + Py3Dmol)")
+        elif HAS_STMOL:
+            st.markdown("✅ 3D Visualization (Stmol)")
+        elif HAS_PY3DMOL:
+            st.markdown("✅ 3D Visualization (Py3Dmol)")
+        else:
+            st.markdown("📊 3D Visualization (Static)")
+            
         st.markdown(f"{'✅' if HAS_QUANTUM else '❌'} Quantum Engine")
         st.markdown(f"{'✅' if HAS_AKG else '📁'} Database {'(Live)' if HAS_AKG else '(Static)'}")
         
