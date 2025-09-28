@@ -2,3 +2,8 @@ build-essential
 libxrender1
 libxext6
 libsm6
+libice6
+libxt6
+libglib2.0-0
+libfontconfig1
+libfreetype6

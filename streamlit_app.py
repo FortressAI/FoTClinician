@@ -169,54 +169,96 @@ def create_demo_data():
 
 def render_molecule_2d(smiles: str):
     """Generate 2D molecular structure as SVG"""
-    if not HAS_RDKIT or not smiles:
-        # Return a text-based fallback
-        return f'<div style="text-align: center; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;"><h3>Molecular Structure</h3><p style="font-family: monospace; font-size: 18px;">{smiles}</p><p style="color: #666;">2D visualization requires RDKit</p></div>'
+    if not smiles:
+        return None
     
+    # Try RDKit first (best quality)
+    if HAS_RDKIT:
+        try:
+            mol = Chem.MolFromSmiles(smiles)
+            if mol is not None:
+                drawer = rdMolDraw2D.MolDraw2DSVG(400, 400)
+                drawer.SetFontSize(16)
+                drawer.DrawMolecule(mol)
+                drawer.FinishDrawing()
+                svg = drawer.GetDrawingText()
+                return svg
+        except Exception as e:
+            st.warning(f"RDKit visualization failed: {e}")
+    
+    # Fallback to simple molecular visualization
     try:
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            return f'<div style="text-align: center; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fff3cd;"><h3>Invalid SMILES</h3><p style="font-family: monospace;">{smiles}</p></div>'
-        
-        drawer = rdMolDraw2D.MolDraw2DSVG(400, 400)
-        drawer.SetFontSize(16)
-        drawer.DrawMolecule(mol)
-        drawer.FinishDrawing()
-        svg = drawer.GetDrawingText()
-        
+        from simple_mol_viz import smiles_to_simple_svg
+        svg = smiles_to_simple_svg(smiles, 400, 400)
         return svg
     except Exception as e:
-        return f'<div style="text-align: center; padding: 20px; border: 1px solid #f8d7da; border-radius: 5px; background-color: #f8d7da;"><h3>Visualization Error</h3><p style="font-family: monospace;">{smiles}</p><p style="color: #721c24;">Error: {e}</p></div>'
+        # Ultimate fallback - styled text display
+        return f'''
+        <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
+                    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); 
+                    display: flex; flex-direction: column; align-items: center; justify-content: center;
+                    font-family: Arial, sans-serif;">
+            <div style="font-size: 48px; margin-bottom: 20px;">⚗️</div>
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #1565c0;">
+                Molecular Structure
+        </div>
+            <div style="font-size: 14px; color: #1976d2; margin-bottom: 15px;">
+                {smiles}
+        </div>
+            <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
+                Visual structure rendering unavailable
+        </div>
+        </div>
+        '''
 
 def render_molecule_3d(smiles: str):
     """Generate 3D molecular structure"""
-    if not HAS_RDKIT or not HAS_3D_VIZ or not smiles:
+    if not smiles:
         return None
-    
-    try:
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            return None
         
-        # Add hydrogens and generate 3D coordinates
-        mol = Chem.AddHs(mol)
-        
-        # Try to embed molecule
-        for attempt in range(3):
-            try:
-                AllChem.EmbedMolecule(mol, randomSeed=42 + attempt)
+    # Try full 3D visualization with RDKit + stmol
+    if HAS_RDKIT and HAS_3D_VIZ:
+        try:
+            mol = Chem.MolFromSmiles(smiles)
+            if mol is not None:
+                mol = Chem.AddHs(mol)
+                AllChem.EmbedMolecule(mol, randomSeed=42)
                 AllChem.UFFOptimizeMolecule(mol)
-                break
-            except:
-                if attempt == 2:
-                    return None
-                continue
-        
-        # Convert to SDF format for py3Dmol
-        sdf = Chem.MolToMolBlock(mol)
-        return sdf
-    except Exception as e:
-        return None
+                
+                molblock = Chem.MolToMolBlock(mol)
+                
+                xyzview = py3Dmol.view(width=400, height=400)
+                xyzview.addModel(molblock, 'mol')
+                xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
+                xyzview.setBackgroundColor('white')
+                xyzview.zoomTo()
+                
+                return xyzview
+        except Exception as e:
+            st.warning(f"3D visualization failed: {e}")
+    
+    # Fallback to simple 3D representation
+    try:
+        from simple_mol_viz import create_3d_fallback_html
+        return create_3d_fallback_html(smiles)
+    except Exception:
+        return f'''
+        <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
+                    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); 
+                    display: flex; flex-direction: column; align-items: center; justify-content: center;
+                    font-family: Arial, sans-serif;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🧬</div>
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #7b1fa2;">
+                3D Molecular Model
+            </div>
+            <div style="font-size: 14px; color: #8e24aa; margin-bottom: 15px;">
+                {smiles}
+            </div>
+            <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
+                Interactive 3D requires additional packages
+            </div>
+        </div>
+        '''
 
 def calculate_molecular_properties(smiles: str):
     """Calculate molecular properties"""
