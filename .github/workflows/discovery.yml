@@ -1,0 +1,178 @@
+name: Autonomous Discovery Engine
+
+on:
+  schedule:
+    - cron: "0 * * * *"          # Hourly quick scans for urgent discoveries
+    - cron: "0 6 * * *"          # Daily deeper discovery campaigns  
+    - cron: "0 12 * * 1"         # Weekly major truth-mining cycles
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: 'Discovery time budget'
+        required: false
+        default: '2h'
+        type: choice
+        options:
+        - '30m'
+        - '1h'
+        - '2h'
+        - '4h'
+      campaigns:
+        description: 'Campaign pattern (glob)'
+        required: false
+        default: 'configs/campaigns/*.yaml'
+
+env:
+  DISCOVERY_MODE: "autonomous"
+  PYTHONHASHSEED: "1337"  # Deterministic for reproducibility
+
+jobs:
+  truth-mining:
+    name: "🔬 Truth Mining Campaign"
+    runs-on: ubuntu-latest
+    timeout-minutes: 300  # 5 hour safety limit
+    
+    outputs:
+      discoveries: ${{ steps.discovery.outputs.discoveries }}
+      collapsed_claims: ${{ steps.discovery.outputs.collapsed_claims }}
+      new_truth: ${{ steps.discovery.outputs.new_truth }}
+    
+    steps:
+    - name: "📥 Checkout FoTChemistry"
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for delta detection
+        
+    - name: "🐍 Setup Python Environment"
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+        
+    - name: "📦 Install Dependencies"
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -e .
+        
+    - name: "🐳 Start Knowledge Graph Infrastructure"
+      run: |
+        cd akg
+        docker-compose up -d
+        sleep 30  # Wait for services to stabilize
+        
+    - name: "🔍 Verify AKG Health"
+      run: |
+        python -c "
+        from akg.client import AKG
+        akg = AKG()
+        print(f'✓ Neo4j: {akg.neo4j_health()}')
+        print(f'✓ GraphDB: {akg.graphdb_health()}')
+        print(f'✓ Fuseki: {akg.fuseki_health()}')
+        "
+        
+    - name: "🧠 Launch Autonomous Discovery"
+      id: discovery
+      run: |
+        BUDGET="${{ github.event.inputs.budget || '2h' }}"
+        CAMPAIGNS="${{ github.event.inputs.campaigns || 'configs/campaigns/*.yaml' }}"
+        
+        echo "🚀 Starting autonomous discovery with budget: $BUDGET"
+        echo "📋 Campaign pattern: $CAMPAIGNS"
+        
+        python orchestrator.py \
+          --campaigns $CAMPAIGNS \
+          --budget $BUDGET \
+          --mode autonomous \
+          --output discovery_results.json
+          
+        # Extract key metrics for outputs
+        python -c "
+        import json
+        with open('discovery_results.json') as f:
+            results = json.load(f)
+        print(f'discoveries={results[\"total_discoveries\"]}')
+        print(f'collapsed_claims={results[\"collapsed_claims\"]}')
+        print(f'new_truth={results[\"new_truth_count\"]}')
+        " >> $GITHUB_OUTPUT
+        
+    - name: "📊 Update Public Leaderboards"
+      run: |
+        python leaderboards/generate_all.py \
+          --input discovery_results.json \
+          --output site/leaderboards/
+          
+    - name: "📖 Build Documentation Site"
+      run: |
+        pip install mkdocs mkdocs-material
+        mkdocs build --clean
+        
+    - name: "🌐 Deploy Discovery Dashboard"
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: site
+        commit_message: "🤖 Autonomous discovery update: ${{ steps.discovery.outputs.discoveries }} discoveries, ${{ steps.discovery.outputs.new_truth }} collapsed to truth"
+        
+    - name: "💾 Archive Discovery Artifacts"
+      uses: actions/upload-artifact@v3
+      with:
+        name: discovery-artifacts-${{ github.run_number }}
+        path: |
+          discovery_results.json
+          artifacts/
+          logs/discovery_*.log
+        retention-days: 30
+        
+    - name: "🐳 Cleanup Infrastructure"
+      if: always()
+      run: |
+        cd akg
+        docker-compose down
+        
+  truth-validation:
+    name: "✅ Truth Claim Validation"
+    needs: truth-mining
+    if: needs.truth-mining.outputs.new_truth != '0'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: "🔬 Independent Validation"
+      run: |
+        echo "🎯 Validating ${{ needs.truth-mining.outputs.new_truth }} new truth claims"
+        python validation/independent_replication.py \
+          --claims discovery_results.json \
+          --replications 3 \
+          --confidence 0.95
+          
+    - name: "📢 Notify Community"
+      if: success()
+      run: |
+        python community/notify_discoveries.py \
+          --discoveries ${{ needs.truth-mining.outputs.discoveries }} \
+          --collapsed ${{ needs.truth-mining.outputs.collapsed_claims }} \
+          --new-truth ${{ needs.truth-mining.outputs.new_truth }}
+
+  reproducibility-check:
+    name: "🔄 Reproducibility Verification"
+    needs: truth-mining
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: "🧪 Verify Reproducibility"
+      run: |
+        echo "🔍 Checking reproducibility of all new claims"
+        python validation/reproducibility_check.py \
+          --results discovery_results.json \
+          --container-verification \
+          --environment-lock
+          
+    - name: "📋 Generate Reproducibility Report"
+      run: |
+        python reports/reproducibility_report.py \
+          --output site/reports/reproducibility_$(date +%Y%m%d_%H%M%S).html
