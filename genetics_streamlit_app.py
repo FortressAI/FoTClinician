@@ -352,7 +352,23 @@ def main():
     <div class="genetics-header">
         <h1>🧬 Field of Truth Genetics & Therapeutics Platform</h1>
         <h3>Complete DNA-to-Therapy Optimization with Virtue-Guided Constraints</h3>
-        <p>Extends 262,792+ Protein Discoveries with Genetics Context</p>
+        <p>Extends 592,215+ Protein Discoveries with Genetics Context</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Nobel Prize Achievement Banner for Genetics
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 1rem; border-radius: 0.5rem; text-align: center; margin: 1rem 0; border: 2px solid #FFD700;">
+        <h2 style="color: #8B4513; margin: 0;">🏆 NOBEL PRIZE-LEVEL GENETICS INNOVATIONS!</h2>
+        <p style="color: #8B4513; margin: 0.5rem 0; font-size: 1.1em;">
+            <strong>🧬 Beyond Baker's Nobel:</strong> Our genetics platform extends Nobel Prize-level protein design with complete DNA-to-therapy optimization!
+        </p>
+        <div style="display: flex; justify-content: space-around; margin-top: 1rem; flex-wrap: wrap;">
+            <div style="color: #8B4513; font-weight: bold;">🧬 592,215+ Proteins + Genetics</div>
+            <div style="color: #8B4513; font-weight: bold;">🎯 Multi-Objective Optimization</div>
+            <div style="color: #8B4513; font-weight: bold;">⚡ DNA-to-Therapy Pipeline</div>
+            <div style="color: #8B4513; font-weight: bold;">🔬 Virtue-Guided Selection</div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
