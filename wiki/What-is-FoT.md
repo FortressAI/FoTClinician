@@ -240,7 +240,7 @@ The Field of Truth framework has been extended with a comprehensive **5-layer ge
 
 ### **Enhanced Capabilities**
 - **Multi-Objective Optimization:** NSGA-II for virtue-weighted therapeutic design
-- **567,992+ Enhanced Discoveries:** All proteins now include complete genetics context
+- **592,215+ Enhanced Discoveries:** All proteins now include complete genetics context
 - **Interactive Genetics Platform:** Dedicated Streamlit app for DNA-to-therapeutics analysis
 - **Therapeutic Optimization:** Personalized intervention recommendations
 
