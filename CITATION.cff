@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "FoTChemistry: Open Lab Notebook & Truth Ledger for Chemistry"
+abstract: >-
+  An Agentic Knowledge Graph (AKG) for chemistry with truth-mining workflows 
+  where agents propose, test, and collapse claims to accepted truth after 
+  validation/replication. Built on Field of Truth (FoT) principles with 
+  open-science defaults, FAIR metadata, and reproducible compute.
+authors:
+  - family-names: "Gillespie"
+    given-names: "Richard"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    email: "richard@fieldoftruth.org"
+    affiliation: "Field of Truth Research"
+  - name: "FoT Research Team"
+    email: "research@fieldoftruth.org"
+version: "0.1.0"
+date-released: "2025-09-28"
+url: "https://github.com/FortressAI/FoTChemistry"
+repository-code: "https://github.com/FortressAI/FoTChemistry"
+repository-artifact: "https://zenodo.org/record/XXXXXX"
+license: "Apache-2.0"
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+keywords:
+  - "chemistry"
+  - "knowledge graph"
+  - "field of truth"
+  - "computational chemistry"
+  - "cheminformatics"
+  - "agentic systems"
+  - "truth mining"
+  - "ontology"
+  - "FAIR data"
+  - "reproducible research"
+  - "open science"
+  - "neo4j"
+  - "RDKit"
+  - "quantum chemistry"
+references:
+  - type: "article"
+    title: "Field of Truth: Quantum-Enhanced Scientific Discovery"
+    authors:
+      - family-names: "Gillespie"
+        given-names: "Richard"
+    year: 2025
+    journal: "arXiv preprint"
+    url: "https://arxiv.org/abs/2025.XXXXX"
+  - type: "software"
+    title: "Neo4j Graph Database"
+    authors:
+      - name: "Neo4j, Inc."
+    url: "https://neo4j.com"
+  - type: "software"
+    title: "RDKit: Open-Source Cheminformatics Software"
+    authors:
+      - name: "RDKit Contributors"
+    url: "https://www.rdkit.org"
+contact:
+  - family-names: "Gillespie"
+    given-names: "Richard"
+    email: "richard@fieldoftruth.org"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+preferred-citation:
+  type: "software"
+  title: "FoTChemistry: Open Lab Notebook & Truth Ledger for Chemistry"
+  authors:
+    - family-names: "Gillespie"
+      given-names: "Richard"
+      orcid: "https://orcid.org/0000-0000-0000-0000"
+    - name: "FoT Research Team"
+  version: "0.1.0"
+  year: 2025
+  url: "https://github.com/FortressAI/FoTChemistry"
+  doi: "10.5281/zenodo.XXXXXX"

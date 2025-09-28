@@ -1,0 +1,181 @@
+name: "PFAS Sorbent & Catalyst Discovery"
+description: "Autonomous discovery of safe materials for PFAS capture and defluorination"
+batch_size: 16
+per_task_timeout: 600  # 10 minutes per measurement
+priority: high
+
+# Discovery objective and success criteria
+objective: "minimize_residual_pfas_ngL"
+target_metrics:
+  residual_pfas_ngL: {"<=": 10}
+  removal_efficiency: {">=": 95}
+  breakthrough_cycles: {">=": 100}
+  regeneration_efficiency: {">=": 90}
+
+# FoT virtue weighting for claim prioritization  
+virtue_weighting:
+  Beneficence: 0.6    # Massive impact on clean water access
+  Prudence: 0.3       # Safety and environmental considerations
+  Honesty: 0.1        # Transparent reporting of limitations
+
+# Data sources to monitor for discovery signals
+sources:
+  - type: kg-delta
+    description: "Monitor AKG for new PFAS structures and field reports"
+    query: "NEW_PFAS_STRUCTURES OR NEW_FIELD_REPORTS OR NEW_REMOVAL_DATA"
+    polling_interval: 3600  # Check hourly
+    
+  - type: dataset-watch
+    description: "Monitor public datasets for PFAS contamination data"
+    uris: 
+      - "open://pfas-bench-v1"
+      - "open://epa-pfas-monitoring"
+      - "zenodo://pfas-remediation"
+    file_patterns: ["*.csv", "*.xlsx", "*.json"]
+    
+  - type: literature-stream
+    description: "Monitor literature for PFAS treatment breakthroughs"
+    keywords: ["PFAS removal", "perfluorooctanoic acid", "adsorption", "defluorination"]
+    sources: ["pubmed", "arxiv", "chemrxiv"]
+    min_relevance: 0.8
+
+# Candidate generation strategy
+generator:
+  type: "safe_material_search"
+  
+  # Search space constraints (safety-first)
+  search_space:
+    material_types: 
+      - "activated_carbons"
+      - "metal_organic_frameworks" 
+      - "ion_exchange_resins"
+      - "biomass_derived_sorbents"
+      - "safe_ionic_liquids"
+    
+    scaffold_library: "data/safe_sorbents_v1.smi"
+    max_mutations: 2
+    molecular_weight: {"min": 100, "max": 2000}
+    
+  # Generation parameters
+  exploration_strategy: "bayesian_optimization"
+  acquisition_function: "expected_improvement"
+  initial_random_samples: 12
+  batch_size: 8
+
+# Measurement and evaluation protocols
+measure:
+  # Computational oracles (safe, simulation-based)
+  oracles:
+    - kind: "adsorption_isotherm_proxy"
+      description: "Predict PFAS binding affinity using molecular descriptors"
+      method: "QSPR_ensemble"
+      uncertainty_quantification: true
+      
+    - kind: "hydrophobicity_proxy" 
+      description: "Estimate hydrophobic/hydrophilic balance for PFAS affinity"
+      method: "logP_calculation"
+      
+    - kind: "stability_assessment"
+      description: "Evaluate material stability under treatment conditions"
+      method: "bond_dissociation_energy"
+      
+    - kind: "selectivity_screening"
+      description: "Predict selectivity for PFAS vs common water constituents"
+      method: "competitive_binding_model"
+      
+  # Physical property predictions
+  properties:
+    - surface_area_m2g
+    - pore_volume_cmg
+    - hydrophobicity_index
+    - thermal_stability_c
+    - ph_stability_range
+    
+  # Cost and manufacturability screening
+  practical_filters:
+    - cost_per_kg: {"<": 100}  # USD per kg
+    - commercial_availability: {">=": 0.7}  # Availability score
+    - synthesis_complexity: {"<": 5}  # Complexity score 1-10
+
+# Truth collapse rules (when to accept discoveries)
+collapse_rules:
+  success_criteria:
+    residual_pfas_ngL: {"<=": 10}
+    removal_efficiency: {">=": 95} 
+    confidence_level: {">=": 0.8}
+    replication_agreement: {">=": 2}  # Independent replications
+    
+  uncertainty_thresholds:
+    max_prediction_uncertainty: 0.2
+    min_model_confidence: 0.7
+    
+  statistical_requirements:
+    min_sample_size: 5
+    significance_level: 0.05
+    effect_size_threshold: 0.3
+
+# Safety and ethics constraints
+ethics:
+  # Blocked categories (automatic rejection)
+  blocklists:
+    - "hazard_class_1"      # Explosive materials
+    - "carcinogenic"        # Known carcinogens
+    - "highly_toxic"        # Acute toxicity
+    - "persistent_pollutants" # Environmental persistence
+    
+  # Allowed safe categories
+  allowlists:
+    - "activated_carbons"
+    - "natural_silicas" 
+    - "safe_aluminas"
+    - "biodegradable_polymers"
+    - "food_grade_materials"
+    
+  # Additional safety checks
+  safety_screening:
+    ghs_classification: "exclude_cat_1_2"
+    environmental_fate: "biodegradable_preferred"
+    bioaccumulation: "low_risk_only"
+    
+  # Publication constraints
+  output_restrictions:
+    no_synthesis_procedures: true
+    descriptors_only: true
+    safety_warnings_required: true
+
+# Discovery campaign metadata
+metadata:
+  version: "1.0"
+  created: "2025-09-28"
+  author: "FoTChemistry Autonomous Discovery"
+  license: "CC-BY-4.0"
+  
+  tags: 
+    - "pfas_remediation"
+    - "water_treatment" 
+    - "environmental_chemistry"
+    - "materials_discovery"
+    
+  related_challenges:
+    - "01_pfas_open_challenge"
+    - "clean_water_initiative"
+    
+# Expected outcomes and success metrics
+expected_outcomes:
+  discovery_rate: "2-5 viable candidates per week"
+  truth_collapse_rate: "60-80% of tested candidates"
+  false_positive_rate: "<10%"
+  computational_cost: "<$10 per candidate"
+  
+# Reporting and archival
+reporting:
+  update_frequency: "daily"
+  public_dashboard: true
+  leaderboard_updates: true
+  doi_minting: "monthly_releases"
+  
+archival:
+  preserve_all_attempts: true
+  container_snapshots: true
+  environment_hashes: true
+  full_provenance_chain: true
