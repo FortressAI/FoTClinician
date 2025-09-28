@@ -1,5 +1,3 @@
-# System packages for Streamlit Cloud
-# Required for RDKit and chemistry libraries
 build-essential
 libxrender1
 libxext6
