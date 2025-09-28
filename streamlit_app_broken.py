@@ -186,7 +186,7 @@ def calculate_molecular_properties(smiles: str):
         }
         
         return properties
-    except Exception as e:
+            except Exception as e:
         st.error(f"❌ Molecular property calculation failed: {e}")
         return None
 
@@ -199,42 +199,52 @@ def load_discovery_data():
         try:
             # Query for recent chemistry discoveries directly from Neo4j
             with akg.neo4j_driver.session() as session:
-                # Get recent discoveries (using the actual Discovery nodes that exist)
+                # Get recent chemistry discoveries from FoTChem_Discovery nodes
                 result = session.run("""
-                    MATCH (d:Discovery)
-                    WHERE d.smiles IS NOT NULL
+                    MATCH (d:FoTChem_Discovery)
                     RETURN d.smiles as smiles, 
                            d.combined_score as score,
                            d.drug_likeness as drug_likeness,
                            d.safety_score as safety_score,
                            d.quantum_coherence as quantum_coherence,
-                           d.timestamp as timestamp,
-                           d.id as id
-                    ORDER BY d.timestamp DESC
+                           d.discovery_timestamp as timestamp,
+                           d.discovery_id as id
+                    ORDER BY d.discovery_timestamp DESC
                     LIMIT 50
                 """)
                 
                 discoveries = []
                 for record in result:
+                    # Handle drug_likeness which might be a JSON string or dict
+                    drug_likeness_raw = record.get('drug_likeness', {})
+                    if isinstance(drug_likeness_raw, str):
+                        import json
+                        try:
+                            drug_likeness_parsed = json.loads(drug_likeness_raw)
+                        except:
+                            drug_likeness_parsed = {'passes_lipinski': False}
+                    else:
+                        drug_likeness_parsed = drug_likeness_raw or {'passes_lipinski': False}
+                    
                     discovery = {
                         'id': record.get('id', 'unknown'),
                         'smiles': record.get('smiles', ''),
-                        'score': float(record.get('score', 0)),
-                        'drug_likeness': float(record.get('drug_likeness', 0)),
-                        'safety_score': float(record.get('safety_score', 0)),
-                        'quantum_coherence': float(record.get('quantum_coherence', 0)),
+                        'score': float(record.get('score', 0) or 0),
+                        'drug_likeness': drug_likeness_parsed,
+                        'safety_score': float(record.get('safety_score', 0) or 0),
+                        'quantum_coherence': float(record.get('quantum_coherence', 0) or 0),
                         'timestamp': record.get('timestamp', ''),
                         'properties': {
-                            'combined_score': float(record.get('score', 0)),
-                            'drug_likeness': float(record.get('drug_likeness', 0)),
-                            'safety_score': float(record.get('safety_score', 0))
+                            'combined_score': float(record.get('score', 0) or 0),
+                            'drug_likeness': drug_likeness_parsed,
+                            'safety_score': float(record.get('safety_score', 0) or 0)
                         }
                     }
                     discoveries.append(discovery)
                 
                 # Get discovery statistics
                 stats_result = session.run("""
-                    MATCH (d:Discovery) WHERE d.smiles IS NOT NULL
+                    MATCH (d:FoTChem_Discovery)
                     RETURN count(d) as total_discoveries,
                            avg(d.combined_score) as avg_score,
                            max(d.combined_score) as max_score
@@ -255,7 +265,7 @@ def load_discovery_data():
                     'recent_molecules': discoveries[:10]  # Top 10 for display
                 }
                 
-        except Exception as e:
+            except Exception as e:
             st.warning(f"⚠️ Failed to query Neo4j directly: {e}")
     
     # Fallback: Try to load from file export (for cloud deployment)
@@ -263,9 +273,9 @@ def load_discovery_data():
     if os.path.exists(export_file):
         try:
             with open(export_file, 'r') as f:
-                data = json.load(f)
-                if data.get('total_discoveries', 0) > 0:
-                    return data
+                    data = json.load(f)
+            if data.get('total_discoveries', 0) > 0:
+                return data
         except Exception as e:
             st.warning(f"⚠️ Failed to load discovery data from file: {e}")
     
@@ -319,7 +329,7 @@ def analyze_molecule_quantum(smiles: str):
 
 def main():
     st.title("🧬 FoTChemistry Discovery Dashboard")
-    st.markdown("""
+        st.markdown("""
     **Field of Truth methodology for autonomous chemical discovery**  
     *Quantum vQbit substrate • Truth-mining workflows • Open chemical knowledge*
     """)
@@ -332,7 +342,7 @@ def main():
         engine = get_quantum_engine()
         if engine:
             st.success("✅ Quantum Substrate Active")
-            st.metric("🌌 Hilbert Dimension", engine.hilbert_dim)
+            st.metric("🌌 Hilbert Dimension", engine.hilbert_dimension)
             st.metric("🚀 GPU Acceleration", "Yes" if engine.gpu_acceleration else "No")
         else:
             st.error("❌ Quantum Engine Offline")
@@ -394,7 +404,7 @@ def main():
                     svg_2d = render_molecular_structure_2d(smiles)
                     if svg_2d:
                         st.markdown("**2D Structure:**")
-                        st.image(svg_2d.encode('utf-8'))
+                        st.markdown(svg_2d, unsafe_allow_html=True)
                     
                     # 3D Interactive Structure
                     if HAS_3D_VIZ:
@@ -436,12 +446,12 @@ def main():
                                 
                                 stmol.showmol(viewer, height=400, width=500)
                                 st.success("✅ 3D structure rendered successfully")
-                            else:
+        else:
                                 st.warning("⚠️ Could not generate 3D coordinates for this molecule")
                         except Exception as e:
                             st.error(f"❌ 3D visualization error: {e}")
                             st.info("💡 Some complex molecules may not render in 3D")
-                    else:
+        else:
                         st.info("💡 Install stmol and py3Dmol for 3D visualization")
                 
                 with col_props:
@@ -467,7 +477,7 @@ def main():
                     st.text(f"Lipinski Violations: {props['lipinski_violations']}/4")
                     if props['lipinski_violations'] == 0:
                         st.success("✅ Lipinski Rule of Five compliant")
-                    else:
+            else:
                         st.warning(f"⚠️ {props['lipinski_violations']} Lipinski violations")
                 
                 # Quantum Analysis
@@ -576,7 +586,13 @@ def main():
                             st.markdown("**Discovery Details:**")
                             st.text(f"SMILES: {molecule.get('smiles', 'N/A')}")
                             st.text(f"Combined Score: {molecule.get('score', 0):.3f}")
-                            st.text(f"Drug Likeness: {molecule.get('drug_likeness', 0):.3f}")
+                            # Handle drug_likeness as dictionary or float
+                            drug_likeness_val = molecule.get('drug_likeness', 0)
+                            if isinstance(drug_likeness_val, dict):
+                                drug_likeness_score = drug_likeness_val.get('passes_lipinski', False)
+                                st.text(f"Drug Likeness: {'Pass' if drug_likeness_score else 'Fail'} Lipinski")
+                            else:
+                                st.text(f"Drug Likeness: {float(drug_likeness_val):.3f}")
                             st.text(f"Safety Score: {molecule.get('safety_score', 0):.3f}")
                             st.text(f"Quantum Coherence: {molecule.get('quantum_coherence', 0):.6f}")
                             st.text(f"Discovery ID: {molecule.get('id', 'Unknown')[:8]}...")
@@ -644,12 +660,12 @@ def main():
         if engine:
             st.subheader("🌌 Quantum Properties")
             
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.metric("Hilbert Dimension", engine.hilbert_dim)
-            with col2:
+        col1, col2, col3 = st.columns(3)
+        with col1:
+                st.metric("Hilbert Dimension", engine.hilbert_dimension)
+        with col2:
                 st.metric("Property Operators", len(ChemistryPropertyType))
-            with col3:
+        with col3:
                 st.metric("Quantum Coherence Time", "∞ (noiseless)")
             
             # Test quantum operations
