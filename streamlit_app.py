@@ -80,13 +80,37 @@ st.set_page_config(
 def load_discovery_data():
     """Load discovery data with cloud/local detection and fallback options."""
     
-    # Detect deployment environment
+    # Detect deployment environment (improved cloud detection)
     is_cloud_deployment = (
+        # Official Streamlit Cloud environment variables
         os.environ.get('STREAMLIT_SHARING') == '1' or
         os.environ.get('STREAMLIT_CLOUD') == '1' or
+        os.environ.get('STREAMLIT_COMMUNITY_CLOUD') == '1' or
+        
+        # Hostname-based detection
         'streamlit.io' in os.environ.get('HOSTNAME', '') or
-        not os.path.exists('akg/client.py')  # Local AKG not available
+        'streamlit.app' in os.environ.get('HOSTNAME', '') or
+        
+        # Path-based detection (cloud containers)
+        '/mount/src/' in os.getcwd() or
+        '/app/' in os.getcwd() or
+        
+        # File-based detection (local development files missing)
+        not os.path.exists('akg/client.py') or
+        not os.path.exists('core/chemistry_vqbit_engine.py') or
+        
+        # Environment variable that indicates cloud
+        os.environ.get('HOME', '').startswith('/home/adminuser')
     )
+    
+    # Debug info (remove in production)
+    with st.expander("🔧 Debug: Environment Detection"):
+        st.write(f"Current working directory: {os.getcwd()}")
+        st.write(f"HOME environment: {os.environ.get('HOME', 'Not set')}")
+        st.write(f"HOSTNAME environment: {os.environ.get('HOSTNAME', 'Not set')}")
+        st.write(f"akg/client.py exists: {os.path.exists('akg/client.py')}")
+        st.write(f"core/chemistry_vqbit_engine.py exists: {os.path.exists('core/chemistry_vqbit_engine.py')}")
+        st.write(f"Is cloud deployment: {is_cloud_deployment}")
     
     if is_cloud_deployment:
         st.info("☁️ Cloud deployment detected - using static data snapshot")
