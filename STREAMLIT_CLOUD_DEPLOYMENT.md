@@ -15,11 +15,15 @@
 
 ### Step 3: Requirements (Automatic)
 The app will automatically use:
-- **Main requirements**: `requirements.txt` (cloud-optimized, default)
+- **Core requirements**: `requirements.txt` (guaranteed to work - no chemistry packages)
+- **Python version**: `runtime.txt` and `.python-version` (forces Python 3.9)
 - **System packages**: `packages.txt` (minimal system dependencies)
 - **Streamlit config**: `.streamlit/config.toml`
+
+**Alternative requirement files:**
+- **With chemistry**: `requirements-with-chemistry.txt` (if you want to try RDKit)
 - **Local development**: `requirements-local.txt` (full chemistry stack)
-- **Backup**: `requirements_minimal.txt` (if chemistry packages fail)
+- **Minimal backup**: `requirements_minimal.txt` (absolute minimum)
 
 ## 🔧 How Cloud Deployment Works
 
