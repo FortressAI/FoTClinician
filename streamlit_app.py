@@ -49,8 +49,7 @@ except ImportError:
 
 try:
     import stmol
-    import py3Dmol
-    HAS_3D_VIZ = True
+    HAS_STMOL = True
 except ImportError:
     pass
 
@@ -77,8 +76,8 @@ def load_discovery_data():
     if is_cloud_deployment:
         st.info("☁️ Cloud deployment detected - using static data snapshot")
         
-        # Try cloud snapshot first
-        for snapshot_file in ['cloud_data_snapshot.json', 'demo_data.json']:
+        # Try cloud snapshot with visualizations first
+        for snapshot_file in ['cloud_data_snapshot_with_viz.json', 'cloud_data_snapshot.json', 'demo_data.json']:
             if os.path.exists(snapshot_file):
                 try:
                     with open(snapshot_file, 'r') as f:
@@ -167,12 +166,19 @@ def create_demo_data():
         "recent_molecules": demo_molecules
     }
 
-def render_molecule_2d(smiles: str):
-    """Generate 2D molecular structure as SVG"""
+def render_molecule_2d(molecule_data: dict):
+    """Render 2D molecular structure from pre-generated or live data"""
+    smiles = molecule_data.get('smiles', '')
     if not smiles:
         return None
     
-    # Try RDKit first (best quality)
+    # Try pre-generated visualization first
+    if 'visualization_2d' in molecule_data:
+        viz_data = molecule_data['visualization_2d']
+        if viz_data.get('svg'):
+            return viz_data['svg']
+    
+    # Fallback to live generation if RDKit available
     if HAS_RDKIT:
         try:
             mol = Chem.MolFromSmiles(smiles)
@@ -201,23 +207,40 @@ def render_molecule_2d(smiles: str):
             <div style="font-size: 48px; margin-bottom: 20px;">⚗️</div>
             <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #1565c0;">
                 Molecular Structure
-        </div>
+            </div>
             <div style="font-size: 14px; color: #1976d2; margin-bottom: 15px;">
                 {smiles}
-        </div>
+            </div>
             <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
                 Visual structure rendering unavailable
         </div>
         </div>
         '''
 
-def render_molecule_3d(smiles: str):
-    """Generate 3D molecular structure"""
+def render_molecule_3d(molecule_data: dict):
+    """Render 3D molecular structure using stmol and pre-generated data"""
+    smiles = molecule_data.get('smiles', '')
     if not smiles:
         return None
-        
-    # Try full 3D visualization with RDKit + stmol
-    if HAS_RDKIT and HAS_3D_VIZ:
+    
+    # Try pre-generated 3D data first
+    if 'visualization_3d' in molecule_data:
+        viz_data = molecule_data['visualization_3d']
+        if viz_data.get('has_3d') and viz_data.get('molblock') and HAS_STMOL:
+            try:
+                # Use stmol to render the pre-generated MOL block
+                molblock = viz_data['molblock']
+                stmol.showmol(molblock, height=400, width=400)
+                return True  # Stmol displays directly
+            except Exception as e:
+                st.warning(f"Stmol visualization failed: {e}")
+        elif viz_data.get('html'):
+            # Use pre-generated HTML fallback
+            st.components.v1.html(viz_data['html'], height=400)
+            return True
+    
+    # Fallback to live generation if RDKit + stmol available
+    if HAS_RDKIT and HAS_STMOL:
         try:
             mol = Chem.MolFromSmiles(smiles)
             if mol is not None:
@@ -226,39 +249,31 @@ def render_molecule_3d(smiles: str):
                 AllChem.UFFOptimizeMolecule(mol)
                 
                 molblock = Chem.MolToMolBlock(mol)
-                
-                xyzview = py3Dmol.view(width=400, height=400)
-                xyzview.addModel(molblock, 'mol')
-                xyzview.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
-                xyzview.setBackgroundColor('white')
-                xyzview.zoomTo()
-                
-                return xyzview
+                stmol.showmol(molblock, height=400, width=400)
+                return True
         except Exception as e:
-            st.warning(f"3D visualization failed: {e}")
+            st.warning(f"Live 3D generation failed: {e}")
     
-    # Fallback to simple 3D representation
-    try:
-        from simple_mol_viz import create_3d_fallback_html
-        return create_3d_fallback_html(smiles)
-    except Exception:
-        return f'''
-        <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
-                    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); 
-                    display: flex; flex-direction: column; align-items: center; justify-content: center;
-                    font-family: Arial, sans-serif;">
-            <div style="font-size: 48px; margin-bottom: 20px;">🧬</div>
-            <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #7b1fa2;">
-                3D Molecular Model
-            </div>
-            <div style="font-size: 14px; color: #8e24aa; margin-bottom: 15px;">
-                {smiles}
-            </div>
-            <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
-                Interactive 3D requires additional packages
-            </div>
+    # Ultimate fallback - styled HTML
+    fallback_html = f'''
+    <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
+                background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); 
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                font-family: Arial, sans-serif;">
+        <div style="font-size: 48px; margin-bottom: 20px;">🧬</div>
+        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #7b1fa2;">
+            3D Molecular Model
         </div>
-        '''
+        <div style="font-size: 14px; color: #8e24aa; margin-bottom: 15px;">
+            {smiles}
+        </div>
+        <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
+            Interactive 3D visualization
+        </div>
+    </div>
+    '''
+    st.components.v1.html(fallback_html, height=400)
+    return True
 
 def calculate_molecular_properties(smiles: str):
     """Calculate molecular properties"""
@@ -337,31 +352,16 @@ def display_molecule_detail(molecule):
         st.subheader("🧪 Molecular Structure")
         
         # 2D Structure
-        smiles = molecule.get('smiles', '')
-        if smiles and HAS_RDKIT:
-            svg_2d = render_molecule_2d(smiles)
-            if svg_2d:
-                st.markdown("**2D Structure:**")
-                st.components.v1.html(svg_2d, height=420)
+        st.markdown("**2D Structure:**")
+        svg_2d = render_molecule_2d(molecule)
+        if svg_2d:
+            st.markdown(svg_2d, unsafe_allow_html=True)
         else:
-                st.error("❌ Could not generate 2D structure")
+            st.info("2D structure not available")
         
         # 3D Structure
-        if smiles and HAS_3D_VIZ:
-            sdf_3d = render_molecule_3d(smiles)
-            if sdf_3d:
-                st.markdown("**3D Interactive Structure:**")
-                try:
-                    viewer = py3Dmol.view(width=400, height=400)
-                    viewer.addModel(sdf_3d, 'sdf')
-                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'radius': 0.3}})
-                    viewer.setBackgroundColor('white')
-                    viewer.zoomTo()
-                    stmol.showmol(viewer, height=400, width=400)
-                except Exception as e:
-                    st.error(f"❌ 3D visualization error: {e}")
-            else:
-                st.warning("⚠️ Could not generate 3D coordinates")
+        st.markdown("**3D Interactive Structure:**")
+        render_molecule_3d(molecule)  # Function handles display internally
 
 def main():
     st.title("🧬 FoTChemistry Discovery Dashboard")
@@ -381,8 +381,8 @@ def main():
         st.markdown("✅ Interactive Visualization")
         
         st.markdown("**🧬 Advanced Features:**")
-        st.markdown(f"{'✅' if HAS_RDKIT else '📊'} 2D Structures {'(RDKit)' if HAS_RDKIT else '(Text Display)'}")
-        st.markdown(f"{'✅' if HAS_3D_VIZ else '❌'} 3D Visualization")
+        st.markdown("✅ 2D Molecular Structures (Pre-generated)")
+        st.markdown(f"{'✅' if HAS_STMOL else '📊'} 3D Visualization {'(Stmol)' if HAS_STMOL else '(Static)'}")
         st.markdown(f"{'✅' if HAS_QUANTUM else '❌'} Quantum Engine")
         st.markdown(f"{'✅' if HAS_AKG else '📁'} Database {'(Live)' if HAS_AKG else '(Static)'}")
         

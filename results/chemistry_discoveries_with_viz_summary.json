@@ -1,0 +1,8 @@
+{
+  "total_molecules": 43,
+  "with_2d": 43,
+  "with_3d": 43,
+  "rdkit_available": true,
+  "source_file": "results/chemistry_discoveries.json",
+  "output_file": "results/chemistry_discoveries_with_viz.json"
+}
