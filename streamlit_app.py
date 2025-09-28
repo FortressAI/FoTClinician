@@ -6,6 +6,7 @@ Dashboard-first interface for viewing molecular discoveries with detailed analys
 """
 
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -44,20 +45,27 @@ try:
     from rdkit import Chem
     from rdkit.Chem import AllChem, Descriptors, rdMolDescriptors
     from rdkit.Chem.Draw import rdMolDraw2D
+    from rdkit.Chem import rdDepictor
     HAS_RDKIT = True
+    print("RDKit loaded successfully")
 except ImportError:
+    print("RDKit not available")
     pass
 
 try:
     import stmol
     HAS_STMOL = True
+    print("stmol loaded successfully")
 except ImportError:
+    print("stmol not available")
     pass
 
 try:
     import py3Dmol
     HAS_PY3DMOL = True
+    print("py3Dmol loaded successfully")
 except ImportError:
+    print("py3Dmol not available")
     pass
 
 # Page configuration
@@ -94,9 +102,9 @@ def load_discovery_data():
                 except Exception as e:
                     st.warning(f"⚠️ Failed to load {snapshot_file}: {e}")
         
-        # No demo data - return None to force error if no real data available
-        st.error("❌ No discovery data available - real data required")
-        return None
+        # Generate demo data if no files found
+        st.info("🎭 Generating demo data for visualization")
+        return create_demo_data()
     
     else:
         st.info("🏠 Local deployment detected - using live data")
@@ -112,9 +120,9 @@ def load_discovery_data():
             except Exception as e:
                 st.warning(f"⚠️ Failed to load local results: {e}")
         
-        # No demo data - return None to force real data requirement
-        st.error("❌ No discovery data found - check data files")
-        return None
+        # Fallback to demo data for local testing
+        st.info("🎭 Generating demo data for testing")
+        return create_demo_data()
 
 def create_demo_data():
     """Create embedded demo data for cloud deployment."""
@@ -123,17 +131,17 @@ def create_demo_data():
     demo_molecules = [
         {
             "id": "demo_001",
-            "smiles": "CCCO",
-            "name": "Propanol",
+            "smiles": "CCO",
+            "name": "Ethanol",
             "score": 0.786,
             "drug_likeness": {"passes_lipinski": True, "score": 0.85},
             "safety_score": 0.92,
             "quantum_coherence": 0.74,
             "timestamp": datetime.now().isoformat(),
             "properties": {
-                "formula": "C3H8O",
-                "molecular_weight": 60.1,
-                "logp": 0.25,
+                "formula": "C2H6O",
+                "molecular_weight": 46.07,
+                "logp": -0.31,
                 "tpsa": 20.23,
                 "hbd": 1,
                 "hba": 1
@@ -141,20 +149,74 @@ def create_demo_data():
         },
         {
             "id": "demo_002", 
-            "smiles": "c1ccc(-c2ccccc2)cc1",
-            "name": "Biphenyl",
+            "smiles": "c1ccc(cc1)O",
+            "name": "Phenol",
             "score": 0.754,
             "drug_likeness": {"passes_lipinski": True, "score": 0.78},
             "safety_score": 0.88,
             "quantum_coherence": 0.71,
             "timestamp": datetime.now().isoformat(),
             "properties": {
-                "formula": "C12H10",
-                "molecular_weight": 154.2,
-                "logp": 3.76,
+                "formula": "C6H6O",
+                "molecular_weight": 94.11,
+                "logp": 1.46,
+                "tpsa": 20.23,
+                "hbd": 1,
+                "hba": 1
+            }
+        },
+        {
+            "id": "demo_003",
+            "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+            "name": "Aspirin",
+            "score": 0.834,
+            "drug_likeness": {"passes_lipinski": True, "score": 0.91},
+            "safety_score": 0.95,
+            "quantum_coherence": 0.82,
+            "timestamp": datetime.now().isoformat(),
+            "properties": {
+                "formula": "C9H8O4",
+                "molecular_weight": 180.16,
+                "logp": 1.19,
+                "tpsa": 63.6,
+                "hbd": 1,
+                "hba": 4
+            }
+        },
+        {
+            "id": "demo_004",
+            "smiles": "CC1=CC=C(C=C1)C",
+            "name": "p-Xylene",
+            "score": 0.698,
+            "drug_likeness": {"passes_lipinski": True, "score": 0.72},
+            "safety_score": 0.85,
+            "quantum_coherence": 0.69,
+            "timestamp": datetime.now().isoformat(),
+            "properties": {
+                "formula": "C8H10",
+                "molecular_weight": 106.17,
+                "logp": 3.15,
                 "tpsa": 0.0,
                 "hbd": 0,
                 "hba": 0
+            }
+        },
+        {
+            "id": "demo_005",
+            "smiles": "CN1CCC[C@H]1c2cccnc2",
+            "name": "Nicotine",
+            "score": 0.712,
+            "drug_likeness": {"passes_lipinski": True, "score": 0.76},
+            "safety_score": 0.78,
+            "quantum_coherence": 0.73,
+            "timestamp": datetime.now().isoformat(),
+            "properties": {
+                "formula": "C10H14N2",
+                "molecular_weight": 162.23,
+                "logp": 1.17,
+                "tpsa": 16.13,
+                "hbd": 0,
+                "hba": 2
             }
         }
     ]
@@ -173,144 +235,154 @@ def create_demo_data():
         "recent_molecules": demo_molecules
     }
 
-def render_molecule_2d(molecule_data: dict):
-    """Render 2D molecular structure from pre-generated or live data"""
-    smiles = molecule_data.get('smiles', '')
-    if not smiles:
-        return None
+def render_molecule_2d(smiles: str, width=400, height=400):
+    """Render 2D molecular structure using RDKit"""
+    if not HAS_RDKIT or not smiles:
+        return create_molecule_placeholder(smiles, "2D Structure", width, height)
     
-    # Try pre-generated visualization first
-    if 'visualization_2d' in molecule_data:
-        viz_data = molecule_data['visualization_2d']
-        if viz_data.get('svg'):
-            return viz_data['svg']
-    
-    # Fallback to live generation if RDKit available
-    if HAS_RDKIT:
-        try:
-            mol = Chem.MolFromSmiles(smiles)
-            if mol is not None:
-                drawer = rdMolDraw2D.MolDraw2DSVG(400, 400)
-                drawer.SetFontSize(16)
-                drawer.DrawMolecule(mol)
-                drawer.FinishDrawing()
-                svg = drawer.GetDrawingText()
-                return svg
-        except Exception as e:
-            st.warning(f"RDKit visualization failed: {e}")
-    
-    # Fallback to simple molecular visualization
     try:
-        from simple_mol_viz import smiles_to_simple_svg
-        svg = smiles_to_simple_svg(smiles, 400, 400)
-        return svg
-    except Exception as e:
-        # Ultimate fallback - styled text display
-        return f'''
-        <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
-                    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); 
-                    display: flex; flex-direction: column; align-items: center; justify-content: center;
-                    font-family: Arial, sans-serif;">
-            <div style="font-size: 48px; margin-bottom: 20px;">⚗️</div>
-            <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #1565c0;">
-                Molecular Structure
-            </div>
-            <div style="font-size: 14px; color: #1976d2; margin-bottom: 15px;">
-                {smiles}
-            </div>
-            <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
-                Visual structure rendering unavailable
-        </div>
-        </div>
-        '''
-
-def render_molecule_3d(molecule_data: dict):
-    """Render 3D molecular structure using stmol/py3Dmol and pre-generated data"""
-    smiles = molecule_data.get('smiles', '')
-    if not smiles:
-        return None
-    
-    # Try pre-generated 3D data first
-    if 'visualization_3d' in molecule_data:
-        viz_data = molecule_data['visualization_3d']
-        if viz_data.get('has_3d') and viz_data.get('molblock'):
-            molblock = viz_data['molblock']
-            
-            # Try stmol first (preferred for Streamlit Cloud)
-            if HAS_STMOL:
-                try:
-                    stmol.showmol(molblock, height=400, width=400)
-                    return True
-                except Exception as e:
-                    st.warning(f"Stmol visualization failed: {e}")
-            
-            # Try py3Dmol as alternative
-            if HAS_PY3DMOL:
-                try:
-                    viewer = py3Dmol.view(width=400, height=400)
-                    viewer.addModel(molblock, 'mol')
-                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
-                    viewer.setBackgroundColor('white')
-                    viewer.zoomTo()
-                    stmol.showmol(viewer, height=400, width=400)
-                    return True
-                except Exception as e:
-                    st.warning(f"Py3Dmol visualization failed: {e}")
+        # Parse SMILES
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is None:
+            st.error(f"Invalid SMILES: {smiles}")
+            return create_molecule_placeholder(smiles, "Invalid SMILES", width, height)
         
-        elif viz_data.get('html'):
-            # Use pre-generated HTML fallback
-            st.components.v1.html(viz_data['html'], height=400)
-            return True
+        # Generate 2D coordinates
+        rdDepictor.Compute2DCoords(mol)
+        
+        # Create SVG drawer
+        drawer = rdMolDraw2D.MolDraw2DSVG(width, height)
+        drawer.SetFontSize(16)
+        
+        # Draw molecule
+        drawer.DrawMolecule(mol)
+        drawer.FinishDrawing()
+        
+        # Get SVG
+        svg = drawer.GetDrawingText()
+        
+        # Clean SVG (remove XML declaration) and validate
+        cleaned_svg = svg
+        if cleaned_svg.startswith('<?xml'):
+            cleaned_svg = cleaned_svg[cleaned_svg.find('<svg'):]
+        
+        # Validate SVG has actual molecule content
+        if 'bond-' in cleaned_svg or len(cleaned_svg) > 1000:  # Basic validation
+            return cleaned_svg
+        else:
+            st.warning(f"Generated SVG appears empty for {smiles}")
+            return create_molecule_placeholder(smiles, "2D Structure", width, height)
+            
+    except Exception as e:
+        st.error(f"Error generating 2D structure for {smiles}: {str(e)}")
+        return create_molecule_placeholder(smiles, "2D Structure Error", width, height)
+
+def render_molecule_3d(smiles: str, height=400):
+    """Render 3D molecular structure using stmol and py3Dmol"""
+    if not smiles:
+        st.write("No SMILES provided for 3D rendering")
+        return False
     
-    # Fallback to live generation if RDKit available
-    if HAS_RDKIT:
+    if not HAS_RDKIT:
+        st.write("RDKit required for 3D molecular generation")
+        return False
+    
+    try:
+        # Parse SMILES and add hydrogens
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is None:
+            st.error(f"Invalid SMILES: {smiles}")
+            return False
+        
+        # Add hydrogens for 3D structure
+        mol = Chem.AddHs(mol)
+        
+        # Generate 3D coordinates
+        success = AllChem.EmbedMolecule(mol, randomSeed=42)
+        if success != 0:
+            # Try alternative method if embedding fails
+            success = AllChem.EmbedMolecule(mol, useRandomCoords=True, randomSeed=42)
+            if success != 0:
+                st.warning(f"Could not generate 3D coordinates for {smiles}")
+                return False
+        
+        # Optimize geometry
         try:
-            mol = Chem.MolFromSmiles(smiles)
-            if mol is not None:
-                mol = Chem.AddHs(mol)
-                AllChem.EmbedMolecule(mol, randomSeed=42)
-                AllChem.UFFOptimizeMolecule(mol)
+            AllChem.UFFOptimizeMolecule(mol)
+        except:
+            # If UFF fails, try MMFF
+            try:
+                AllChem.MMFFOptimizeMolecule(mol)
+            except:
+                st.warning("Geometry optimization failed, using unoptimized structure")
+        
+        # Convert to molblock for 3D visualization
+        molblock = Chem.MolToMolBlock(mol)
+        
+        # Try stmol first (best for Streamlit)
+        if HAS_STMOL and HAS_PY3DMOL:
+            try:
+                # Create py3Dmol viewer
+                viewer = py3Dmol.view(width=400, height=height)
+                viewer.addModel(molblock, 'mol')
+                viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
+                viewer.setBackgroundColor('white')
+                viewer.zoomTo()
                 
-                molblock = Chem.MolToMolBlock(mol)
+                # Pass viewer object to stmol
+                stmol.showmol(viewer, height=height, width=400)
+                return True
+            except Exception as e:
+                st.warning(f"stmol failed: {str(e)}")
+        
+        # Try py3Dmol with custom HTML
+        if HAS_PY3DMOL:
+            try:
+                viewer_html = f"""
+                <div id="3dmol_{hash(smiles)}" style="height: {height}px; width: 400px; position: relative;"></div>
+                <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+                <script>
+                var element = document.getElementById('3dmol_{hash(smiles)}');
+                var viewer = $3Dmol.createViewer(element);
+                viewer.addModel(`{molblock}`, 'mol');
+                viewer.setStyle({{}}, {{stick: {{radius: 0.1}}, sphere: {{scale: 0.3}}}});
+                viewer.setBackgroundColor('white');
+                viewer.zoomTo();
+                viewer.render();
+                </script>
+                """
+                components.html(viewer_html, height=height)
+                return True
+            except Exception as e:
+                st.warning(f"py3Dmol failed: {str(e)}")
+        
+        # Fallback: show molblock as text
+        st.text_area("3D Structure (MOL format)", molblock, height=200)
+        return True
                 
-                # Try stmol first
-                if HAS_STMOL:
-                    stmol.showmol(molblock, height=400, width=400)
-                    return True
-                
-                # Try py3Dmol alternative
-                if HAS_PY3DMOL:
-                    viewer = py3Dmol.view(width=400, height=400)
-                    viewer.addModel(molblock, 'mol')
-                    viewer.setStyle({'stick': {'radius': 0.1}, 'sphere': {'scale': 0.3}})
-                    viewer.setBackgroundColor('white')
-                    viewer.zoomTo()
-                    stmol.showmol(viewer, height=400, width=400)
-                    return True
-                
-        except Exception as e:
-            st.warning(f"Live 3D generation failed: {e}")
-    
-    # Ultimate fallback - styled HTML
-    fallback_html = f'''
-    <div style="width: 400px; height: 400px; border: 1px solid #ddd; border-radius: 8px; 
-                background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); 
+    except Exception as e:
+        st.error(f"Error generating 3D structure for {smiles}: {str(e)}")
+        return False
+
+def create_molecule_placeholder(smiles, title, width=400, height=400):
+    """Create a styled placeholder when molecule rendering fails"""
+    return f'''
+    <div style="width: {width}px; height: {height}px; border: 2px solid #ddd; border-radius: 12px; 
+                background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); 
                 display: flex; flex-direction: column; align-items: center; justify-content: center;
-                font-family: Arial, sans-serif;">
-        <div style="font-size: 48px; margin-bottom: 20px;">🧬</div>
-        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #7b1fa2;">
-            3D Molecular Model
+                font-family: Arial, sans-serif; margin: 10px 0;">
+        <div style="font-size: 48px; margin-bottom: 20px;">⚗️</div>
+        <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #1565c0;">
+            {title}
         </div>
-        <div style="font-size: 14px; color: #8e24aa; margin-bottom: 15px;">
+        <div style="font-size: 14px; color: #1976d2; margin-bottom: 15px; padding: 0 20px; text-align: center;">
             {smiles}
         </div>
         <div style="font-size: 12px; color: #666; text-align: center; padding: 0 20px;">
-            Interactive 3D visualization
+            Visualization requires RDKit
         </div>
     </div>
     '''
-    st.components.v1.html(fallback_html, height=400)
-    return True
 
 def calculate_molecular_properties(smiles: str):
     """Calculate molecular properties"""
@@ -343,11 +415,13 @@ def calculate_molecular_properties(smiles: str):
         
         return properties
     except Exception as e:
+        st.error(f"Error calculating properties: {str(e)}")
         return None
 
 def display_molecule_detail(molecule):
     """Display detailed view of a single molecule"""
-    st.header(f"🧬 Molecule Detail: {molecule.get('smiles', 'Unknown')}")
+    smiles = molecule.get('smiles', '')
+    st.header(f"🧬 Molecule Detail: {smiles}")
     
     # Main layout
     col1, col2 = st.columns([1, 1])
@@ -356,7 +430,7 @@ def display_molecule_detail(molecule):
         st.subheader("📊 Discovery Information")
         
         # Basic info
-        st.markdown(f"**SMILES:** `{molecule.get('smiles', 'N/A')}`")
+        st.markdown(f"**SMILES:** `{smiles}`")
         st.markdown(f"**Discovery Score:** {molecule.get('score', 0):.3f}")
         st.markdown(f"**Discovery ID:** {molecule.get('id', 'Unknown')[:12]}...")
         
@@ -370,35 +444,36 @@ def display_molecule_detail(molecule):
         st.markdown(f"**Quantum Coherence:** {molecule.get('quantum_coherence', 0):.6f}")
         
         # Molecular properties
-        if HAS_RDKIT:
-            props = calculate_molecular_properties(molecule.get('smiles', ''))
-            if props:
-                st.subheader("🔬 Molecular Properties")
-                st.markdown(f"**Formula:** {props['molecular_formula']}")
-                st.markdown(f"**Molecular Weight:** {props['molecular_weight']} g/mol")
-                st.markdown(f"**LogP:** {props['logp']}")
-                st.markdown(f"**TPSA:** {props['tpsa']} Ų")
-                st.markdown(f"**H-Bond Donors:** {props['hbd_count']}")
-                st.markdown(f"**H-Bond Acceptors:** {props['hba_count']}")
-                st.markdown(f"**Rotatable Bonds:** {props['rotatable_bonds']}")
-                st.markdown(f"**Heavy Atoms:** {props['heavy_atoms']}")
-                st.markdown(f"**Rings:** {props['rings']}")
-                st.markdown(f"**Lipinski Violations:** {props['lipinski_violations']}")
+        props = calculate_molecular_properties(smiles)
+        if props:
+            st.subheader("🔬 Molecular Properties")
+            st.markdown(f"**Formula:** {props['molecular_formula']}")
+            st.markdown(f"**Molecular Weight:** {props['molecular_weight']} g/mol")
+            st.markdown(f"**LogP:** {props['logp']}")
+            st.markdown(f"**TPSA:** {props['tpsa']} Ų")
+            st.markdown(f"**H-Bond Donors:** {props['hbd_count']}")
+            st.markdown(f"**H-Bond Acceptors:** {props['hba_count']}")
+            st.markdown(f"**Rotatable Bonds:** {props['rotatable_bonds']}")
+            st.markdown(f"**Heavy Atoms:** {props['heavy_atoms']}")
+            st.markdown(f"**Rings:** {props['rings']}")
+            st.markdown(f"**Lipinski Violations:** {props['lipinski_violations']}")
+        else:
+            st.info("Molecular properties calculation requires RDKit")
     
     with col2:
-        st.subheader("🧪 Molecular Structure")
+        st.subheader("🧪 Molecular Visualization")
         
         # 2D Structure
         st.markdown("**2D Structure:**")
-        svg_2d = render_molecule_2d(molecule)
+        svg_2d = render_molecule_2d(smiles)
         if svg_2d:
-            st.markdown(svg_2d, unsafe_allow_html=True)
-        else:
-            st.info("2D structure not available")
+            components.html(svg_2d, height=400, width=400)
         
         # 3D Structure
         st.markdown("**3D Interactive Structure:**")
-        render_molecule_3d(molecule)  # Function handles display internally
+        if not render_molecule_3d(smiles):
+            # Show fallback placeholder
+            st.markdown(create_molecule_placeholder(smiles, "3D Structure", 400, 300), unsafe_allow_html=True)
 
 def main():
     st.title("🧬 FoTChemistry Discovery Dashboard")
@@ -410,28 +485,28 @@ def main():
     with st.sidebar:
         st.header("⚡ System Status")
         
-        # Feature availability - focus on what works
+        # Feature availability
         st.markdown("**🚀 Core Features:**")
         st.markdown("✅ Molecular Discovery Data")
         st.markdown("✅ Property Analysis") 
         st.markdown("✅ Statistical Dashboard")
         st.markdown("✅ Interactive Visualization")
         
-        st.markdown("**🧬 Advanced Features:**")
-        st.markdown("✅ 2D Molecular Structures (Pre-generated)")
-        
-        # 3D visualization status
-        if HAS_STMOL and HAS_PY3DMOL:
-            st.markdown("✅ 3D Visualization (Stmol + Py3Dmol)")
-        elif HAS_STMOL:
-            st.markdown("✅ 3D Visualization (Stmol)")
-        elif HAS_PY3DMOL:
-            st.markdown("✅ 3D Visualization (Py3Dmol)")
-        else:
-            st.markdown("📊 3D Visualization (Static)")
-            
+        st.markdown("**🧬 Visualization Features:**")
+        st.markdown(f"{'✅' if HAS_RDKIT else '❌'} RDKit (2D/3D Generation)")
+        st.markdown(f"{'✅' if HAS_STMOL else '❌'} stmol (3D Viewer)")
+        st.markdown(f"{'✅' if HAS_PY3DMOL else '❌'} py3Dmol (3D Backup)")
         st.markdown(f"{'✅' if HAS_QUANTUM else '❌'} Quantum Engine")
         st.markdown(f"{'✅' if HAS_AKG else '📁'} Database {'(Live)' if HAS_AKG else '(Static)'}")
+        
+        # Installation help
+        if not HAS_RDKIT:
+            st.warning("Install RDKit for molecular visualization:")
+            st.code("pip install rdkit-pypi")
+        
+        if not HAS_STMOL and HAS_RDKIT:
+            st.info("Install stmol for better 3D visualization:")
+            st.code("pip install stmol")
         
         # Clear cache button
         if st.button("🗑️ Clear Cache"):
@@ -442,14 +517,7 @@ def main():
     discovery_data = load_discovery_data()
     
     if not discovery_data:
-        st.error("❌ No discovery data available. Run discovery campaigns to generate molecules.")
-        st.markdown("""
-        **🚀 To start discovering molecules:**
-        
-        ```bash
-        python3 continuous_chemistry_discovery.py --continuous
-        ```
-        """)
+        st.error("❌ No discovery data available.")
         return
     
     # Statistics overview
@@ -526,6 +594,11 @@ def main():
     - Quantum-guided property optimization
     
     **🔄 To refresh data:** Clear cache in sidebar and reload page
+    
+    **📦 Required for full visualization:**
+    - `pip install rdkit-pypi` (2D/3D structure generation)
+    - `pip install stmol` (3D interactive viewer)
+    - `pip install py3Dmol` (3D backup viewer)
     """)
 
 if __name__ == "__main__":
