@@ -15,9 +15,10 @@
 
 ### Step 3: Requirements (Automatic)
 The app will automatically use:
-- **Main requirements**: `requirements-cloud.txt` (cloud-optimized)
+- **Main requirements**: `requirements.txt` (cloud-optimized, default)
 - **System packages**: `packages.txt` (minimal system dependencies)
 - **Streamlit config**: `.streamlit/config.toml`
+- **Local development**: `requirements-local.txt` (full chemistry stack)
 - **Backup**: `requirements_minimal.txt` (if chemistry packages fail)
 
 ## 🔧 How Cloud Deployment Works

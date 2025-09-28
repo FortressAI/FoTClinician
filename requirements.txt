@@ -1,65 +1,9 @@
-# Core dependencies for FoTChemistry
-# Basic scientific computing
-numpy>=1.24.0
-pandas>=2.0.0
-scipy>=1.11.0
-
-# Visualization and dashboards
 streamlit>=1.28.0
-plotly>=5.17.0
-matplotlib>=3.8.0
+pandas>=1.5.0
+numpy>=1.24.0
+plotly>=5.15.0
+requests>=2.31.0
+rdkit-pypi>=2022.9.5
 stmol>=0.0.9
 py3Dmol>=2.0.4
 ipython_genutils>=0.2.0
-seaborn>=0.13.0
-
-# Chemistry core libraries
-rdkit>=2023.9.1
-openbabel>=3.1.1
-cclib>=1.8.0
-
-# Quantum chemistry (optional heavy dependencies)
-# psi4>=1.7.0  # Uncomment if needed - large install
-# qcengine>=0.27.0
-
-# Molecular dynamics and simulation
-# openmm>=8.0.0  # Uncomment if needed - GPU dependent
-
-# Graph databases and knowledge graphs
-neo4j>=5.13.0
-rdflib>=7.0.0
-sparqlwrapper>=2.0.0
-owlready2>=0.45
-networkx>=3.1
-
-# Machine learning for chemistry and MPS GPU acceleration
-torch>=2.1.0
-# pytorch-lightning>=2.1.0  # Uncomment if needed
-# dgl>=1.1.2  # Uncomment for graph neural networks
-# torch-geometric>=2.4.0  # Uncomment for graph neural networks
-
-# Data processing and workflows
-pydantic>=2.4.0
-pyyaml>=6.0.1
-click>=8.1.7
-tqdm>=4.66.0
-requests>=2.31.0
-
-# Pipeline and workflow management
-# snakemake>=7.32.4  # Uncomment for workflow management
-# cwltool>=3.1.20231013155012  # Uncomment for CWL workflows
-
-# FAIR data and reproducibility
-frictionless>=5.15.0
-bagit>=1.8.1
-checksumdir>=1.2.0
-
-# Development and testing
-pytest>=7.4.3
-black>=23.11.0
-flake8>=6.1.0
-mypy>=1.7.1
-
-# Documentation
-mkdocs>=1.5.3
-mkdocs-material>=9.4.8
