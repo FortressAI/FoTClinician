@@ -103,15 +103,6 @@ def load_discovery_data():
         os.environ.get('HOME', '').startswith('/home/adminuser')
     )
     
-    # Debug info (remove in production)
-    with st.expander("🔧 Debug: Environment Detection"):
-        st.write(f"Current working directory: {os.getcwd()}")
-        st.write(f"HOME environment: {os.environ.get('HOME', 'Not set')}")
-        st.write(f"HOSTNAME environment: {os.environ.get('HOSTNAME', 'Not set')}")
-        st.write(f"akg/client.py exists: {os.path.exists('akg/client.py')}")
-        st.write(f"core/chemistry_vqbit_engine.py exists: {os.path.exists('core/chemistry_vqbit_engine.py')}")
-        st.write(f"Is cloud deployment: {is_cloud_deployment}")
-    
     if is_cloud_deployment:
         st.info("☁️ Cloud deployment detected - using static data snapshot")
         
@@ -600,19 +591,26 @@ def main():
         return
     
     # Statistics overview
-    stats = discovery_data.get('statistics', {})
+    summary = discovery_data.get('discovery_summary', {})
+    discoveries = discovery_data.get('discoveries', [])
+    
+    # Calculate real-time statistics from data
+    total_molecules = len(discoveries)
+    scores = [mol.get('score', 0) for mol in discoveries if mol.get('score') is not None]
+    avg_score = sum(scores) / len(scores) if scores else 0
+    max_score = max(scores) if scores else 0
     
     st.subheader("📈 Discovery Overview")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        st.metric("🧬 Total Molecules", stats.get('total_molecules', 0))
+        st.metric("🧬 Total Molecules", total_molecules)
     with col2:
-        st.metric("📊 Average Score", f"{stats.get('avg_score', 0):.3f}")
+        st.metric("📊 Average Score", f"{avg_score:.3f}")
     with col3:
-        st.metric("🏆 Max Score", f"{stats.get('max_score', 0):.3f}")
+        st.metric("🏆 Max Score", f"{max_score:.3f}")
     with col4:
-        st.metric("🔬 Active Claims", stats.get('active_claims', 0))
+        st.metric("🔬 Active Claims", summary.get('active_claims', 0))
     
     # Main discovery list
     st.subheader("🧬 Discovered Molecules")
