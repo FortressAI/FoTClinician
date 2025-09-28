@@ -82,10 +82,10 @@ def load_discovery_data():
             if os.path.exists(snapshot_file):
                 try:
                     with open(snapshot_file, 'r') as f:
-                    data = json.load(f)
+                        data = json.load(f)
                     st.success(f"📦 Loaded {data.get('discovery_summary', {}).get('total_discoveries', 0)} molecules from {snapshot_file}")
                     return data
-            except Exception as e:
+                except Exception as e:
                     st.warning(f"⚠️ Failed to load {snapshot_file}: {e}")
         
         # No demo data - return None to force error if no real data available
@@ -369,13 +369,13 @@ def main():
     st.subheader("📈 Discovery Overview")
     col1, col2, col3, col4 = st.columns(4)
     
-            with col1:
+    with col1:
         st.metric("🧬 Total Molecules", stats.get('total_molecules', 0))
-            with col2:
+    with col2:
         st.metric("📊 Average Score", f"{stats.get('avg_score', 0):.3f}")
-            with col3:
+    with col3:
         st.metric("🏆 Max Score", f"{stats.get('max_score', 0):.3f}")
-            with col4:
+    with col4:
         st.metric("🔬 Active Claims", stats.get('active_claims', 0))
     
     # Main discovery list
