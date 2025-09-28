@@ -1,0 +1,1466 @@
+{
+  "deployment_info": {
+    "created_at": "2025-09-28T11:34:53.891814",
+    "source": "FoTChemistry Local Discovery Engine",
+    "version": "1.0.0",
+    "deployment_type": "cloud_static"
+  },
+  "discovery_summary": {
+    "total_discoveries": 43,
+    "avg_score": 0.7166744186046512,
+    "max_score": 0.786
+  },
+  "discoveries": [
+    {
+      "id": "c780c7f2-c4e5-4182-9611-a03aea117046",
+      "smiles": "CCCO",
+      "score": 0.786,
+      "drug_likeness": {
+        "molecular_weight": 60.096,
+        "logp": 0.3887,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 20.23,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:30:24.526974",
+      "properties": {
+        "molecular_weight": 60.096,
+        "logp": 0.3887,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "7b58e439-b0dc-41db-b435-d1ebaee116d1",
+      "smiles": "NCCO",
+      "score": 0.782,
+      "drug_likeness": {
+        "molecular_weight": 61.083999999999996,
+        "logp": -1.0626000000000002,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 46.25,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:43:47.802012",
+      "properties": {
+        "molecular_weight": 61.083999999999996,
+        "logp": -1.0626000000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "710ab7f8-f8ca-465e-991b-fec3f9b54115",
+      "smiles": "OCCO",
+      "score": 0.782,
+      "drug_likeness": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -1.0290000000000001,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 40.46,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:31:04.381790",
+      "properties": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -1.0290000000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "79becfee-7ebc-4a6e-9d16-4f1c19394496",
+      "smiles": "CCC(=O)O",
+      "score": 0.78,
+      "drug_likeness": {
+        "molecular_weight": 74.079,
+        "logp": 0.481,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 37.3,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:58:53.004126",
+      "properties": {
+        "molecular_weight": 74.079,
+        "logp": 0.481,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "22306401-b963-4415-bcf0-f390a184825a",
+      "smiles": "NCC(=O)O",
+      "score": 0.776,
+      "drug_likeness": {
+        "molecular_weight": 75.067,
+        "logp": -0.9702999999999999,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 63.32000000000001,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:00:34.568801",
+      "properties": {
+        "molecular_weight": 75.067,
+        "logp": -0.9702999999999999,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "9da8eaa5-037c-4fcc-8901-909c85753712",
+      "smiles": "O=C(O)CO",
+      "score": 0.776,
+      "drug_likeness": {
+        "molecular_weight": 76.051,
+        "logp": -0.9367000000000001,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 57.53,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:59:14.554267",
+      "properties": {
+        "molecular_weight": 76.051,
+        "logp": -0.9367000000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "75a31eec-ba6f-49cf-b199-4dfdc67d1d5d",
+      "smiles": "OC1CCCC1",
+      "score": 0.774,
+      "drug_likeness": {
+        "molecular_weight": 86.13399999999999,
+        "logp": 0.9213,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 20.23,
+        "rotatable_bonds": 0,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:57:08.614487",
+      "properties": {
+        "molecular_weight": 86.13399999999999,
+        "logp": 0.9213,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "af942606-51a1-4ba5-8196-c32cf74b280e",
+      "smiles": "c1ccc(C2CCCC2)cc1",
+      "score": 0.756,
+      "drug_likeness": {
+        "molecular_weight": 146.23299999999998,
+        "logp": 3.3442000000000016,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:42:37.169610",
+      "properties": {
+        "molecular_weight": 146.23299999999998,
+        "logp": 3.3442000000000016,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "9eea52d6-dfab-4814-a9c3-24e78074c57e",
+      "smiles": "c1ccc(-c2ccccc2)cc1",
+      "score": 0.754,
+      "drug_likeness": {
+        "molecular_weight": 154.212,
+        "logp": 3.353600000000002,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:52:58.100903",
+      "properties": {
+        "molecular_weight": 154.212,
+        "logp": 3.353600000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "372077dd-8029-46f2-b0d3-ebf4cc4b4952",
+      "smiles": "c1ccc(C2CCCCC2)cc1",
+      "score": 0.754,
+      "drug_likeness": {
+        "molecular_weight": 160.25999999999996,
+        "logp": 3.734300000000003,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:02:40.217792",
+      "properties": {
+        "molecular_weight": 160.25999999999996,
+        "logp": 3.734300000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "8004c696-a8bc-41f3-bdf3-f9f36cc08767",
+      "smiles": "c1ccc(-c2ccoc2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 144.17299999999997,
+        "logp": 2.946600000000001,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 13.14,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:30:42.770783",
+      "properties": {
+        "molecular_weight": 144.17299999999997,
+        "logp": 2.946600000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "a6e09d1c-3e5e-44fd-b330-c50d1b1c4cd9",
+      "smiles": "c1ccc(-c2cc[nH]c2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 143.189,
+        "logp": 2.6817,
+        "hbd": 1,
+        "hba": 0,
+        "tpsa": 15.79,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:54:51.384493",
+      "properties": {
+        "molecular_weight": 143.189,
+        "logp": 2.6817,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f376620a-2e62-4382-82b9-7e0abc8afb4b",
+      "smiles": "c1ccc(-c2ccsc2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 160.24099999999999,
+        "logp": 3.4151000000000016,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:43:04.088984",
+      "properties": {
+        "molecular_weight": 160.24099999999999,
+        "logp": 3.4151000000000016,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "94b640cd-75b1-4848-a93e-fd45cbd8ca91",
+      "smiles": "c1ccc(-c2ccncc2)cc1",
+      "score": 0.75,
+      "drug_likeness": {
+        "molecular_weight": 155.2,
+        "logp": 2.7486000000000006,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 12.89,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:26:41.737932",
+      "properties": {
+        "molecular_weight": 155.2,
+        "logp": 2.7486000000000006,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f207433c-5f12-4474-896a-e66f816e6609",
+      "smiles": "c1ccc(-c2cnccn2)cc1",
+      "score": 0.746,
+      "drug_likeness": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:32:22.909428",
+      "properties": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "15b8e53c-4ef9-47c1-98f6-28e923f17e45",
+      "smiles": "c1ccc(-c2cncnc2)cc1",
+      "score": 0.746,
+      "drug_likeness": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:39:56.802157",
+      "properties": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "ec38c1e8-956d-40a7-93ae-29fecba6f2af",
+      "smiles": "c1ccc(-c2ccc3ccccc3c2)cc1",
+      "score": 0.736,
+      "drug_likeness": {
+        "molecular_weight": 204.272,
+        "logp": 4.506800000000003,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:15:51.596322",
+      "properties": {
+        "molecular_weight": 204.272,
+        "logp": 4.506800000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "13e471d5-0844-4296-9983-ac02eb28b6d9",
+      "smiles": "c1ccc(-c2ccccc2-c2cc[nH]c2)cc1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 219.28699999999998,
+        "logp": 4.348700000000003,
+        "hbd": 1,
+        "hba": 0,
+        "tpsa": 15.79,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:17:31.609112",
+      "properties": {
+        "molecular_weight": 219.28699999999998,
+        "logp": 4.348700000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f7b13946-0076-4f8e-b302-76d8bf41a310",
+      "smiles": "CCC(C)NCC(O)c1ccc(O)c(CO)c1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 239.315,
+        "logp": 1.3059999999999998,
+        "hbd": 4,
+        "hba": 4,
+        "tpsa": 72.72,
+        "rotatable_bonds": 6,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:11:28.577121",
+      "properties": {
+        "molecular_weight": 239.315,
+        "logp": 1.3059999999999998,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "43e83c36-5733-4348-acfd-2d65a6f19f6b",
+      "smiles": "c1ccc(-c2ccccc2-c2ccoc2)cc1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 220.27099999999996,
+        "logp": 4.613600000000003,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 13.14,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:40:09.716787",
+      "properties": {
+        "molecular_weight": 220.27099999999996,
+        "logp": 4.613600000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "b665fa7d-577e-4f1b-938e-9d88f8422a77",
+      "smiles": "c1ccc(-c2ccccc2-c2ccncc2)cc1",
+      "score": 0.726,
+      "drug_likeness": {
+        "molecular_weight": 231.29799999999997,
+        "logp": 4.415600000000003,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 12.89,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:44:16.127366",
+      "properties": {
+        "molecular_weight": 231.29799999999997,
+        "logp": 4.415600000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "3b8fbfc8-23e3-4172-99c1-f80bc40601e6",
+      "smiles": "CC(O)O",
+      "score": 0.7240000000000001,
+      "drug_likeness": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -0.683,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 40.46,
+        "rotatable_bonds": 0,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:04:32.261941",
+      "properties": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -0.683,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "21670bd3-a337-44fd-b4a3-56ef2c0d4f81",
+      "smiles": "CC(CN)NCC(O)c1ccc(O)c(CO)c1",
+      "score": 0.724,
+      "drug_likeness": {
+        "molecular_weight": 240.303,
+        "logp": -0.14529999999999998,
+        "hbd": 5,
+        "hba": 5,
+        "tpsa": 98.74000000000001,
+        "rotatable_bonds": 6,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:47:57.262707",
+      "properties": {
+        "molecular_weight": 240.303,
+        "logp": -0.14529999999999998,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "15aebdc5-4391-404f-a321-8d5f2413e051",
+      "smiles": "CC(CO)NCC(O)c1ccc(O)c(CO)c1",
+      "score": 0.724,
+      "drug_likeness": {
+        "molecular_weight": 241.287,
+        "logp": -0.11169999999999969,
+        "hbd": 5,
+        "hba": 5,
+        "tpsa": 92.95,
+        "rotatable_bonds": 6,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:31:39.680973",
+      "properties": {
+        "molecular_weight": 241.287,
+        "logp": -0.11169999999999969,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "60e48eaf-b667-496a-bc49-609bd2b42e05",
+      "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+      "score": 0.724,
+      "drug_likeness": {
+        "molecular_weight": 208.221,
+        "logp": -0.5464000000000002,
+        "hbd": 0,
+        "hba": 6,
+        "tpsa": 61.82,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:15:26.984600",
+      "properties": {
+        "molecular_weight": 208.221,
+        "logp": -0.5464000000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "cc146a85-a252-4a35-9fa8-be59bcb19593",
+      "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+      "score": 0.722,
+      "drug_likeness": {
+        "molecular_weight": 232.28599999999997,
+        "logp": 3.8106000000000027,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:04:41.994123",
+      "properties": {
+        "molecular_weight": 232.28599999999997,
+        "logp": 3.8106000000000027,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "435670fb-ce90-4eff-ab7c-c124d3171272",
+      "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+      "score": 0.722,
+      "drug_likeness": {
+        "molecular_weight": 232.28599999999997,
+        "logp": 3.8106000000000027,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:32:58.775940",
+      "properties": {
+        "molecular_weight": 232.28599999999997,
+        "logp": 3.8106000000000027,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "3ac6edf0-579b-434c-86b8-9ce5d5727f34",
+      "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+      "score": 0.72,
+      "drug_likeness": {
+        "molecular_weight": 209.209,
+        "logp": -1.650099999999999,
+        "hbd": 1,
+        "hba": 7,
+        "tpsa": 87.84,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:18:02.985435",
+      "properties": {
+        "molecular_weight": 209.209,
+        "logp": -1.650099999999999,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "5e4004d9-ffe4-481f-aea9-f7f5de0156ad",
+      "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+      "score": 0.72,
+      "drug_likeness": {
+        "molecular_weight": 210.19299999999998,
+        "logp": -1.6165000000000003,
+        "hbd": 1,
+        "hba": 7,
+        "tpsa": 82.04999999999998,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:12:57.740603",
+      "properties": {
+        "molecular_weight": 210.19299999999998,
+        "logp": -1.6165000000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "5a95ff4b-c4f8-42da-bc9f-371f31e42d94",
+      "smiles": "CC1(NCC(O)c2ccc(O)c(CO)c2)CCCC1",
+      "score": 0.716,
+      "drug_likeness": {
+        "molecular_weight": 265.353,
+        "logp": 1.8402000000000003,
+        "hbd": 4,
+        "hba": 4,
+        "tpsa": 72.72,
+        "rotatable_bonds": 5,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:45:34.088356",
+      "properties": {
+        "molecular_weight": 265.353,
+        "logp": 1.8402000000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "d8826a87-0586-44f8-a25a-c9ae9b683f48",
+      "smiles": "CC(O)Oc1ccccc1C(=O)O",
+      "score": 0.682,
+      "drug_likeness": {
+        "molecular_weight": 182.17499999999998,
+        "logp": 1.1018999999999999,
+        "hbd": 2,
+        "hba": 3,
+        "tpsa": 66.76,
+        "rotatable_bonds": 3,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:43:47.954824",
+      "properties": {
+        "molecular_weight": 182.17499999999998,
+        "logp": 1.1018999999999999,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "22fb54cb-5121-47ce-8a33-0700207e1db2",
+      "smiles": "CCC(=O)Oc1ccccc1C(=O)O",
+      "score": 0.68,
+      "drug_likeness": {
+        "molecular_weight": 194.18599999999998,
+        "logp": 1.7002,
+        "hbd": 1,
+        "hba": 3,
+        "tpsa": 63.60000000000001,
+        "rotatable_bonds": 3,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:16:00.687872",
+      "properties": {
+        "molecular_weight": 194.18599999999998,
+        "logp": 1.7002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "c80d45e8-f83f-44b1-868b-0fe6d6bad89f",
+      "smiles": "NCC(=O)Oc1ccccc1C(=O)O",
+      "score": 0.676,
+      "drug_likeness": {
+        "molecular_weight": 195.17399999999998,
+        "logp": 0.24889999999999984,
+        "hbd": 2,
+        "hba": 4,
+        "tpsa": 89.62000000000002,
+        "rotatable_bonds": 3,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:15:20.374605",
+      "properties": {
+        "molecular_weight": 195.17399999999998,
+        "logp": 0.24889999999999984,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "bb773018-55fe-41c2-9e96-86b90a042235",
+      "smiles": "O=C(CO)Oc1ccccc1C(=O)O",
+      "score": 0.676,
+      "drug_likeness": {
+        "molecular_weight": 196.158,
+        "logp": 0.28250000000000014,
+        "hbd": 2,
+        "hba": 4,
+        "tpsa": 83.83,
+        "rotatable_bonds": 3,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:32:45.538857",
+      "properties": {
+        "molecular_weight": 196.158,
+        "logp": 0.28250000000000014,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "0fc70eae-7019-4e4a-a137-1ea83ea63586",
+      "smiles": "O=C(O)CCCCCCCCCCCCCCCO",
+      "score": 0.66,
+      "drug_likeness": {
+        "molecular_weight": 272.4289999999999,
+        "logp": 4.524700000000004,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 57.53,
+        "rotatable_bonds": 15,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:04:11.956891",
+      "properties": {
+        "molecular_weight": 272.4289999999999,
+        "logp": 4.524700000000004,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "702f89d9-6478-4485-b0d1-27db4a7c54c9",
+      "smiles": "NCCCCCCCCCCCCCCCC(=O)O",
+      "score": 0.66,
+      "drug_likeness": {
+        "molecular_weight": 271.4449999999999,
+        "logp": 4.491100000000004,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 63.32000000000001,
+        "rotatable_bonds": 15,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:00:19.033549",
+      "properties": {
+        "molecular_weight": 271.4449999999999,
+        "logp": 4.491100000000004,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "779b727d-28af-4807-ae11-84a7605fab36",
+      "smiles": "c1ccc(-c2ccccc2C2CCCC2)cc1",
+      "score": 0.6569999999999999,
+      "drug_likeness": {
+        "molecular_weight": 222.3309999999999,
+        "logp": 5.011200000000003,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:54:01.757286",
+      "properties": {
+        "molecular_weight": 222.3309999999999,
+        "logp": 5.011200000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "77662cb2-a056-493a-b166-61fba106b4d7",
+      "smiles": "c1ccc(-c2ccccc2-c2ccccc2)cc1",
+      "score": 0.6549999999999999,
+      "drug_likeness": {
+        "molecular_weight": 230.30999999999997,
+        "logp": 5.0206000000000035,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:15:13.747772",
+      "properties": {
+        "molecular_weight": 230.30999999999997,
+        "logp": 5.0206000000000035,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "1a197c17-c08d-47fb-be14-1721286d9941",
+      "smiles": "c1ccc(-c2ccccc2C2CCCCC2)cc1",
+      "score": 0.6549999999999999,
+      "drug_likeness": {
+        "molecular_weight": 236.3579999999999,
+        "logp": 5.4013000000000035,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:38:20.346589",
+      "properties": {
+        "molecular_weight": 236.3579999999999,
+        "logp": 5.4013000000000035,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "7d200bc1-c577-4909-ad77-2cc07f999e26",
+      "smiles": "c1ccc(-c2ccccc2-c2ccsc2)cc1",
+      "score": 0.6529999999999999,
+      "drug_likeness": {
+        "molecular_weight": 236.33899999999997,
+        "logp": 5.082100000000002,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 0.0,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:45:53.395803",
+      "properties": {
+        "molecular_weight": 236.33899999999997,
+        "logp": 5.082100000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "d07252d2-8afa-4783-b9e9-e130c7bac2a6",
+      "smiles": "c1ccc(-c2ccccc2-c2ccc3ccccc3c2)cc1",
+      "score": 0.6369999999999999,
+      "drug_likeness": {
+        "molecular_weight": 280.37,
+        "logp": 6.173800000000004,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:16:46.516407",
+      "properties": {
+        "molecular_weight": 280.37,
+        "logp": 6.173800000000004,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "7dfd04e0-0d29-49d2-a519-972b23ab88fa",
+      "smiles": "CCCCCCCCCCCCCCCCC(=O)O",
+      "score": 0.589,
+      "drug_likeness": {
+        "molecular_weight": 270.4569999999999,
+        "logp": 5.9424000000000055,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 37.3,
+        "rotatable_bonds": 15,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:02:35.246413",
+      "properties": {
+        "molecular_weight": 270.4569999999999,
+        "logp": 5.9424000000000055,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "ab03625b-2b6e-4d55-845e-a5adc6cc6b34",
+      "smiles": "O=C(O)CCCCCCCCCCCCCC1CCCC1",
+      "score": 0.577,
+      "drug_likeness": {
+        "molecular_weight": 296.49499999999995,
+        "logp": 6.332500000000007,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 37.3,
+        "rotatable_bonds": 14,
+        "lipinski_violations": 1,
+        "passes_lipinski": false
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:01:03.625636",
+      "properties": {
+        "molecular_weight": 296.49499999999995,
+        "logp": 6.332500000000007,
+        "molecular_formula": "N/A"
+      }
+    }
+  ],
+  "recent_molecules": [
+    {
+      "id": "c780c7f2-c4e5-4182-9611-a03aea117046",
+      "smiles": "CCCO",
+      "score": 0.786,
+      "drug_likeness": {
+        "molecular_weight": 60.096,
+        "logp": 0.3887,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 20.23,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:30:24.526974",
+      "properties": {
+        "molecular_weight": 60.096,
+        "logp": 0.3887,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "7b58e439-b0dc-41db-b435-d1ebaee116d1",
+      "smiles": "NCCO",
+      "score": 0.782,
+      "drug_likeness": {
+        "molecular_weight": 61.083999999999996,
+        "logp": -1.0626000000000002,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 46.25,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:43:47.802012",
+      "properties": {
+        "molecular_weight": 61.083999999999996,
+        "logp": -1.0626000000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "710ab7f8-f8ca-465e-991b-fec3f9b54115",
+      "smiles": "OCCO",
+      "score": 0.782,
+      "drug_likeness": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -1.0290000000000001,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 40.46,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:31:04.381790",
+      "properties": {
+        "molecular_weight": 62.068000000000005,
+        "logp": -1.0290000000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "79becfee-7ebc-4a6e-9d16-4f1c19394496",
+      "smiles": "CCC(=O)O",
+      "score": 0.78,
+      "drug_likeness": {
+        "molecular_weight": 74.079,
+        "logp": 0.481,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 37.3,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:58:53.004126",
+      "properties": {
+        "molecular_weight": 74.079,
+        "logp": 0.481,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "22306401-b963-4415-bcf0-f390a184825a",
+      "smiles": "NCC(=O)O",
+      "score": 0.776,
+      "drug_likeness": {
+        "molecular_weight": 75.067,
+        "logp": -0.9702999999999999,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 63.32000000000001,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:00:34.568801",
+      "properties": {
+        "molecular_weight": 75.067,
+        "logp": -0.9702999999999999,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "9da8eaa5-037c-4fcc-8901-909c85753712",
+      "smiles": "O=C(O)CO",
+      "score": 0.776,
+      "drug_likeness": {
+        "molecular_weight": 76.051,
+        "logp": -0.9367000000000001,
+        "hbd": 2,
+        "hba": 2,
+        "tpsa": 57.53,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:59:14.554267",
+      "properties": {
+        "molecular_weight": 76.051,
+        "logp": -0.9367000000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "75a31eec-ba6f-49cf-b199-4dfdc67d1d5d",
+      "smiles": "OC1CCCC1",
+      "score": 0.774,
+      "drug_likeness": {
+        "molecular_weight": 86.13399999999999,
+        "logp": 0.9213,
+        "hbd": 1,
+        "hba": 1,
+        "tpsa": 20.23,
+        "rotatable_bonds": 0,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:57:08.614487",
+      "properties": {
+        "molecular_weight": 86.13399999999999,
+        "logp": 0.9213,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "af942606-51a1-4ba5-8196-c32cf74b280e",
+      "smiles": "c1ccc(C2CCCC2)cc1",
+      "score": 0.756,
+      "drug_likeness": {
+        "molecular_weight": 146.23299999999998,
+        "logp": 3.3442000000000016,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:42:37.169610",
+      "properties": {
+        "molecular_weight": 146.23299999999998,
+        "logp": 3.3442000000000016,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "9eea52d6-dfab-4814-a9c3-24e78074c57e",
+      "smiles": "c1ccc(-c2ccccc2)cc1",
+      "score": 0.754,
+      "drug_likeness": {
+        "molecular_weight": 154.212,
+        "logp": 3.353600000000002,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:52:58.100903",
+      "properties": {
+        "molecular_weight": 154.212,
+        "logp": 3.353600000000002,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "372077dd-8029-46f2-b0d3-ebf4cc4b4952",
+      "smiles": "c1ccc(C2CCCCC2)cc1",
+      "score": 0.754,
+      "drug_likeness": {
+        "molecular_weight": 160.25999999999996,
+        "logp": 3.734300000000003,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:02:40.217792",
+      "properties": {
+        "molecular_weight": 160.25999999999996,
+        "logp": 3.734300000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "8004c696-a8bc-41f3-bdf3-f9f36cc08767",
+      "smiles": "c1ccc(-c2ccoc2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 144.17299999999997,
+        "logp": 2.946600000000001,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 13.14,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:30:42.770783",
+      "properties": {
+        "molecular_weight": 144.17299999999997,
+        "logp": 2.946600000000001,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "a6e09d1c-3e5e-44fd-b330-c50d1b1c4cd9",
+      "smiles": "c1ccc(-c2cc[nH]c2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 143.189,
+        "logp": 2.6817,
+        "hbd": 1,
+        "hba": 0,
+        "tpsa": 15.79,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:54:51.384493",
+      "properties": {
+        "molecular_weight": 143.189,
+        "logp": 2.6817,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f376620a-2e62-4382-82b9-7e0abc8afb4b",
+      "smiles": "c1ccc(-c2ccsc2)cc1",
+      "score": 0.752,
+      "drug_likeness": {
+        "molecular_weight": 160.24099999999999,
+        "logp": 3.4151000000000016,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:43:04.088984",
+      "properties": {
+        "molecular_weight": 160.24099999999999,
+        "logp": 3.4151000000000016,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "94b640cd-75b1-4848-a93e-fd45cbd8ca91",
+      "smiles": "c1ccc(-c2ccncc2)cc1",
+      "score": 0.75,
+      "drug_likeness": {
+        "molecular_weight": 155.2,
+        "logp": 2.7486000000000006,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 12.89,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:26:41.737932",
+      "properties": {
+        "molecular_weight": 155.2,
+        "logp": 2.7486000000000006,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f207433c-5f12-4474-896a-e66f816e6609",
+      "smiles": "c1ccc(-c2cnccn2)cc1",
+      "score": 0.746,
+      "drug_likeness": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T09:32:22.909428",
+      "properties": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "15b8e53c-4ef9-47c1-98f6-28e923f17e45",
+      "smiles": "c1ccc(-c2cncnc2)cc1",
+      "score": 0.746,
+      "drug_likeness": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "hbd": 0,
+        "hba": 2,
+        "tpsa": 25.78,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:39:56.802157",
+      "properties": {
+        "molecular_weight": 156.18800000000002,
+        "logp": 2.1435999999999993,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "ec38c1e8-956d-40a7-93ae-29fecba6f2af",
+      "smiles": "c1ccc(-c2ccc3ccccc3c2)cc1",
+      "score": 0.736,
+      "drug_likeness": {
+        "molecular_weight": 204.272,
+        "logp": 4.506800000000003,
+        "hbd": 0,
+        "hba": 0,
+        "tpsa": 0.0,
+        "rotatable_bonds": 1,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:15:51.596322",
+      "properties": {
+        "molecular_weight": 204.272,
+        "logp": 4.506800000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "13e471d5-0844-4296-9983-ac02eb28b6d9",
+      "smiles": "c1ccc(-c2ccccc2-c2cc[nH]c2)cc1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 219.28699999999998,
+        "logp": 4.348700000000003,
+        "hbd": 1,
+        "hba": 0,
+        "tpsa": 15.79,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:17:31.609112",
+      "properties": {
+        "molecular_weight": 219.28699999999998,
+        "logp": 4.348700000000003,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "f7b13946-0076-4f8e-b302-76d8bf41a310",
+      "smiles": "CCC(C)NCC(O)c1ccc(O)c(CO)c1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 239.315,
+        "logp": 1.3059999999999998,
+        "hbd": 4,
+        "hba": 4,
+        "tpsa": 72.72,
+        "rotatable_bonds": 6,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T11:11:28.577121",
+      "properties": {
+        "molecular_weight": 239.315,
+        "logp": 1.3059999999999998,
+        "molecular_formula": "N/A"
+      }
+    },
+    {
+      "id": "43e83c36-5733-4348-acfd-2d65a6f19f6b",
+      "smiles": "c1ccc(-c2ccccc2-c2ccoc2)cc1",
+      "score": 0.728,
+      "drug_likeness": {
+        "molecular_weight": 220.27099999999996,
+        "logp": 4.613600000000003,
+        "hbd": 0,
+        "hba": 1,
+        "tpsa": 13.14,
+        "rotatable_bonds": 2,
+        "lipinski_violations": 0,
+        "passes_lipinski": true
+      },
+      "safety_score": 1.0,
+      "quantum_coherence": 0.0,
+      "timestamp": "2025-09-28T10:40:09.716787",
+      "properties": {
+        "molecular_weight": 220.27099999999996,
+        "logp": 4.613600000000003,
+        "molecular_formula": "N/A"
+      }
+    }
+  ]
+}

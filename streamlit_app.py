@@ -82,15 +82,15 @@ def load_discovery_data():
             if os.path.exists(snapshot_file):
                 try:
                     with open(snapshot_file, 'r') as f:
-                        data = json.load(f)
+                    data = json.load(f)
                     st.success(f"📦 Loaded {data.get('discovery_summary', {}).get('total_discoveries', 0)} molecules from {snapshot_file}")
                     return data
-                except Exception as e:
+            except Exception as e:
                     st.warning(f"⚠️ Failed to load {snapshot_file}: {e}")
         
-        # Fallback to embedded demo data for cloud
-        st.info("🎯 Using embedded demo data for cloud deployment")
-        return create_demo_data()
+        # No demo data - return None to force error if no real data available
+        st.error("❌ No discovery data available - real data required")
+        return None
     
     else:
         st.info("🏠 Local deployment detected - using live data")
@@ -106,9 +106,9 @@ def load_discovery_data():
             except Exception as e:
                 st.warning(f"⚠️ Failed to load local results: {e}")
         
-        # Fallback to demo data
-        st.info("🎯 Loading demo discovery data")
-        return create_demo_data()
+        # No demo data - return None to force real data requirement
+        st.error("❌ No discovery data found - check data files")
+        return None
 
 def create_demo_data():
     """Create embedded demo data for cloud deployment."""
@@ -301,7 +301,7 @@ def display_molecule_detail(molecule):
             if svg_2d:
                 st.markdown("**2D Structure:**")
                 st.components.v1.html(svg_2d, height=420)
-            else:
+        else:
                 st.error("❌ Could not generate 2D structure")
         
         # 3D Structure
@@ -331,12 +331,18 @@ def main():
     with st.sidebar:
         st.header("⚡ System Status")
         
-        # Feature availability
-        st.markdown("**🛠️ Available Features:**")
-        st.markdown(f"{'✅' if HAS_RDKIT else '❌'} Molecular Analysis")
+        # Feature availability - focus on what works
+        st.markdown("**🚀 Core Features:**")
+        st.markdown("✅ Molecular Discovery Data")
+        st.markdown("✅ Property Analysis") 
+        st.markdown("✅ Statistical Dashboard")
+        st.markdown("✅ Interactive Visualization")
+        
+        st.markdown("**🧬 Advanced Features:**")
+        st.markdown(f"{'✅' if HAS_RDKIT else '📊'} 2D Structures {'(RDKit)' if HAS_RDKIT else '(Text Display)'}")
         st.markdown(f"{'✅' if HAS_3D_VIZ else '❌'} 3D Visualization")
         st.markdown(f"{'✅' if HAS_QUANTUM else '❌'} Quantum Engine")
-        st.markdown(f"{'✅' if HAS_AKG else '❌'} AKG Database")
+        st.markdown(f"{'✅' if HAS_AKG else '📁'} Database {'(Live)' if HAS_AKG else '(Static)'}")
         
         # Clear cache button
         if st.button("🗑️ Clear Cache"):
@@ -363,13 +369,13 @@ def main():
     st.subheader("📈 Discovery Overview")
     col1, col2, col3, col4 = st.columns(4)
     
-    with col1:
+            with col1:
         st.metric("🧬 Total Molecules", stats.get('total_molecules', 0))
-    with col2:
+            with col2:
         st.metric("📊 Average Score", f"{stats.get('avg_score', 0):.3f}")
-    with col3:
+            with col3:
         st.metric("🏆 Max Score", f"{stats.get('max_score', 0):.3f}")
-    with col4:
+            with col4:
         st.metric("🔬 Active Claims", stats.get('active_claims', 0))
     
     # Main discovery list

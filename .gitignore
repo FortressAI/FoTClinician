@@ -59,6 +59,8 @@ discovery_*.log
 !requirements.json
 !package.json
 !streamlit_dashboard/data/genetics_enhanced/genetics_chunk_index.json
+!cloud_data_snapshot.json
+!**/results/chemistry_discoveries.json
 
 # Generated plots and figures
 *.png
