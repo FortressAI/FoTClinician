@@ -124,11 +124,11 @@ def load_discovery_data():
     else:
         st.info("🏠 Local deployment detected - using live data")
         
-        # Try to load from overnight mega dataset first, then fallback
+        # Try to load from fixed chemistry discoveries first, then fallback
         data_files = [
-            "results/overnight_discovery_mega_dataset.json",
+            "results/chemistry_discoveries.json",  # Fixed data with score mapping
             "cloud_data_snapshot.json", 
-            "results/chemistry_discoveries.json"
+            "results/overnight_discovery_mega_dataset.json"  # Legacy data
         ]
         
         for export_file in data_files:
