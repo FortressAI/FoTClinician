@@ -131,3 +131,12 @@ dmypy.json
 !requirements.txt
 !setup.py
 !PUBLICATION_SUMMARY.mdFoTChemistry.wiki/
+# Discovery data should be committed to showcase achievements
+!results/overnight_discovery_mega_dataset.json
+!continuous_chemistry_discoveries/batches/*.json
+!continuous_chemistry_discoveries/discoveries/*.json
+
+# Large discovery data files (use LFS)
+results/chemistry_discoveries_COMPLETE.json
+results/overnight_discovery_mega_dataset.json
+cloud_data_snapshot*.json
