@@ -114,26 +114,46 @@ def load_discovery_data():
                         data = json.load(f)
                     st.success(f"📦 Loaded {data.get('discovery_summary', {}).get('total_discoveries', 0)} molecules from {snapshot_file}")
                     return data
-                except Exception as e:
+                        except Exception as e:
                     st.warning(f"⚠️ Failed to load {snapshot_file}: {e}")
-        
+                
         # Generate demo data if no files found
         st.info("🎭 Generating demo data for visualization")
         return create_demo_data()
-    
-    else:
+                    
+                else:
         st.info("🏠 Local deployment detected - using live data")
         
-        # Try to load from local results file  
-        export_file = "results/chemistry_discoveries.json"
-        if os.path.exists(export_file):
-            try:
-                with open(export_file, 'r') as f:
+        # Try to load from overnight mega dataset first, then fallback
+        data_files = [
+            "results/overnight_discovery_mega_dataset.json",
+            "cloud_data_snapshot.json", 
+            "results/chemistry_discoveries.json"
+        ]
+        
+        for export_file in data_files:
+            if os.path.exists(export_file):
+                try:
+                    with open(export_file, 'r') as f:
                     data = json.load(f)
-                st.success(f"📂 Loaded {data.get('total_discoveries', 0)} molecules from local results")
-                return data
+                
+                    # Handle different data structures
+                    if isinstance(data, dict):
+                        if 'discovery_summary' in data:
+                            total_count = data['discovery_summary'].get('total_discoveries', 0)
+                            display_count = len(data.get('discoveries', []))
+                            st.success(f"📂 Loaded {display_count} molecules from {export_file} (Total: {total_count})")
+                        else:
+                            display_count = len(data.get('discoveries', data))
+                            st.success(f"📂 Loaded {display_count} molecules from {export_file}")
+                    else:
+                        display_count = len(data) if isinstance(data, list) else 0
+                        st.success(f"📂 Loaded {display_count} molecules from {export_file}")
+                    
+                    return data
             except Exception as e:
-                st.warning(f"⚠️ Failed to load local results: {e}")
+                    st.warning(f"⚠️ Failed to load {export_file}: {e}")
+                    continue
         
         # Fallback to demo data for local testing
         st.info("🎭 Generating demo data for testing")
@@ -601,15 +621,15 @@ def main():
     max_score = max(scores) if scores else 0
     
     st.subheader("📈 Discovery Overview")
-    col1, col2, col3, col4 = st.columns(4)
+                col1, col2, col3, col4 = st.columns(4)
     
-    with col1:
+            with col1:
         st.metric("🧬 Total Molecules", total_molecules)
-    with col2:
+            with col2:
         st.metric("📊 Average Score", f"{avg_score:.3f}")
-    with col3:
+            with col3:
         st.metric("🏆 Max Score", f"{max_score:.3f}")
-    with col4:
+            with col4:
         st.metric("🔬 Active Claims", summary.get('active_claims', 0))
     
     # Main discovery list
