@@ -1,0 +1,44 @@
+{
+  "discovery_id": "ccb16f55-6887-4ac2-a7e8-9e293f54c63e",
+  "smiles": "CCCO",
+  "generation_method": "structural_modification",
+  "molecular_properties": {
+    "molecular_weight": 60.096,
+    "logp": 0.3887,
+    "hbd": 1,
+    "hba": 1,
+    "tpsa": 20.23,
+    "rotatable_bonds": 1,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "quantum_measurements": {},
+  "validation_scores": {
+    "combined_score": 0.786,
+    "drug_likeness_score": 1.0,
+    "safety_score": 1.0
+  },
+  "drug_likeness": {
+    "molecular_weight": 60.096,
+    "logp": 0.3887,
+    "hbd": 1,
+    "hba": 1,
+    "tpsa": 20.23,
+    "rotatable_bonds": 1,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "safety_assessment": {
+    "flags": []
+  },
+  "synthetic_accessibility": 0.7000000000000001,
+  "combined_score": 0.786,
+  "parent_molecule": "CCO",
+  "discovery_timestamp": "2025-09-29T01:23:45.433543",
+  "campaign_objective": "drug_discovery",
+  "computational_cost": {
+    "cpu_time_seconds": 1.0,
+    "memory_mb": 100,
+    "gpu_time_seconds": 0.1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "discovery_id": "f2b8ffe6-ed6a-4e12-84bf-b68ad5b192e9",
+  "smiles": "NCCCCCCCCCCCCCCCC(=O)O",
+  "generation_method": "structural_modification",
+  "molecular_properties": {
+    "molecular_weight": 271.4449999999999,
+    "logp": 4.491100000000004,
+    "hbd": 2,
+    "hba": 2,
+    "tpsa": 63.32000000000001,
+    "rotatable_bonds": 15,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "quantum_measurements": {},
+  "validation_scores": {
+    "combined_score": 0.66,
+    "drug_likeness_score": 1.0,
+    "safety_score": 0.8
+  },
+  "drug_likeness": {
+    "molecular_weight": 271.4449999999999,
+    "logp": 4.491100000000004,
+    "hbd": 2,
+    "hba": 2,
+    "tpsa": 63.32000000000001,
+    "rotatable_bonds": 15,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "safety_assessment": {
+    "flags": [
+      "Aliphatic_long_chain"
+    ]
+  },
+  "synthetic_accessibility": 4.0,
+  "combined_score": 0.66,
+  "parent_molecule": "CCCCCCCCCCCCCCCC(=O)O",
+  "discovery_timestamp": "2025-09-29T05:47:39.452237",
+  "campaign_objective": "green_chemistry",
+  "computational_cost": {
+    "cpu_time_seconds": 1.0,
+    "memory_mb": 100,
+    "gpu_time_seconds": 0.1
+  }
+}

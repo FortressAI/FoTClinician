@@ -1,0 +1,46 @@
+{
+  "discovery_id": "1171ab9d-b58d-46a9-b3fc-5304bb711462",
+  "smiles": "O=C(CO)Oc1ccccc1C(=O)O",
+  "generation_method": "structural_modification",
+  "molecular_properties": {
+    "molecular_weight": 196.158,
+    "logp": 0.28250000000000014,
+    "hbd": 2,
+    "hba": 4,
+    "tpsa": 83.83,
+    "rotatable_bonds": 3,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "quantum_measurements": {},
+  "validation_scores": {
+    "combined_score": 0.676,
+    "drug_likeness_score": 1.0,
+    "safety_score": 0.8
+  },
+  "drug_likeness": {
+    "molecular_weight": 196.158,
+    "logp": 0.28250000000000014,
+    "hbd": 2,
+    "hba": 4,
+    "tpsa": 83.83,
+    "rotatable_bonds": 3,
+    "lipinski_violations": 0,
+    "passes_lipinski": true
+  },
+  "safety_assessment": {
+    "flags": [
+      "phenol_ester"
+    ]
+  },
+  "synthetic_accessibility": 3.2,
+  "combined_score": 0.676,
+  "parent_molecule": "CC(=O)Oc1ccccc1C(=O)O",
+  "discovery_timestamp": "2025-09-28T19:44:17.300283",
+  "campaign_objective": "drug_discovery",
+  "computational_cost": {
+    "cpu_time_seconds": 1.0,
+    "memory_mb": 100,
+    "gpu_time_seconds": 0.1
+  }
+}
