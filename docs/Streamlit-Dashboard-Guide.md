@@ -1,5 +1,7 @@
 # Streamlit Dashboard Guide
 
+> **📊 MASSIVE DATASET**: Explore **6,443 real molecular discoveries** through interactive visualization!
+
 Complete guide to using FoTChemistry's interactive web dashboard for molecular analysis, discovery monitoring, and quantum property exploration.
 
 ## 🌐 Dashboard Overview

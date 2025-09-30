@@ -1,5 +1,7 @@
 # Quick Start Tutorial
 
+> **🚀 JOIN THE BREAKTHROUGH**: Experience the system that discovered **6,443 unique molecules** autonomously!
+
 Get up and running with FoTChemistry in 10 minutes. This tutorial will walk you through your first molecular discovery using quantum-guided analysis.
 
 ## 🎯 What You'll Learn

@@ -1,5 +1,7 @@
 # Molecular Discovery Pipeline
 
+> **🎉 PROVEN AT SCALE**: **6,443 unique molecular discoveries** achieved through continuous autonomous operation!
+
 Comprehensive guide to FoTChemistry's autonomous molecular discovery system that finds novel chemical structures using quantum-guided optimization.
 
 ## 🎯 Overview

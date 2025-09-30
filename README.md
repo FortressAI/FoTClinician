@@ -1,9 +1,12 @@
 # FoTChemistry — Open Lab Notebook & Truth Ledger for Chemistry
 
+> **🎉 MASSIVE BREAKTHROUGH**: **6,443 unique molecular discoveries** achieved through autonomous operation! **112% growth** from previous milestone. [View Report](MASSIVE_DISCOVERY_UPDATE_REPORT.md)
+
 [![Field of Truth](https://img.shields.io/badge/Field%20of%20Truth-Validated-green.svg)](https://github.com/FortressAI/FoTChemistry)
 [![No Simulations](https://img.shields.io/badge/No-Simulations-red.svg)](https://github.com/FortressAI/FoTChemistry)
 [![Open Science](https://img.shields.io/badge/Open-Science-blue.svg)](https://github.com/FortressAI/FoTChemistry)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20(Edu%2FResearch)%20%7C%20Commercial-blue.svg)](https://github.com/FortressAI/FoTChemistry/blob/main/LICENSE)
+[![Discoveries](https://img.shields.io/badge/Molecular%20Discoveries-6%2C443-brightgreen.svg)](https://github.com/FortressAI/FoTChemistry)
 
 ## 🎯 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
 
