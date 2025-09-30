@@ -1,0 +1,3668 @@
+{
+  "analysis_timestamp": "2025-09-30T08:30:13.397019",
+  "total_compounds": 6443,
+  "summary_statistics": {
+    "PFAS": {
+      "mean": 32.30060064931189,
+      "std": 11.172212351033764,
+      "min": 17.175208791208803,
+      "max": 50.0,
+      "threshold": 25.0,
+      "success_rate": 0.39143256247089864
+    },
+    "CO2": {
+      "mean": 0.365897319913084,
+      "std": 0.1026361016417202,
+      "min": 0.2096258,
+      "max": 0.5761158,
+      "threshold": 0.65,
+      "success_rate": 0.0
+    },
+    "Thermodynamic": {
+      "mean": 0.2225912359666822,
+      "std": 0.09044672407810905,
+      "min": 0.05533333333333334,
+      "max": 0.4233333333333333,
+      "threshold": 0.3,
+      "success_rate": 0.799627502716126
+    },
+    "Green": {
+      "mean": 0.5384464349290391,
+      "std": 0.09774445254181643,
+      "min": 0.31155214804656933,
+      "max": 0.6881553733773251,
+      "threshold": 0.5,
+      "success_rate": 0.6937761912152723
+    }
+  },
+  "problem_solutions": {
+    "PFAS": {
+      "total_analyzed": 6443,
+      "valid_solutions": 2522,
+      "success_rate": 0.39143256247089864,
+      "solutions": [
+        {
+          "compound_id": "1f41913e-1c92-4eaf-8f3b-2d61f3998a2e",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "5ab41b5a-a20f-455c-a0d7-f01f8a0df1d3",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "4fabc8d6-3ab1-4264-8900-62a211ae9b96",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "2a6dd077-f791-429e-91c2-eeb7e8123e57",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8da28e3a-cc9c-4666-9786-154327476094",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "84df52f5-506d-47b8-b12f-a0e21a67dd8c",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "cc146a85-a252-4a35-9fa8-be59bcb19593",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "449546ec-58f9-4644-b707-0f50050dc6aa",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "39794da5-a245-4d19-85b5-c97ac20b3e96",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "01379cd1-dec9-4ce0-afd0-c5a91932a36c",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "48ad6e82-d470-4629-a436-c07257d7d764",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "fd239771-227b-458a-ba55-768310382a98",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "2199634f-aeb4-4188-9bc8-8a6512d2672a",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "d7db3204-a523-4e56-99fa-44d4bda5306f",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3834f387-f35f-42db-b75f-2d2cf12674e9",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "abb58c1d-c5cf-4a01-87e3-6ccc29020b51",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "d055c678-fe20-4786-b85c-143a77ede47d",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "6e490033-b14b-480b-8ad1-98cc87c9c972",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8f35ea0b-b0f5-4685-a20c-453bf70bf5f3",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "d0b22bb0-be36-41d9-ba3b-374da204e6b6",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "6c71a31a-766d-4261-9503-109f341c0ada",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "6b09ac3e-ab56-462b-9a36-0eec8eb3126e",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "435670fb-ce90-4eff-ab7c-c124d3171272",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "7bfd8207-bd06-436c-857f-5839f7105f66",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "52c17864-69de-460c-b720-ba882ae66647",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "5ce400d3-21c4-4e02-a853-d8430e8cfcb2",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "07b40974-4d7c-4107-80db-e07e3426e4c3",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8d042ebc-3091-44ea-b221-9bfcd415168e",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "54cdef4f-b8fe-4deb-a386-a0c1d237fa97",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "aa837d5c-2c9e-4491-91db-2f7750c26cb6",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8eaf8323-8c9a-47ba-a992-e59a8bc1ab7f",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "203852f7-2dba-4a5c-8328-cb65cbd2c4e1",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "4ac88d6a-982e-4150-a3fe-629106303674",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "1be64ebf-db83-4352-9b2f-8840d6fd0a50",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "53d4b21d-51e3-4545-97e1-76dacbad3fff",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8dc3f74c-025a-4d8a-b9ab-a965a0ec6373",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8022c847-f180-4ae3-854f-a735795ca0ac",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "2192d666-58c7-47c4-a7bb-f6ebca51726d",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "929d82fe-0464-4bb5-a792-3a28757e4ceb",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3261eaad-784d-4850-899c-b9495f6079bf",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "45c023b5-9ba4-4e14-bcaa-0434cf9014fd",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "acab4ae6-49ad-40d7-928b-d8ad543ae9f5",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "c21988c0-752b-4810-b283-4897c6a167b7",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "768fa0f0-9d55-4b7b-a885-012df5a14e4d",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "cb3b8c1d-1333-487b-b47d-47d9d52f578e",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "2a1d3e1a-df73-47df-bbbb-6432ff361245",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "96a4144f-2c4d-499c-8bf2-5f68efb35e20",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "7489e7a3-e03f-4d72-bccc-372c8150a52d",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "a561882c-555d-4f0e-a44d-816668f92b48",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "b828ffef-0367-4aae-a00b-81bce40f034e",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "e6c36ede-b7e6-475b-80b9-cedd68cab035",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "c45afe8d-6c20-4f63-b075-543facde614f",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "ee803350-3f7a-4304-9626-69346065c52f",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "bce9761b-bcf0-4b29-be40-ff5925ac55b4",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "ee28340e-cc18-4cd9-8086-ee6ca71e1c40",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "7395b3ee-34ba-4533-b206-79af943fa0ec",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "254c1ba9-5359-4291-8af6-854c99d5d0b6",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "1d2de86e-e220-4d3f-9e31-b66c08202457",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "b4d85e23-dc4c-478d-8bdb-907d07a59402",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "95b411c8-a04f-4bd7-90e4-40cc1fd983a1",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "1cb01fe3-3c1a-4024-b86c-2a33f6c1ddaf",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "62e53b59-85d2-4169-9f1b-1d66d9d8e4d9",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "cfcbffc3-b833-4777-b2cf-a66354909038",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "5d41a5dc-1cf7-40c5-b334-2dffac811ed5",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "0bbc71da-0f08-48cc-af5c-fd26d512eaee",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "9a5f9d89-460a-4d35-9343-4d0cdb612b9f",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3c984975-7964-4f19-b2ba-5d1365863b7f",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "bdbc629c-2f8d-4fe8-86ab-0aebb70880d3",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "e04888dd-e846-4813-a079-7c0ec9725b1f",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "04c9ad0a-ac72-4276-9a86-7846553ae74d",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8cabafd0-1cbd-4ed0-ba7e-4c09b17f97b8",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "4a0a3950-6dec-4475-81f1-3fbe7e70e583",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "00e46321-e27c-4959-b6ba-2e461df0f48a",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "a058c540-2f53-4c17-ac52-0f37e9b539a5",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "f48c3b87-f409-45e3-8b24-37e563f2a74d",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "0b214863-3531-412e-afb7-ee5fa1703b66",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "f8d56eec-cde5-4d7c-b89e-7b496c2f2f0d",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "a2494b42-050d-4ae6-86bb-2345eedbee5d",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "aa59da96-87b2-49f0-ad3e-258d7fab5672",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "4639ddb5-75d4-4f51-a36e-ad80983d2a15",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3f04d999-2aa1-415e-b3d4-e8e69cf6b496",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "da12a9d5-0c52-4071-91a1-f427d34ba50d",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "304a5779-9a52-430c-9da6-07917cc4ffc7",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "dcc9f71e-02c7-4d7e-a374-6cbf8d8f2d7b",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "39297f99-82b4-4990-9d9b-4ad5c2de1175",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "fc039a99-7035-477b-a8e3-a44a441dc3a7",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "7681ec45-95d6-4c9f-8a91-b74f4380fd3f",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3067851b-f9ce-4e48-9389-18a7a11e67ac",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "72ad0b26-0f6a-4a98-8c65-2f8420f93498",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "a1f0a4b6-82c4-4999-b662-2832a9302231",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "4076bba9-8495-48cb-be51-d1d8b20f1c18",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "c5b065c2-82b3-4351-b915-9d74a4a1ca5d",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "1ca21d5d-4066-4aeb-a2a8-577adf5d60b6",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "f699765b-94d1-4130-97c2-864d04c84ad3",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "479486ee-f176-45af-a9fe-b3f5004b87ff",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "3442e582-8766-4f75-adf1-d57147752d7e",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "9d5c9268-c259-421f-9930-e335ed3aba2a",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "76bcf73c-6953-4c96-a053-8a8e97f6bd74",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "8c5511ef-e7e1-4413-b6ba-da82cc4251d9",
+          "smiles": "c1ccc(-c2ccccc2-c2cnccn2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        },
+        {
+          "compound_id": "dd953a3d-5d6e-4892-b961-c886dd2cbcc3",
+          "smiles": "c1ccc(-c2ccccc2-c2cncnc2)cc1",
+          "metric_value": 17.175208791208803,
+          "uncertainty": 2.5762813186813203,
+          "meets_criteria": true,
+          "gap_to_threshold": -7.824791208791197,
+          "virtue_sum": 3.2390000000000003
+        }
+      ]
+    },
+    "CO2": {
+      "total_analyzed": 6443,
+      "valid_solutions": 0,
+      "success_rate": 0.0,
+      "solutions": [
+        {
+          "compound_id": "563446f8-7492-4464-8e49-8a8179f33a11",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0614f6bd-2f63-49fb-ab36-3af7631ac32c",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "91b15a2f-2a0c-4a6c-8863-ce7766a9b466",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8941cc62-7075-4e90-9da6-1d757bf2229d",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "37109045-c54b-4a37-8c3a-7f6b29f6be2f",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "c704ba2b-4043-4aa1-a216-70a50fb5a9d6",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "12ab1059-1df5-4d43-ba98-f4d4e963b814",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a493a559-2b14-435c-84f7-191f17e8f9c0",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1bef94c9-50d2-42a4-aecb-7aebaa738c7c",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "fd9dbaeb-1331-4d11-929a-ef762137de94",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e0aadc5b-bb7f-46cc-8a9a-af1648bf2436",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d77274e6-b0d9-446a-bedf-9aaab29072a5",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "53d2e0e9-2b7e-4a92-bf07-357026531af4",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5e4004d9-ffe4-481f-aea9-f7f5de0156ad",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f6559d74-4920-4600-9a80-cd4a6fddd25c",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5f0788f6-6d53-4ea5-b7b2-176142d47c89",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "325d983a-ae30-478d-819e-ee79e3c19d83",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "57f5b45b-cd92-4da5-8cbd-1f5c6950f9dc",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "cf78190f-f4ee-4afe-9bfb-6864f3477248",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0c2ee3a3-4861-426e-bd51-7b397c4c84f2",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "29dce8a9-a365-4d5a-b0a2-54b284db061b",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "80b96c1c-0b5f-44ad-9c0d-0f260fbf274a",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "70a060b3-f469-4964-97cc-e900327a69c5",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b13e025d-5b88-4787-926e-703b4e771a53",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b2fcbe79-2413-470b-b1b4-b02c623fbb25",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "15a6b07e-6bf8-4865-a492-59693bf6177d",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ee1ee413-e196-40da-a902-48b2c6d1c7e2",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4d9f0966-d833-4a0d-a29f-a348bf28c893",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "40236b26-e32a-4d8c-8e9c-64382732cb5c",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "09177bc5-3673-4c63-bb07-db7437420e91",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "6144e4fa-d9e6-4d59-bdfa-8341205099af",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e0480e13-c9e2-4a98-ac59-1581368179d1",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "cec658e1-a7b5-48ef-9da9-17739f2fcdaa",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "bdfc2f65-1ebb-4b4a-a457-3fd7e724cfeb",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ba7fec41-ec44-4ab6-beb0-413d723f8ed0",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "c7fae97f-d6ea-4e25-8b4a-399402cb5953",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "80d8c664-5a90-491b-8175-6ce443bd0957",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3e53a1ac-70f5-4566-a084-de8b24a4e3c9",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d712eda2-08b3-4adf-bfe4-960ddbb51687",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "dff77607-5f14-417e-9a1e-9c54d9f28552",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a00ebeef-988f-447e-be9d-6c5fcb0cf8ee",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1ac58eff-9da4-4093-94f2-a8fad13cc2f1",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1ecf72cd-b8f2-4158-9b23-f6b981308478",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "be840db5-acdd-45e5-9848-ca12571d61be",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8f670309-5c9d-46a0-8c08-bf44cf042364",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "69e90106-4c28-4361-b426-33c81d4139e9",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "75f0c33d-0d3b-40d6-9f44-77b82c6150fd",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4c795769-ca66-4aab-827f-93db89ac765e",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3b3fab93-72bd-4cbd-a27f-02329c216124",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "be9680e4-a3d5-466a-8a5f-319971127f9b",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2d0f6d81-e5c8-4b9d-b120-80d82e91218b",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f3eb21d7-5006-4a69-a237-0d18174b5fa1",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "26cee18d-0736-4a77-834f-23f4e9a2d0b3",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "65f74fe3-36de-4898-8619-15832c45f1c3",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f171dd21-ba59-4c24-b19d-f75b7ff0f539",
+          "smiles": "Cn1c(=O)c2c(ncn2CO)n(C)c1=O",
+          "metric_value": 0.5761158,
+          "uncertainty": 0.08641737,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07388420000000007,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8bb6f29a-eea3-4029-adfd-2538223e8021",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "83fe6c0d-6e1e-4f45-b3f9-887eb0e0ad0d",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "71fac00e-51a2-4763-b90d-e863f9876d9b",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "df44cf2c-239e-42bf-9fba-89884a99566c",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "fd179903-e030-4a02-b6ac-6156cf50a3a2",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d5d5175e-0154-4f5c-a6e7-ddcde6d9da43",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2683f4a6-f018-45e9-a76a-828ada2ff314",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8ac6aa36-eb7e-4a57-b8f5-45c1fea877e3",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "44fbcd47-545e-4674-a417-036ee7fde300",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "985be740-f8ed-4f22-b919-4a5d960ac86c",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "29bb3bf5-ee49-4514-9578-e7e439066083",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5f9e883b-394c-4725-95d7-98d9dac13780",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "432a9805-31af-4e78-9f6c-c79ead328194",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3ac6edf0-579b-434c-86b8-9ce5d5727f34",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f1cd2582-5641-447b-8091-b073f23dd45f",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b33ad3a5-5cdf-465c-bb36-1e1a95127db0",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "904937a5-f746-4e98-834c-6247571b70a4",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d4c71f89-3c1d-4d03-a4b0-71fd6c20e849",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "23b62e15-0dd0-436d-9055-beecca92726d",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0c17ba79-9ecd-4985-8ca0-54210bd3b83f",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "9da25ad0-e44b-4b4a-92ce-08cf841a6520",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4dde1258-68f7-4bc0-b052-e319da3d1655",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "73af27f2-f24e-47ae-b3b9-8d33c4980024",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "08b55256-5f34-4b64-b31b-d311bfc0c0a8",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "982169a8-7b4c-4bf2-a89d-301048f407e8",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e00cad7d-e0d0-46e9-9d50-bc2c7ab97b2c",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "20c3a91e-d7be-4275-88ca-2179529bdb5f",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a4fdb895-f99b-4bb1-a554-ec5a93a80df5",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "92c3ce82-e46b-4802-afd4-49f94e5fe1d8",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "708ced67-3d6b-4e23-a02d-3b724907b211",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "bd40aa7e-3e64-4a2c-a352-3e4657c76179",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a2ead69a-a9be-4ed9-9642-85a3a0eef38c",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2ae84a7b-be6f-476f-9872-a1da1545d175",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "712e561f-e966-476e-8d4b-db0a9b1ca5ee",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "558d2002-fff3-4060-8254-35a060d132ac",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3b9a2187-e21b-46ef-b466-aec80fe4ea60",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ae0bd53b-ff90-42e6-854e-6db77349a200",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "61cd84a8-c46a-4a09-b06c-74e0efd09bf2",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e06b34ad-f9a2-4238-8d49-16eadbb079d4",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b262827c-dac2-4db5-8f90-b4dffe816f3a",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1e6c870e-bc5e-4d17-81d5-0bac5b318406",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "337052fe-f3d4-44bf-b3ec-d8e51c09fcd7",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "76d2887d-63af-4ff4-8a46-31241eb7ed09",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "9e13c3b7-5401-4f25-aaae-9a3370e99643",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "61bb97a9-1761-49a1-a5b0-f225f726149a",
+          "smiles": "Cn1c(=O)c2c(ncn2CN)n(C)c1=O",
+          "metric_value": 0.5755254,
+          "uncertainty": 0.08632880999999999,
+          "meets_criteria": false,
+          "gap_to_threshold": 0.07447460000000006,
+          "virtue_sum": 3.2550000000000003
+        }
+      ]
+    },
+    "Thermodynamic": {
+      "total_analyzed": 6443,
+      "valid_solutions": 5152,
+      "success_rate": 0.799627502716126,
+      "solutions": [
+        {
+          "compound_id": "f7cb5808-7c3a-4867-abc7-9064fff34f19",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "10aa2915-6ff5-4ad6-b9ec-c8ed8e30a462",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2f1137fa-b789-43c6-8969-6f40954d77fd",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "5c2b2542-3f93-4383-97e6-810dbf632412",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "58f71b09-4592-49b0-9377-c0bbf3cb2271",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2feae277-e8f2-43f6-872f-600957d112c8",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "25eb8af5-21bb-4419-ae5b-09afda866303",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "9d96261a-f8cd-4c41-9275-d26f37bdf559",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "96f8a043-32a8-4e79-9a1f-0ad5316ba931",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "8b723f35-1573-4b17-8130-b2a094e687d9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "bd14aa12-210e-4e48-9bca-6ff87f20e033",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "4fdb9ccc-c6cd-4248-98eb-7fcb51c7564b",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "0fb2c126-3728-43b8-af03-c6f03b6a5179",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "34d492d1-5734-480f-98eb-0fd3b540d454",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "058e0457-2c82-4dd0-95c0-20fb171c44ab",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "ed025154-8ce2-4ad4-b78b-f99bc0125143",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "774f10e0-c49f-40db-8cb2-d7876a68a0c0",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "5eb630b6-1482-4188-a36f-ad3b476d83d6",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "3c877705-015f-470c-b958-e284a8042a9c",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "cd1c60fa-e54a-4cb9-96a9-e7dc1b5e7c65",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "e8545c16-b5da-44d4-9edf-0b4910b8d3a9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "c106cad6-1cd2-411c-8d8e-a155da2cdf0a",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "b00069bb-f896-45c5-9324-3f5296d923d6",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "504e8157-e534-4905-beeb-32c03d995d1d",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "6c3efe90-94c7-4b96-b49e-24aafd1b6ad8",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "c3c994aa-247b-491c-8a79-0c26d2495404",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "cb2262b2-3b62-4c30-8a09-a49796e94a6f",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "7cbbda3c-79ff-4c72-88ad-debff8d1a44a",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "324ac035-3e34-41a4-8d31-796ece51ed09",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "290bb923-59bc-41c7-90ed-4878427828ec",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "94ae31bb-3544-434d-a7e3-aab30a14bdbe",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "804798b6-f7b1-4197-a9fd-86c5ac1171b1",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "5af0dde4-ae0c-4cf6-a91c-77ede91ef66f",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "0cdbf156-2464-4c31-b0ca-de328872a0e4",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "748f10db-4920-4ffd-b966-e5528ff6043b",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "315f756f-4f56-4ac1-bd70-b0db00b7b3fe",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "9c3efab0-8dc5-4adb-94ec-70b3dc17cde4",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "e85c24ed-9696-4b28-9d4d-2cbbfea39bfa",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "d0ec5558-3fed-4a50-8e53-4c61ccebb7ab",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "010dc916-1b1c-44ed-a83e-3a123461a20c",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "21c496cd-a732-4b21-875a-b65ffc3b7ed2",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "5021f91f-fce3-47ec-8586-1b0f5d454fa9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "d603d60c-92f2-4504-941b-e19fc4196eb1",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "d5435187-8e90-4592-aa37-5bbf13f1bdf1",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "025249fa-059d-4e84-9def-cd27e18874c9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "8181cccc-89b9-431e-b49e-ce5b3674225c",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "614cd151-c986-43da-8dc5-1dd3cd00173a",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "ad037a11-375f-47e2-9b2b-e75eb8d08cd8",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "132c62bc-5999-456b-b7c9-eb2225fa59be",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "28d17ff0-75a9-4408-bca0-693ce59c21c6",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "07eaacc3-ab10-415d-9a31-0da13f5ee286",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "26bf3371-cf2c-4fa3-ac8c-bc3e54241fca",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "02d40e79-7e0b-4d67-879b-d736ae3ef616",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "fad768e9-9fd6-420f-ad82-05610cfb8f48",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "ac8ad398-13d9-4813-a863-9681a2184ab4",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "df64b883-c292-4cc4-935a-541c5be19a7e",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "74fc3fd9-45e6-42aa-8733-e00654c4097e",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2faf676a-092d-44c9-b961-0762bf4d0c1a",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2963d486-a203-44dc-91c2-a2985ce9d763",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "0f05a8f6-8198-4eb8-ab9a-f4975a6ece49",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "c0166da8-e822-4dd2-b0f2-e2e8866187b9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "c0da5b97-2936-4f6e-8015-af6c2f536267",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "bda4f336-e26d-454d-8a1f-61b14eacbbf0",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "1e9887b5-0e5b-4cce-956f-4a95b1dc99cc",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2fe664bf-fae5-4c3e-a5e9-5e9aafb6e4e5",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "29fa0a69-a4ee-4758-995f-0c901e4d4426",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "9603aa27-3626-4842-b24c-4a85c3122887",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "111f7f99-fc1e-4141-9cb7-58daf0751703",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "851a7793-136a-446c-b6bc-67cb024dd6bb",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "95140d93-5017-478d-abf5-420db09920c2",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "1ff34906-c26f-4e25-93f5-390889f86f23",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "d7d1e878-ce48-461a-8f0c-47c51e56ef5a",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "e0e10fef-258c-4840-897d-7da7772f0c86",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "f7077152-ad24-4d55-9755-377ab15640b9",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "d31db059-da82-4f7a-8e8c-d6e4d3569f92",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "a1be8c52-fc21-4c27-ba15-ea04be685c1c",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "867a5eb3-c0c7-44c3-9df2-dcabc050fa12",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "86b5a8a5-74fa-49ea-a98e-12fe59a98473",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "48ec6f27-55a1-40ea-a21e-f65bdaea80c3",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "7bcfe4d7-04ed-440a-8885-dc7f247e3c18",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "1efa93e7-7bcb-435a-987c-ee1ad07afa1c",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "b9546d01-2135-4cb7-be11-2ce1fae6cb90",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "df56104e-b1cd-418a-9265-81c6cbb952d2",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "b5098eb2-dc7b-4b32-a1b7-b59291047e0d",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "c60d400d-9fa6-49ed-9376-df26c5f6ca09",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "ce84a435-0db3-4974-a396-c9d77ae72742",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "4993a440-0771-4c03-9dda-06a463367477",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "90a48b1f-fb0a-4686-8385-95151d76a8e7",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "e78e6122-94e2-4352-82e9-59e4e77a7c21",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "82e8cbbc-5475-42db-9c4e-2171243fc7c4",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "2e7ad9ba-0fa1-4f16-8539-e5efa2efc0be",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "b8996cad-bab3-4559-9be6-0507477faf7f",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "762f951f-81d1-4fa4-bb2d-ac5457018eba",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "b850c7b0-eed1-4f66-9237-15002e23e19e",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "5a9853e5-4906-4054-883e-212dc56800e5",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "e9a7f243-1b51-4fdc-bb69-85c4e4b21e96",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "4874c932-bf48-4d01-8c5f-9f5be2593db2",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "45faa2cf-7c04-41c5-8693-fe0aa9992c05",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "ce885430-29a8-495d-8fd1-cc526f9a1b08",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        },
+        {
+          "compound_id": "7fa81a6d-1305-4715-8a35-2b08143fe02b",
+          "smiles": "C",
+          "metric_value": 0.05533333333333334,
+          "uncertainty": 0.0166,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.24466666666666664,
+          "virtue_sum": 3.159666666666667
+        }
+      ]
+    },
+    "Green": {
+      "total_analyzed": 6443,
+      "valid_solutions": 4470,
+      "success_rate": 0.6937761912152723,
+      "solutions": [
+        {
+          "compound_id": "e005c04a-89f6-4599-acd6-99353775d534",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "75b66cd2-d451-47a4-b0ea-923379919b96",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b6e9a69a-3ebf-4a5d-a15c-43d0c84472ff",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "13470834-27d8-4d85-8c9b-326af016c197",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1a8d8b3b-66d9-47b3-ae0c-0efaae56aecf",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "484a7ac1-8696-4b9b-b54c-162ca2148cfb",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0808e036-a52a-45fd-b4c4-8408295bfb11",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1676db9d-440d-4793-8e4c-6a9575fa4b30",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "6b90391d-010c-4f91-bbbb-18e0626c409c",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b2123322-d2b5-4217-9b77-d5622cc2daba",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "7fe917d9-ab19-4877-9698-71ac638ce349",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "244c4205-538b-41c4-a3c5-312a0476f81b",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "02e52efb-176e-42d5-9f58-bdb724282f95",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "193f4ef3-b0b8-48dc-88f5-ef9f33b1138f",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "08ef7de9-3b47-4ec6-ab58-1711f8d5ea00",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "984a02cc-17ab-44f8-a3ae-78266767a406",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "7749a2c1-ce69-4063-a402-060e7a70aa5a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "31ce69e6-402a-4e14-b47a-4ed2afeca026",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "36b53256-8003-4c14-81a9-60e15ada0ac5",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e6cfaab1-92a8-4c42-9aca-5d1b4e47cf25",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d95fd560-b2cc-4127-a40e-7e0932691802",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "396b8813-2d44-4c59-810f-9c375e4cde7a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "be08357c-44ce-47a9-ac89-d1a38513b41d",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ae46c58c-2bc5-4f1e-85cb-07f1c7439f13",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "60e48eaf-b667-496a-bc49-609bd2b42e05",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "9e83eb4c-a097-4ab5-8d12-cc0a8cf0915e",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "70cf8d12-9dd5-48ed-a6e4-227393d22ef1",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "84fe530f-6858-403e-aec6-4dc3cca188c2",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0fb23335-3612-445f-b678-a4f5b7faa392",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1a8f52e9-6211-4b03-8d47-b895525bcb4b",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "6db45bfe-e34f-4c9c-89cc-75f3f4deab84",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a112e772-c38b-4a75-b428-9993806f072f",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "83bb28ca-283e-49af-93fb-effe6b9c313d",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "571448ab-155e-4581-9774-3ec6be63fb42",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ad2ff793-76fd-4474-8a0e-24625fc331b4",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e98f43b1-c973-4140-92cf-4ebc3c7c4446",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "d6c8b8d1-eb11-4f6f-957b-7b19569574b6",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5293f60e-c463-4082-a86b-8a0c2459164e",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2ab5e088-2732-48b4-9796-da1c78a39c72",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3a9f1b94-36ed-4bd1-8352-4772d958dd4c",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "6f1dc024-95c6-419c-af33-57fb88044237",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8fdf2714-b067-471c-8f85-7c503660e3ac",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "93d6e379-42d2-4d7a-900a-c5a692835bad",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a6a09216-1eb8-47ec-86db-f7c09b7906b6",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "cd6539a8-cc8a-43bb-9f34-c497a097c5c1",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f18d08eb-78d2-4af7-ba7d-4d41467a2bd7",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ecfcab0f-3175-40f6-90c0-a7119093f2bf",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "91147ead-46bf-4d46-885f-92322cf09027",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a48be430-8a2d-40ee-9b6b-682d9615472a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "7253a0d4-ec50-40e9-a41b-04e0cff155a8",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "21dce77b-5c18-4b43-ba61-53edc1f5dbb9",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f987b8ba-7ebd-4c5a-851d-ae747b0149d6",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "115a31c9-1af5-48f9-bfb8-31be2db59093",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "38a5bf09-53bc-4e97-a047-0c288427762a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "40e9671c-82e8-4dac-b175-e96d9095393a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4f7cc81e-fec4-446a-90ab-e5ecb191be90",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "03f9cb17-ef5b-445f-994d-7a1f6aefd02e",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2213ce8e-36d1-4ed3-8fe2-2046b574ef44",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "69bbed94-a59c-4b2e-96f1-01d5b291682a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1294b7e0-2944-4621-a6d5-3d8b6fe51a91",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "7e35977a-d2e7-4e09-8262-60ffeb551f59",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8c172ddf-a578-49b2-aac5-156ded2cf9c5",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f7258cb9-c325-4d89-9dca-2cd6951aafa0",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "353f0062-8ab4-4733-988a-b2988c5ee1f3",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "303a0552-0e82-40fa-9206-7c4e13855914",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "fcb78143-f4b0-4d08-90d5-6ec5c12606ef",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5c6de480-db57-4ba4-91aa-ed940efadb24",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ce2720f3-8adc-4d31-8342-38895ff33f6f",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "292426e3-536c-405c-b2e2-f2362f738c8d",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "74f01d3a-dcd6-4954-abfb-194020b5cf60",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ae812ff9-7d64-477c-9e39-45b53a34ec80",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b8a57106-ebee-4c85-8417-6d1b59390189",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "e9bed63e-8825-4a53-bc64-06b5703af562",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "58972d0b-598c-4c4b-b140-fa0afa34ced4",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "f19f97d9-3f09-4140-b0d3-c1a70b631373",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "be64443f-d556-4495-94e4-71cff247236c",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "fc4a2ee5-cc2d-4924-9dbb-c11e0379e3c8",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2c0359bb-aa38-4508-b362-ee00c29e2e3b",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b1e536d8-1a1e-4dfe-84b5-7a0e4c7c1264",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "c247d459-1243-44ff-8ca2-6010f017d4bc",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "9350d718-061e-4b96-9d8d-31b8afb96811",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "71d01477-50ee-4750-a7f5-e63cf7bac5b2",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "3b69bc80-0fd7-419b-99d2-3aa640de2069",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "2ed8b218-a6d9-430c-8bfa-e11b99290de6",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "27db6039-6830-4d51-a134-549b451e5365",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "9cc9ba37-2bfc-4d4a-afd8-87df374ae90d",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4e16d2aa-cf81-4737-bf7f-42130bd97ca8",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "52f356a7-7e0c-46ec-94df-633976e742ae",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "88350da7-8b19-455e-9bbb-38140f9771df",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "8e90ae9d-5668-459a-8046-04f4289d60bd",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "768e656c-092b-490f-9589-f3b2b50b1c19",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "1ab71e42-8c58-4aa5-9c26-b918d570b490",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "0b1361e5-c7f2-44d8-97a6-80c72358b1de",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "ff697d32-3d97-47f4-8588-de327fdf740a",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "5118655a-bbcf-4e03-b69a-bf77478a7457",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "a519b16f-02d4-43db-bf2c-d4f59e223fc4",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "4a8ec93c-45e1-4b47-a8e4-3f684bfcc7c8",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "b3fa1f06-ddf7-436b-92de-167027cc49d4",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "872174fb-0e94-453e-ba84-ff862902ca62",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        },
+        {
+          "compound_id": "dffdcf87-7012-4465-89b8-1d946f08f020",
+          "smiles": "CCn1cnc2c1c(=O)n(C)c(=O)n2C",
+          "metric_value": 0.6881553733773251,
+          "uncertainty": 0.17203884334433128,
+          "meets_criteria": true,
+          "gap_to_threshold": -0.18815537337732513,
+          "virtue_sum": 3.2550000000000003
+        }
+      ]
+    }
+  }
+}
