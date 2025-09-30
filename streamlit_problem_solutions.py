@@ -32,12 +32,17 @@ def load_problem_solution_data():
     ]
     
     for data_file in data_files:
+        st.write(f"🔍 Trying to load: {data_file}")
         try:
             with open(data_file, 'r') as f:
                 data = json.load(f)
             st.success(f"📊 Loaded problem-solution data from {data_file}")
             return data
-        except FileNotFoundError:
+        except FileNotFoundError as e:
+            st.write(f"❌ FileNotFoundError: {e}")
+            continue
+        except Exception as e:
+            st.write(f"❌ Other error: {e}")
             continue
     
     st.error("❌ Problem-solution analysis not found. Available data sources not accessible.")
