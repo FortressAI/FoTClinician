@@ -24,13 +24,25 @@ st.set_page_config(
 @st.cache_data
 def load_problem_solution_data():
     """Load problem-solution analysis results"""
-    try:
-        with open("problem_solution_analysis/complete_analysis.json", 'r') as f:
-            data = json.load(f)
-        return data
-    except FileNotFoundError:
-        st.error("❌ Problem-solution analysis not found. Run `python3 problem_solution_analyzer.py` first.")
-        return None
+    # Try different data sources for cloud/local compatibility
+    data_files = [
+        "problem_solution_analysis/complete_analysis.json",  # Local full analysis
+        "cloud_problem_solution_data.json",                  # Cloud snapshot
+        "results/problem_solution_summary.json"              # Alternative location
+    ]
+    
+    for data_file in data_files:
+        try:
+            with open(data_file, 'r') as f:
+                data = json.load(f)
+            st.success(f"📊 Loaded problem-solution data from {data_file}")
+            return data
+        except FileNotFoundError:
+            continue
+    
+    st.error("❌ Problem-solution analysis not found. Available data sources not accessible.")
+    st.info("💡 For cloud deployment, ensure cloud_problem_solution_data.json is available.")
+    return None
 
 @st.cache_data
 def load_problem_specific_data(problem_key):

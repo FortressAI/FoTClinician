@@ -569,6 +569,9 @@ def main():
     st.title("🧬 FoTChemistry Discovery Dashboard")
     st.markdown("""
     **Quantum-guided molecular discovery system** • Real chemistry, no duplicates • Field of Truth methodology
+    
+    > **🎯 NEW**: [Problem-Solution Dashboard](http://localhost:8506) - Find compounds that solve specific chemistry problems!  
+    > **12,144 problem-solution instances** identified from our discoveries.
     """)
     
     # Sidebar

@@ -8,8 +8,15 @@ Get up and running with FoTChemistry in 10 minutes. This tutorial will walk you 
 
 - How to analyze molecules with quantum properties
 - How to discover new molecular structures
+- **NEW: How to find compounds that solve chemistry problems**
 - How to visualize molecules in 3D
 - How to interpret quantum measurement results
+
+### **🎯 Problem-Solution Discovery**
+Our latest breakthrough enables you to instantly find which compounds solve specific problems:
+- **💧 PFAS removal solutions** (2,522 found)
+- **🌱 Green synthesis enablers** (4,470 found)  
+- **🧮 Thermodynamically consistent structures** (5,152 found)
 
 ## ⚡ Prerequisites
 

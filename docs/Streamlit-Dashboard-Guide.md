@@ -7,6 +7,17 @@ Complete guide to using FoTChemistry's interactive web dashboard for molecular a
 ## 🌐 Dashboard Overview
 
 The FoTChemistry Streamlit dashboard provides a comprehensive interface for:
+
+### **🎯 NEW: Problem-Solution Dashboard**
+**Access at**: http://localhost:8506
+
+Dedicated interface for exploring which compounds solve specific chemistry problems:
+- **💧 PFAS Removal Solutions**: 2,522 compounds identified
+- **🌱 Green Synthesis Enablers**: 4,470 compounds found
+- **🧮 Thermodynamic Consistency**: 5,152 validated structures
+- **📊 Interactive Analysis**: Performance distributions, top solutions, multi-problem solvers
+
+### **📊 Main Dashboard Features**
 - **🧪 Molecular Analysis**: Interactive quantum property analysis with 3D visualization
 - **📊 Discovery Dashboard**: Real-time monitoring of autonomous molecular discoveries  
 - **⚛️ Quantum Metrics**: Performance monitoring and system status

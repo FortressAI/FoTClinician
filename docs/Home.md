@@ -124,11 +124,13 @@ FoTChemistry Architecture
 ## 📚 Documentation Index
 
 ### 🏃‍♂️ Quick Start
+- **[Complete User Guide](COMPLETE_USER_GUIDE)** - **🎯 NEW**: Dual-dashboard system guide
 - **[Installation Guide](Installation-Guide)** - Complete setup instructions
 - **[Quick Start Tutorial](Quick-Start-Tutorial)** - Get up and running in 10 minutes
 - **[Streamlit Dashboard Guide](Streamlit-Dashboard-Guide)** - Using the web interface
 
 ### 🔬 Technical Documentation
+- **[Problem-Solution Ontology](Problem-Solution-Ontology)** - **🎯 NEW**: Find compounds that solve problems
 - **[Quantum vQbit Engine](Quantum-vQbit-Engine)** - Deep dive into quantum mechanics
 - **[Molecular Discovery Pipeline](Molecular-Discovery-Pipeline)** - How molecules are discovered
 - **[Knowledge Graph Schema](Knowledge-Graph-Schema)** - Neo4j database structure

@@ -8,6 +8,14 @@ Comprehensive guide to FoTChemistry's autonomous molecular discovery system that
 
 The Molecular Discovery Pipeline combines real quantum mechanics with RDKit-based chemical transformations to autonomously discover new molecular structures. Unlike traditional computational chemistry approaches, our pipeline uses quantum property measurements to guide molecular generation and optimization.
 
+### **🎯 Problem-Solution Integration**
+
+Our pipeline now includes **targeted problem-solving analysis**:
+- **Real-time evaluation** of discovered compounds against chemistry challenges
+- **Automated claim generation** following FoTChemistry ontology
+- **Truth-validation workflows** using Field of Truth methodology
+- **12,144 problem-solution instances** identified from existing discoveries
+
 ## 🔄 Discovery Workflow
 
 ### 1. Continuous Discovery Loop

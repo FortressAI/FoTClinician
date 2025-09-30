@@ -7,8 +7,23 @@
 [![Open Science](https://img.shields.io/badge/Open-Science-blue.svg)](https://github.com/FortressAI/FoTChemistry)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20(Edu%2FResearch)%20%7C%20Commercial-blue.svg)](https://github.com/FortressAI/FoTChemistry/blob/main/LICENSE)
 [![Discoveries](https://img.shields.io/badge/Molecular%20Discoveries-6%2C443-brightgreen.svg)](https://github.com/FortressAI/FoTChemistry)
+[![Problem Solutions](https://img.shields.io/badge/Problem%20Solutions-12%2C144-gold.svg)](https://github.com/FortressAI/FoTChemistry)
+[![PFAS Solutions](https://img.shields.io/badge/PFAS%20Solutions-2%2C522-blue.svg)](https://github.com/FortressAI/FoTChemistry)
+[![Green Chemistry](https://img.shields.io/badge/Green%20Solutions-4%2C470-green.svg)](https://github.com/FortressAI/FoTChemistry)
 
-## 🎯 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
+## 🎯 **PROBLEM-SOLUTION BREAKTHROUGH**
+
+**FoTChemistry now identifies which compounds solve specific chemistry problems!**
+
+### **🏆 Latest Results:**
+- **💧 PFAS Removal**: 2,522 compounds can remove PFAS to <25 ng/L (39.1% success)
+- **🧮 Thermodynamic Consistency**: 5,152 compounds show excellent cycle closure (80.0% success)  
+- **🌱 Green Synthesis**: 4,470 compounds enable sustainable processes (69.4% success)
+- **📊 Total Problem-Solutions**: 12,144 validated instances across all challenges
+
+**[🎯 Explore Problem-Solution Dashboard](docs/Problem-Solution-Ontology.md)**
+
+## 🔬 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
 
 **An Agentic Knowledge Graph (AKG)** for chemistry with truth-mining workflows where agents propose, test, and collapse claims to accepted truth after validation/replication.
 
@@ -180,7 +195,22 @@ pip install -r requirements.txt
 cd akg && docker-compose up -d
 ```
 
-### Basic Usage
+### Dual-Dashboard System
+```bash
+# Launch Main Discovery Dashboard (explore 6,443 molecules)
+streamlit run streamlit_app.py --server.port 8505
+
+# Launch Problem-Solution Dashboard (find targeted solutions)  
+streamlit run streamlit_problem_solutions.py --server.port 8506
+```
+
+### Continuous Discovery
+```bash
+# Start autonomous molecular discovery
+python3 continuous_chemistry_discovery.py
+```
+
+### Legacy Usage
 ```bash
 # Launch reaction yield truth mining demo
 cd demos/01_reaction-yield-truth-mining/

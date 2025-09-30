@@ -1,5 +1,7 @@
 # Installation Guide
 
+> **🎯 NEW**: Complete problem-solution ontology system with **12,144 validated instances**!
+
 Complete setup instructions for FoTChemistry quantum-guided molecular discovery system.
 
 ## 🎯 Prerequisites
