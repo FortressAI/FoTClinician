@@ -1,0 +1,332 @@
+# SPARQL Queries for FoT-Chemistry Problem-Solution Matching
+# Identifies which of the 6,443 discoveries solve specific problems
+
+PREFIX fct: <https://safeaicoin.org/fotchem#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# =====================================
+# 1. PFAS REMOVAL WINNERS
+# =====================================
+# Find compounds that effectively remove PFAS to <10 ng/L
+# WITH sufficient replications and acceptable uncertainty
+
+# QUERY: PFAS_Winners
+SELECT ?compound ?compoundId ?smiles ?residual ?uncertainty ?replications
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem fct:PFASRemovalProblem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement ;
+         fct:hasCollapsePolicy ?policy .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?measurement fct:hasMetric fct:residualPFAS_ngL ;
+               fct:value ?residual ;
+               fct:uncertainty ?uncertainty .
+  
+  ?policy fct:replicationsCount ?replications .
+  
+  # Collapse policy criteria
+  FILTER (?residual <= 10.0 && ?uncertainty <= 1.0 && ?replications >= 2)
+}
+ORDER BY ?residual
+
+# =====================================
+# 2. CO2 ELECTROCATALYST CHAMPIONS
+# =====================================
+# Find compounds with high CO2→CO conversion efficiency
+# WITH toolchain agreement and replication validation
+
+# QUERY: CO2_Champions
+SELECT ?compound ?compoundId ?smiles ?faradaicEfficiency ?toolchainDelta ?uncertainty
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem fct:CO2ElectroReductionProblem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement1 ;
+         fct:hasMeasurement ?measurement2 ;
+         fct:hasCollapsePolicy ?policy .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?measurement1 fct:hasMetric fct:FE_CO_50mAcm2 ;
+                fct:value ?faradaicEfficiency ;
+                fct:uncertainty ?uncertainty .
+  
+  ?measurement2 fct:hasMetric fct:toolchain_dFE ;
+                fct:value ?toolchainDelta .
+  
+  ?policy fct:replicationsCount ?replications .
+  
+  # Collapse policy criteria
+  FILTER (?faradaicEfficiency >= 0.85 && ?toolchainDelta <= 0.05 && 
+          ?uncertainty <= 0.25 && ?replications >= 2)
+}
+ORDER BY DESC(?faradaicEfficiency)
+
+# =====================================
+# 3. THERMODYNAMIC CONSISTENCY MASTERS
+# =====================================
+# Find compounds with excellent pKa/logP cycle closure
+# Proving computational thermodynamic consistency
+
+# QUERY: Thermodynamic_Masters
+SELECT ?compound ?compoundId ?smiles ?cycleClosure ?uncertainty
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem fct:PKaLogPConsistencyProblem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?measurement fct:hasMetric fct:cycleClosure_kcal_per_mol ;
+               fct:value ?cycleClosure ;
+               fct:uncertainty ?uncertainty .
+  
+  # Collapse policy criteria
+  FILTER (?cycleClosure <= 0.3 && ?uncertainty <= 0.15)
+}
+ORDER BY ?cycleClosure
+
+# =====================================
+# 4. GREEN CHEMISTRY INNOVATORS
+# =====================================
+# Find compounds enabling sustainable synthesis
+# WITH significant PMI and E-Factor reductions
+
+# QUERY: Green_Innovators
+SELECT ?compound ?compoundId ?smiles ?pmiReduction ?efactorReduction ?uncertainty
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem fct:GreenSynthesisProblem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement1 ;
+         fct:hasMeasurement ?measurement2 .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?measurement1 fct:hasMetric fct:PMI_Reduction ;
+                fct:value ?pmiReduction ;
+                fct:uncertainty ?uncertainty .
+  
+  ?measurement2 fct:hasMetric fct:EFactor_Reduction ;
+                fct:value ?efactorReduction .
+  
+  # Collapse policy criteria
+  FILTER (?pmiReduction >= 0.5 && ?efactorReduction >= 0.5 && ?uncertainty <= 0.2)
+}
+ORDER BY DESC(?pmiReduction)
+
+# =====================================
+# 5. NEAR-MISS TRIAGE
+# =====================================
+# Find compounds that almost meet criteria
+# These are candidates for optimization or replication
+
+# QUERY: Near_Miss_Triage
+SELECT ?problem ?compound ?compoundId ?smiles ?metric ?value ?uncertainty ?gap
+WHERE {
+  VALUES (?problem ?metric ?threshold ?maxValue) {
+    (fct:PFASRemovalProblem fct:residualPFAS_ngL 10.0 15.0)
+    (fct:CO2ElectroReductionProblem fct:FE_CO_50mAcm2 0.85 0.80)
+    (fct:PKaLogPConsistencyProblem fct:cycleClosure_kcal_per_mol 0.3 0.5)
+  }
+  
+  ?claim a fct:Claim ;
+         fct:addressesProblem ?problem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?measurement fct:hasMetric ?metric ;
+               fct:value ?value ;
+               fct:uncertainty ?uncertainty .
+  
+  # Near-miss criteria (different logic for each problem)
+  FILTER (
+    (?problem = fct:PFASRemovalProblem && ?value > 10.0 && ?value <= 15.0) ||
+    (?problem = fct:CO2ElectroReductionProblem && ?value >= 0.80 && ?value < 0.85) ||
+    (?problem = fct:PKaLogPConsistencyProblem && ?value > 0.3 && ?value <= 0.5)
+  )
+  
+  BIND(
+    IF(?problem = fct:PFASRemovalProblem, ?value - 10.0,
+    IF(?problem = fct:CO2ElectroReductionProblem, 0.85 - ?value,
+    IF(?problem = fct:PKaLogPConsistencyProblem, ?value - 0.3, 0))) AS ?gap
+  )
+}
+ORDER BY ?problem ?gap
+
+# =====================================
+# 6. REPLICATION STATUS CHECK
+# =====================================
+# Find claims that need more replications
+# To achieve truth collapse
+
+# QUERY: Replication_Needed
+SELECT ?claim ?problem ?compound ?compoundId ?currentReps ?neededReps ?verdict
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem ?problem ;
+         fct:aboutCompound ?compound ;
+         fct:hasCollapsePolicy ?policy .
+  
+  ?compound schema:identifier ?compoundId .
+  
+  ?policy fct:replicationsCount ?neededReps .
+  
+  # Optional: check if already has verdict
+  OPTIONAL { 
+    ?claim fct:resultsInVerdict ?v . 
+    ?v fct:ok ?verdict . 
+  }
+  
+  # Filter for claims without positive verdict or insufficient replications
+  FILTER (!BOUND(?verdict) || ?verdict = false)
+  
+  # Assume we track current replications (would come from actual data)
+  BIND(0 AS ?currentReps)  # This would be replaced with actual replication count
+}
+ORDER BY ?problem ?neededReps
+
+# =====================================
+# 7. VIRTUE VECTOR ANALYSIS
+# =====================================
+# Find compounds with highest virtue scores
+# Combining problem-solving with quality metrics
+
+# QUERY: Virtue_Leaders
+SELECT ?compound ?compoundId ?smiles ?problem ?honesty ?prudence ?temperance ?beneficence ?virtueSum
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem ?problem ;
+         fct:aboutCompound ?compound ;
+         fct:hasVirtueVector ?virtue .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?virtue fct:honesty ?honesty ;
+          fct:prudence ?prudence ;
+          fct:temperance ?temperance ;
+          fct:beneficence ?beneficence .
+  
+  BIND(?honesty + ?prudence + ?temperance + ?beneficence AS ?virtueSum)
+  
+  # Only include compounds that meet at least one problem's basic criteria
+  FILTER EXISTS {
+    ?claim fct:hasMeasurement ?measurement .
+    ?measurement fct:value ?value .
+    # This would be expanded with actual threshold checks
+  }
+}
+ORDER BY DESC(?virtueSum)
+
+# =====================================
+# 8. MULTI-PROBLEM SOLUTIONS
+# =====================================
+# Find compounds that solve multiple problems
+# True multi-functional discoveries
+
+# QUERY: Multi_Problem_Solutions
+SELECT ?compound ?compoundId ?smiles (GROUP_CONCAT(?problemName; separator=", ") AS ?solvedProblems) (COUNT(?problem) AS ?problemCount)
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem ?problem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement ;
+         fct:hasCollapsePolicy ?policy .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?problem rdfs:label ?problemName .
+  
+  # Check that claim meets basic threshold for the problem
+  # (This would be expanded with specific criteria for each problem type)
+  ?measurement fct:value ?value .
+  ?policy fct:replicationsCount ?reps .
+  FILTER (?reps >= 1)  # Basic quality filter
+}
+GROUP BY ?compound ?compoundId ?smiles
+HAVING (COUNT(?problem) > 1)
+ORDER BY DESC(?problemCount)
+
+# =====================================
+# 9. PROBLEM SUMMARY STATISTICS
+# =====================================
+# Get overview statistics for each problem
+
+# QUERY: Problem_Statistics
+SELECT ?problem ?problemName 
+       (COUNT(?claim) AS ?totalClaims) 
+       (COUNT(?validClaim) AS ?validClaims)
+       (AVG(?value) AS ?avgPerformance)
+       (MIN(?value) AS ?bestPerformance)
+       (MAX(?value) AS ?worstPerformance)
+WHERE {
+  ?problem a fct:Problem ;
+           rdfs:label ?problemName .
+  
+  ?claim fct:addressesProblem ?problem ;
+         fct:hasMeasurement ?measurement .
+  
+  ?measurement fct:value ?value .
+  
+  # Mark valid claims (this is simplified - would use actual collapse criteria)
+  OPTIONAL {
+    ?claim fct:resultsInVerdict ?verdict .
+    ?verdict fct:ok true .
+    BIND(?claim AS ?validClaim)
+  }
+}
+GROUP BY ?problem ?problemName
+ORDER BY ?problemName
+
+# =====================================
+# 10. EXPORT FOR STREAMLIT
+# =====================================
+# Comprehensive export query for dashboard visualization
+
+# QUERY: Streamlit_Export
+SELECT ?compoundId ?smiles ?problem ?problemName ?metric ?value ?unit ?uncertainty 
+       ?honesty ?prudence ?temperance ?beneficence ?verdict
+WHERE {
+  ?claim a fct:Claim ;
+         fct:addressesProblem ?problem ;
+         fct:aboutCompound ?compound ;
+         fct:hasMeasurement ?measurement .
+  
+  ?compound schema:identifier ?compoundId ;
+            schema:smiles ?smiles .
+  
+  ?problem rdfs:label ?problemName .
+  
+  ?measurement fct:hasMetric ?metric ;
+               fct:value ?value ;
+               fct:unit ?unit ;
+               fct:uncertainty ?uncertainty .
+  
+  OPTIONAL {
+    ?claim fct:hasVirtueVector ?virtue .
+    ?virtue fct:honesty ?honesty ;
+            fct:prudence ?prudence ;
+            fct:temperance ?temperance ;
+            fct:beneficence ?beneficence .
+  }
+  
+  OPTIONAL {
+    ?claim fct:resultsInVerdict ?v .
+    ?v fct:ok ?verdict .
+  }
+}
+ORDER BY ?compoundId ?problem

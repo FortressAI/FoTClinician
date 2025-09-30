@@ -1,0 +1,517 @@
+@prefix fct:   <https://safeaicoin.org/fotchem#> .
+@prefix fot:   <https://safeaicoin.org/fot#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix schema:<http://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+############################
+# FoT-Chemistry Ontology
+# Problem-Solution Framework for 6,443 Molecular Discoveries
+############################
+
+<https://safeaicoin.org/fotchem> a owl:Ontology ;
+    rdfs:label "FoT-Chemistry Problem-Solution Ontology" ;
+    rdfs:comment "Ontology for identifying which molecular discoveries solve specific chemistry problems" ;
+    owl:versionInfo "1.0" .
+
+############################
+# Core classes
+############################
+
+fct:Problem            a owl:Class ;
+    rdfs:label "Chemistry Problem" ;
+    rdfs:comment "A specific chemistry challenge that requires solution" .
+
+fct:Metric             a owl:Class ;
+    rdfs:label "Performance Metric" ;
+    rdfs:comment "Quantitative measure for evaluating problem solutions" .
+
+fct:Threshold          a owl:Class ;
+    rdfs:label "Success Threshold" ;
+    rdfs:comment "Minimum performance threshold for problem solution" .
+
+fct:Compound           a owl:Class ;
+    rdfs:label "Chemical Compound" ;
+    rdfs:comment "A discovered molecular structure" .
+
+fct:Descriptor         a owl:Class ;
+    rdfs:label "Molecular Descriptor" ;
+    rdfs:comment "Computed property of a molecular structure" .
+
+fct:Measurement        a owl:Class ;
+    rdfs:label "Property Measurement" ;
+    rdfs:comment "Quantitative measurement of compound property" .
+
+fct:AssayProxy         a owl:Class ;
+    rdfs:label "Assay Proxy" ;
+    rdfs:comment "Safe computational proxy for experimental measurement" .
+
+fct:Toolchain          a owl:Class ;
+    rdfs:label "Computational Toolchain" ;
+    rdfs:comment "Software tools used for property prediction" .
+
+fct:Claim              a owl:Class ;
+    rdfs:label "Problem-Solution Claim" ;
+    rdfs:comment "Claim that a compound solves a specific problem" .
+
+fct:Evidence           a owl:Class ;
+    rdfs:label "Supporting Evidence" ;
+    rdfs:comment "Evidence supporting a problem-solution claim" .
+
+fct:Replication        a owl:Class ;
+    rdfs:label "Replication Study" ;
+    rdfs:comment "Independent verification of claim" .
+
+fct:CollapsePolicy     a owl:Class ;
+    rdfs:label "Truth Collapse Policy" ;
+    rdfs:comment "Rules for accepting claims as truth" .
+
+fct:Verdict            a owl:Class ;
+    rdfs:label "Truth Verdict" ;
+    rdfs:comment "Final determination of claim validity" .
+
+fct:VirtueVector       a owl:Class ;
+    rdfs:label "Virtue Vector" ;
+    rdfs:comment "Multi-dimensional quality assessment" .
+
+fct:EthicsConstraint   a owl:Class ;
+    rdfs:label "Ethics Constraint" ;
+    rdfs:comment "Safety and ethics validation" .
+
+fct:Advice             a owl:Class ;
+    rdfs:label "Green Chemistry Advice" ;
+    rdfs:comment "Recommendation for sustainable synthesis" .
+
+############################
+# Properties
+############################
+
+# Graph structure
+fct:addressesProblem   a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:Problem ;
+    rdfs:label "addresses problem" ;
+    rdfs:comment "Links claim to the problem it addresses" .
+
+fct:aboutCompound      a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:Compound ;
+    rdfs:label "about compound" ;
+    rdfs:comment "Links claim to the compound being evaluated" .
+
+fct:hasMeasurement     a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:Measurement ;
+    rdfs:label "has measurement" ;
+    rdfs:comment "Links claim to supporting measurements" .
+
+fct:measuredByProxy    a owl:ObjectProperty ; 
+    rdfs:domain fct:Measurement ; 
+    rdfs:range fct:AssayProxy ;
+    rdfs:label "measured by proxy" ;
+    rdfs:comment "Computational method used for measurement" .
+
+fct:usesToolchain      a owl:ObjectProperty ; 
+    rdfs:domain fct:Measurement ; 
+    rdfs:range fct:Toolchain ;
+    rdfs:label "uses toolchain" ;
+    rdfs:comment "Software toolchain used for computation" .
+
+fct:hasMetric          a owl:ObjectProperty ; 
+    rdfs:domain fct:Measurement ; 
+    rdfs:range fct:Metric ;
+    rdfs:label "has metric" ;
+    rdfs:comment "Type of measurement metric" .
+
+fct:supportsClaim      a owl:ObjectProperty ; 
+    rdfs:domain fct:Evidence ; 
+    rdfs:range fct:Claim ;
+    rdfs:label "supports claim" ;
+    rdfs:comment "Evidence supporting the claim" .
+
+fct:hasEvidence        a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:Evidence ;
+    rdfs:label "has evidence" ;
+    rdfs:comment "Evidence backing this claim" .
+
+fct:hasCollapsePolicy  a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:CollapsePolicy ;
+    rdfs:label "has collapse policy" ;
+    rdfs:comment "Policy for truth determination" .
+
+fct:resultsInVerdict   a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:Verdict ;
+    rdfs:label "results in verdict" ;
+    rdfs:comment "Final truth determination" .
+
+fct:constrains         a owl:ObjectProperty ; 
+    rdfs:domain fct:EthicsConstraint ; 
+    rdfs:range fct:Claim ;
+    rdfs:label "constrains" ;
+    rdfs:comment "Ethics constraint on claim" .
+
+prov:wasGeneratedBy    a owl:ObjectProperty .
+prov:used              a owl:ObjectProperty .
+
+# Numeric / data properties
+fct:value              a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "numerical value" ;
+    rdfs:comment "Quantitative measurement value" .
+
+fct:unit               a owl:DatatypeProperty ; 
+    rdfs:range xsd:string ;
+    rdfs:label "measurement unit" ;
+    rdfs:comment "Unit of measurement" .
+
+fct:uncertainty        a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "measurement uncertainty" ;
+    rdfs:comment "Statistical uncertainty in measurement" .
+
+fct:replicationsCount  a owl:DatatypeProperty ; 
+    rdfs:range xsd:integer ;
+    rdfs:label "replications count" ;
+    rdfs:comment "Number of independent replications" .
+
+fct:toolchainDelta     a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "toolchain agreement" ;
+    rdfs:comment "Agreement between different computational methods" .
+
+fct:ok                 a owl:DatatypeProperty ; 
+    rdfs:range xsd:boolean ;
+    rdfs:label "verdict status" ;
+    rdfs:comment "Truth verdict boolean status" .
+
+# Virtue dimensions
+fct:hasVirtueVector    a owl:ObjectProperty ; 
+    rdfs:domain fct:Claim ; 
+    rdfs:range fct:VirtueVector ;
+    rdfs:label "has virtue vector" ;
+    rdfs:comment "Multi-dimensional quality assessment" .
+
+fct:honesty            a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "honesty score" ;
+    rdfs:comment "Transparency and accuracy of methods" .
+
+fct:prudence           a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "prudence score" ;
+    rdfs:comment "Conservative and validated approach" .
+
+fct:temperance         a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "temperance score" ;
+    rdfs:comment "Balanced and moderate claims" .
+
+fct:beneficence        a owl:DatatypeProperty ; 
+    rdfs:range xsd:double ;
+    rdfs:label "beneficence score" ;
+    rdfs:comment "Positive impact and benefit to society" .
+
+############################
+# Canonical Metrics (instances)
+############################
+
+# PFAS removal metrics
+fct:residualPFAS_ngL            a fct:Metric ; 
+    rdfs:label "Residual PFAS (ng/L)" ;
+    rdfs:comment "Remaining PFAS concentration after treatment" ;
+    fct:unit "ng/L" .
+
+# CO2 electrocatalysis metrics
+fct:FE_CO_50mAcm2               a fct:Metric ; 
+    rdfs:label "Faradaic Efficiency to CO at 50 mA/cm^2" ;
+    rdfs:comment "Selectivity for CO production in electroreduction" ;
+    fct:unit "fraction" .
+
+fct:toolchain_dFE               a fct:Metric ; 
+    rdfs:label "Toolchain Δ(FE_CO)" ;
+    rdfs:comment "Agreement between different computational predictions" ;
+    fct:unit "fraction" .
+
+# pKa/logP thermodynamic cycle metrics
+fct:cycleClosure_kcal_per_mol   a fct:Metric ; 
+    rdfs:label "Thermodynamic cycle closure (kcal/mol)" ;
+    rdfs:comment "Closure error in thermodynamic cycles" ;
+    fct:unit "kcal/mol" .
+
+# Green chemistry metrics
+fct:PMI_Reduction               a fct:Metric ; 
+    rdfs:label "PMI reduction fraction" ;
+    rdfs:comment "Process Mass Intensity improvement" ;
+    fct:unit "fraction" .
+
+fct:EFactor_Reduction           a fct:Metric ; 
+    rdfs:label "E-Factor reduction fraction" ;
+    rdfs:comment "Environmental factor improvement" ;
+    fct:unit "fraction" .
+
+# Replication integrity metrics
+fct:verificationMatch           a fct:Metric ; 
+    rdfs:label "Verification matches reference" ;
+    rdfs:comment "Independent replication validates original" ;
+    fct:unit "boolean" .
+
+fct:stdUncertainty              a fct:Metric ; 
+    rdfs:label "Standard uncertainty" ;
+    rdfs:comment "Statistical uncertainty in measurements" ;
+    fct:unit "dimensionless" .
+
+############################
+# Problem Definitions with Collapse Policies
+############################
+
+# PFAS removal problem
+fct:PFASRemovalProblem a fct:Problem ;
+    rdfs:label "PFAS removal to <10 ng/L" ;
+    rdfs:comment "Remove PFAS contaminants to below 10 ng/L threshold" ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ;
+        rdfs:comment "Accept if predicted/measured residual <= 10 ng/L, >=2 replications, uncertainty <= 1.0 ng/L" ;
+        fct:hasMetric fct:residualPFAS_ngL ;
+        fct:value 10.0 ; 
+        fct:unit "ng/L" ;
+        fct:replicationsCount 2 ;
+        fct:uncertainty 1.0
+    ] .
+
+# CO2 electrocatalyst problem
+fct:CO2ElectroReductionProblem a fct:Problem ;
+    rdfs:label "CO2→CO electrocatalyst FE@50 mA/cm^2 ≥ 0.85" ;
+    rdfs:comment "Efficient CO2 electroreduction to CO with high selectivity" ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ;
+        rdfs:comment "Accept if FE >= 85%, toolchain agreement <= 5%, uncertainty <= 25%" ;
+        fct:hasMetric fct:FE_CO_50mAcm2 ; 
+        fct:value 0.85 ; 
+        fct:unit "fraction" ;
+        fct:hasMetric fct:toolchain_dFE ; 
+        fct:value 0.05 ; 
+        fct:unit "Δ fraction" ;
+        fct:replicationsCount 2 ; 
+        fct:uncertainty 0.25
+    ] .
+
+# pKa/logP thermodynamic consistency problem
+fct:PKaLogPConsistencyProblem a fct:Problem ;
+    rdfs:label "Thermo cycles close ≤ 0.3 kcal/mol" ;
+    rdfs:comment "Thermodynamic cycle closure within acceptable error" ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ;
+        rdfs:comment "Accept if cycle closure <= 0.3 kcal/mol, uncertainty <= 0.15" ;
+        fct:hasMetric fct:cycleClosure_kcal_per_mol ; 
+        fct:value 0.3 ; 
+        fct:unit "kcal/mol" ;
+        fct:replicationsCount 1 ; 
+        fct:uncertainty 0.15
+    ] .
+
+# Green chemistry synthesis problem
+fct:GreenSynthesisProblem a fct:Problem ;
+    rdfs:label "Reduce PMI & E-Factor by ≥50%" ;
+    rdfs:comment "Sustainable synthesis with significant environmental improvement" ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ;
+        rdfs:comment "Accept if both PMI and E-Factor reduced by >= 50%" ;
+        fct:hasMetric fct:PMI_Reduction ; 
+        fct:value 0.5 ; 
+        fct:unit "fraction" ;
+        fct:hasMetric fct:EFactor_Reduction ; 
+        fct:value 0.5 ; 
+        fct:unit "fraction" ;
+        fct:replicationsCount 1 ; 
+        fct:uncertainty 0.2
+    ] .
+
+# Replication integrity problem
+fct:ReplicationChallengeProblem a fct:Problem ;
+    rdfs:label "Open replication matches reference" ;
+    rdfs:comment "Independent verification confirms original results" ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ;
+        rdfs:comment "Accept if independent replication matches within tolerance" ;
+        fct:hasMetric fct:verificationMatch ; 
+        fct:value 1.0 ; 
+        fct:unit "bool" ;
+        fct:replicationsCount 1 ; 
+        fct:uncertainty 0.05
+    ] .
+
+############################
+# SHACL Validation Shapes
+############################
+
+# Generic Claim validation
+fct:ClaimShape a sh:NodeShape ;
+    sh:targetClass fct:Claim ;
+    sh:property [ 
+        sh:path fct:aboutCompound ; 
+        sh:minCount 1 ;
+        sh:message "Claim must reference a compound"
+    ] ;
+    sh:property [ 
+        sh:path fct:addressesProblem ; 
+        sh:minCount 1 ;
+        sh:message "Claim must address a specific problem"
+    ] ;
+    sh:property [ 
+        sh:path fct:hasMeasurement ; 
+        sh:minCount 1 ;
+        sh:message "Claim must have supporting measurements"
+    ] ;
+    sh:property [ 
+        sh:path fct:hasEvidence ; 
+        sh:minCount 1 ;
+        sh:message "Claim must have supporting evidence"
+    ] ;
+    sh:property [ 
+        sh:path fct:hasCollapsePolicy ; 
+        sh:minCount 1 ;
+        sh:message "Claim must have collapse policy"
+    ] .
+
+# PFAS claim validation
+fct:PFASClaimShape a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX fct: <https://safeaicoin.org/fotchem#>
+            SELECT ?this WHERE {
+                ?this a fct:Claim ; 
+                      fct:addressesProblem fct:PFASRemovalProblem ;
+                      fct:hasMeasurement ?m .
+                ?m fct:hasMetric fct:residualPFAS_ngL ; 
+                   fct:value ?v ; 
+                   fct:uncertainty ?u .
+                ?this fct:hasCollapsePolicy ?cp .
+                ?cp fct:replicationsCount ?r .
+                FILTER (?v <= 10.0 && ?u <= 1.0 && ?r >= 2)
+            }
+        """
+    ] ;
+    sh:message "PFAS claim does not meet collapse policy requirements." .
+
+# CO2 claim validation
+fct:CO2ClaimShape a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX fct: <https://safeaicoin.org/fotchem#>
+            SELECT ?this WHERE {
+                ?this a fct:Claim ; 
+                      fct:addressesProblem fct:CO2ElectroReductionProblem ;
+                      fct:hasMeasurement ?m .
+                ?m fct:hasMetric fct:FE_CO_50mAcm2 ; 
+                   fct:value ?fe .
+                ?m fct:hasMetric fct:toolchain_dFE ; 
+                   fct:value ?dfe .
+                ?m fct:uncertainty ?u .
+                ?this fct:hasCollapsePolicy ?cp . 
+                ?cp fct:replicationsCount ?r .
+                FILTER (?fe >= 0.85 && ?dfe <= 0.05 && ?u <= 0.25 && ?r >= 2)
+            }
+        """
+    ] ;
+    sh:message "CO2 claim does not meet collapse policy requirements." .
+
+# pKa/logP claim validation
+fct:PKaLogPClaimShape a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX fct: <https://safeaicoin.org/fotchem#>
+            SELECT ?this WHERE {
+                ?this a fct:Claim ; 
+                      fct:addressesProblem fct:PKaLogPConsistencyProblem ;
+                      fct:hasMeasurement ?m .
+                ?m fct:hasMetric fct:cycleClosure_kcal_per_mol ; 
+                   fct:value ?cc ; 
+                   fct:uncertainty ?u .
+                FILTER (?cc <= 0.3 && ?u <= 0.15)
+            }
+        """
+    ] ;
+    sh:message "pKa/logP cycle claim fails closure threshold." .
+
+# Green chemistry claim validation
+fct:GreenClaimShape a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX fct: <https://safeaicoin.org/fotchem#>
+            SELECT ?this WHERE {
+                ?this a fct:Claim ; 
+                      fct:addressesProblem fct:GreenSynthesisProblem ;
+                      fct:hasMeasurement ?m .
+                ?m fct:hasMetric fct:PMI_Reduction ; 
+                   fct:value ?pmi .
+                ?m fct:hasMetric fct:EFactor_Reduction ; 
+                   fct:value ?ef .
+                ?m fct:uncertainty ?u .
+                FILTER (?pmi >= 0.5 && ?ef >= 0.5 && ?u <= 0.2)
+            }
+        """
+    ] ;
+    sh:message "Green-chemistry advice claim does not meet reduction thresholds." .
+
+############################
+# Example Instance: PFAS Claim
+############################
+
+# Example compound
+fct:C_12345 a fct:Compound ;
+    schema:identifier "C_12345" ;
+    schema:smiles "C1=CC(=O)C=CC1F" ;
+    rdfs:label "Example Fluorinated Compound" .
+
+# Example toolchain
+fct:RDKitProxyV1 a fct:Toolchain ; 
+    rdfs:label "RDKit Proxy v1" ;
+    rdfs:comment "RDKit-based property prediction" .
+
+# Example assay proxy
+fct:AssayPFASProxyV1 a fct:AssayProxy ;
+    rdfs:label "PFAS Removal Assay Proxy v1" ;
+    rdfs:comment "Computational proxy for PFAS removal efficiency" .
+
+# Example measurement
+fct:M_abc a fct:Measurement ;
+    fct:hasMetric fct:residualPFAS_ngL ;
+    fct:value 8.2 ; 
+    fct:unit "ng/L" ;
+    fct:uncertainty 0.7 ;
+    fct:measuredByProxy fct:AssayPFASProxyV1 ;
+    fct:usesToolchain fct:RDKitProxyV1 .
+
+# Example claim
+fct:Claim_abc a fct:Claim ;
+    fct:aboutCompound fct:C_12345 ;
+    fct:addressesProblem fct:PFASRemovalProblem ;
+    fct:hasMeasurement fct:M_abc ;
+    fct:hasCollapsePolicy [
+        a fct:CollapsePolicy ; 
+        fct:replicationsCount 2 ; 
+        fct:uncertainty 1.0
+    ] ;
+    fct:hasVirtueVector [ 
+        a fct:VirtueVector ;
+        fct:honesty 0.88 ; 
+        fct:prudence 0.92 ; 
+        fct:temperance 0.80 ; 
+        fct:beneficence 0.90 
+    ] ;
+    fct:hasEvidence [ 
+        a fct:Evidence ; 
+        prov:used fct:RDKitProxyV1 ;
+        rdfs:comment "Computational prediction using validated proxy methods"
+    ] .
