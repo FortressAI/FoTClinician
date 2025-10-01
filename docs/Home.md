@@ -14,6 +14,12 @@
 
 **This transforms FoTChemistry from discovery to targeted solution delivery.**
 
+### **🌐 Dual-Dashboard System Now Live**
+- **📊 Main Discovery Dashboard**: Explore all 6,443 molecular discoveries
+- **🎯 Problem-Solution Dashboard**: Find compounds that solve specific problems
+- **☁️ Cloud Deployment**: Both dashboards available globally via Streamlit Cloud
+- **📱 Mobile Ready**: Responsive design works on all devices
+
 [📊 View Full Achievement Report](../OVERNIGHT_DISCOVERY_ACHIEVEMENT_REPORT.md)
 
 ![FoTChemistry Banner](https://img.shields.io/badge/FoTChemistry-Quantum%20Discovery-blue?style=for-the-badge)
@@ -128,6 +134,7 @@ FoTChemistry Architecture
 - **[Installation Guide](Installation-Guide)** - Complete setup instructions
 - **[Quick Start Tutorial](Quick-Start-Tutorial)** - Get up and running in 10 minutes
 - **[Streamlit Dashboard Guide](Streamlit-Dashboard-Guide)** - Using the web interface
+- **[Problem-Solution Breakthrough](../PROBLEM_SOLUTION_BREAKTHROUGH_POST)** - **🎯 NEW**: Detailed announcement
 
 ### 🔬 Technical Documentation
 - **[Problem-Solution Ontology](Problem-Solution-Ontology)** - **🎯 NEW**: Find compounds that solve problems

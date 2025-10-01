@@ -63,7 +63,10 @@ def main():
     
     **Identifying which of our 6,443 molecular discoveries solve real chemistry problems**
     
-    Using Field of Truth methodology with quantum-guided analysis to match compounds to solutions.
+    > **📊 COMPANION**: [Main Discovery Dashboard](http://localhost:8505) - Explore individual molecular properties  
+    > **🎯 This Dashboard**: Find targeted solutions for chemistry challenges
+    > 
+    > **12,144 problem-solution instances** identified using Field of Truth methodology with quantum-guided analysis.
     """)
     
     # Load data

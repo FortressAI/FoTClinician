@@ -21,7 +21,12 @@
 - **🌱 Green Synthesis**: 4,470 compounds enable sustainable processes (69.4% success)
 - **📊 Total Problem-Solutions**: 12,144 validated instances across all challenges
 
-**[🎯 Explore Problem-Solution Dashboard](docs/Problem-Solution-Ontology.md)**
+### **🌐 Dual-Dashboard System**
+- **📊 Main Discovery Dashboard**: Explore 6,443 molecular discoveries (Port 8505)
+- **🎯 Problem-Solution Dashboard**: Find targeted solutions for chemistry challenges (Port 8506)
+- **☁️ Cloud Deployment**: Both dashboards available on Streamlit Cloud
+
+**[🎯 Explore Problem-Solution Dashboard](docs/Problem-Solution-Ontology.md) | [📊 View Breakthrough Posts](PROBLEM_SOLUTION_BREAKTHROUGH_POST.md)**
 
 ## 🔬 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
 
@@ -202,6 +207,8 @@ streamlit run streamlit_app.py --server.port 8505
 
 # Launch Problem-Solution Dashboard (find targeted solutions)  
 streamlit run streamlit_problem_solutions.py --server.port 8506
+
+# Both dashboards work in cloud deployment with automatic data fallbacks
 ```
 
 ### Continuous Discovery

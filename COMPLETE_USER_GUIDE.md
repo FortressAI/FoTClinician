@@ -171,7 +171,8 @@ Both dashboards work in cloud environments with static data:
 ### **For Problem-Solution Dashboard:**
 - Uses `problem_solution_analysis/complete_analysis.json` (local)
 - Falls back to `cloud_problem_solution_data.json` (cloud)
-- Optimized with top 200 solutions per problem
+- Secondary fallback to `results/problem_solution_summary.json` (cloud)
+- Optimized with complete solution sets for comprehensive analysis
 
 ### **Deployment Commands:**
 ```bash

@@ -570,8 +570,11 @@ def main():
     st.markdown("""
     **Quantum-guided molecular discovery system** • Real chemistry, no duplicates • Field of Truth methodology
     
-    > **🎯 NEW**: [Problem-Solution Dashboard](http://localhost:8506) - Find compounds that solve specific chemistry problems!  
-    > **12,144 problem-solution instances** identified from our discoveries.
+    > **🎯 BREAKTHROUGH**: [Problem-Solution Dashboard](http://localhost:8506) - Find compounds that solve specific chemistry problems!  
+    > **12,144 problem-solution instances** identified across PFAS removal, green synthesis, and thermodynamic validation.
+    > 
+    > **📊 This Dashboard**: Explore individual molecular discoveries and properties  
+    > **🎯 Problem Dashboard**: Find targeted solutions for chemistry challenges
     """)
     
     # Sidebar
