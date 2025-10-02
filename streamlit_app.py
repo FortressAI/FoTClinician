@@ -76,7 +76,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-@st.cache_data
+@st.cache_data(ttl=60, show_spinner="Loading all 6,443 molecules...")  # Cache for 60 seconds only
 def load_discovery_data():
     """Load discovery data with cloud/local detection and fallback options."""
     
@@ -612,6 +612,11 @@ def main():
             st.cache_data.clear()
             st.success("✅ Cache cleared!")
     
+    # Add refresh button
+    if st.button("🔄 Force Refresh Data", help="Clear cache and reload all molecules"):
+        st.cache_data.clear()
+        st.rerun()
+    
     # Load discovery data
     discovery_data = load_discovery_data()
     
@@ -622,6 +627,10 @@ def main():
     # Statistics overview
     summary = discovery_data.get('discovery_summary', {})
     discoveries = discovery_data.get('discoveries', [])
+    
+    # DEBUG: Show data loading details
+    st.info(f"🔍 DEBUG: Loaded {len(discoveries)} molecules from data structure")
+    st.info(f"📊 Summary claims: {summary.get('total_discoveries', 'Unknown')} total discoveries")
     
     # Calculate real-time statistics from data
     total_molecules = len(discoveries)
