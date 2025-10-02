@@ -61,12 +61,13 @@ def main():
     st.markdown("""
     # 🎯 FoTChemistry Problem-Solution Dashboard
     
-    **Identifying which of our 6,443 molecular discoveries solve real chemistry problems**
+    **Analyzing molecular candidates against specific chemistry challenges**
     
-    > **📊 COMPANION**: [Main Discovery Dashboard](http://localhost:8505) - Explore individual molecular properties  
-    > **🎯 This Dashboard**: Find targeted solutions for chemistry challenges
+    > **📊 COMPANION**: [Main Discovery Dashboard](https://fotchemistry.streamlit.app/) - Explore molecular generation and validation  
+    > **🎯 This Dashboard**: Analyze compounds against chemistry challenges
+    > **🔬 Validation**: Run `python run_complete_validation.py` to validate novel discoveries
     > 
-    > **12,144 problem-solution instances** identified using Field of Truth methodology with quantum-guided analysis.
+    > **Computational analysis** of molecular candidates using Field of Truth methodology with quantum-guided scoring.
     """)
     
     # Load data

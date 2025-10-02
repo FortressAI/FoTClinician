@@ -566,15 +566,18 @@ def display_molecule_detail(molecule):
             st.markdown(create_molecule_placeholder(smiles, "3D Structure", 400, 300), unsafe_allow_html=True)
 
 def main():
-    st.title("🧬 FoTChemistry Discovery Dashboard")
+    st.title("🧬 FoTChemistry Validation Dashboard")
     st.markdown("""
-    **Quantum-guided molecular discovery system** • Real chemistry, no duplicates • Field of Truth methodology
+    **Quantum-guided molecular validation platform** • Rigorous screening for real-world impact • Field of Truth methodology
     
-    > **🎯 BREAKTHROUGH**: [Problem-Solution Dashboard](http://localhost:8506) - Find compounds that solve specific chemistry problems!  
-    > **12,144 problem-solution instances** identified across PFAS removal, green synthesis, and thermodynamic validation.
+    > **🔬 VALIDATION BREAKTHROUGH**: Transform generated candidates into validated discoveries!  
+    > **Complete validation system** screens for novelty, safety, synthetic accessibility, and public benefit.
     > 
-    > **📊 This Dashboard**: Explore individual molecular discoveries and properties  
-    > **🎯 Problem Dashboard**: Find targeted solutions for chemistry challenges
+    > **📊 This Dashboard**: Explore molecular candidates and validation workflow  
+    > **🎯 Problem Dashboard**: [Chemistry Challenge Analysis](https://fotchemistry-solutions.streamlit.app/)  
+    > **🔬 Run Validation**: `python run_complete_validation.py` to validate overnight discoveries
+    > 
+    > **🌍 Public Benefit Focus**: Prioritizing compounds that help healthcare, environment, and education
     """)
     
     # Sidebar
