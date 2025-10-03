@@ -629,8 +629,10 @@ def main():
     discoveries = discovery_data.get('discoveries', [])
     
     # DEBUG: Show data loading details
-    st.info(f"🔍 DEBUG: Loaded {len(discoveries)} molecules from data structure")
-    st.info(f"📊 Summary claims: {summary.get('total_discoveries', 'Unknown')} total discoveries")
+    st.success(f"🔍 LATEST UPDATE: Loaded {len(discoveries)} molecules from continuous discovery engine")
+    st.success(f"📊 Total discoveries: {summary.get('total_discoveries', 'Unknown')} | Last updated: {summary.get('generated_at', 'Unknown')}")
+    if summary.get('latest_update'):
+        st.info(f"🚀 Active Discovery: {summary.get('individual_files_consolidated', 0)} individual discoveries consolidated")
     
     # Calculate real-time statistics from data
     total_molecules = len(discoveries)

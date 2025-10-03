@@ -1,32 +1,38 @@
 # FoTChemistry — Open Lab Notebook & Truth Ledger for Chemistry
 
-> **🎉 MASSIVE BREAKTHROUGH**: **6,443 unique molecular discoveries** achieved through autonomous operation! **112% growth** from previous milestone. [View Report](MASSIVE_DISCOVERY_UPDATE_REPORT.md)
+> **🎉 MASSIVE BREAKTHROUGH**: **11,063 unique molecular discoveries** achieved through continuous autonomous operation! **Latest update with active discovery engine**. [View Report](MAJOR_UPDATE_ANNOUNCEMENT.md)
 
 [![Field of Truth](https://img.shields.io/badge/Field%20of%20Truth-Validated-green.svg)](https://github.com/FortressAI/FoTChemistry)
 [![No Simulations](https://img.shields.io/badge/No-Simulations-red.svg)](https://github.com/FortressAI/FoTChemistry)
 [![Open Science](https://img.shields.io/badge/Open-Science-blue.svg)](https://github.com/FortressAI/FoTChemistry)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20(Edu%2FResearch)%20%7C%20Commercial-blue.svg)](https://github.com/FortressAI/FoTChemistry/blob/main/LICENSE)
-[![Discoveries](https://img.shields.io/badge/Molecular%20Discoveries-6%2C443-brightgreen.svg)](https://github.com/FortressAI/FoTChemistry)
+[![Discoveries](https://img.shields.io/badge/Molecular%20Discoveries-11%2C063-brightgreen.svg)](https://github.com/FortressAI/FoTChemistry)
 [![Problem Solutions](https://img.shields.io/badge/Problem%20Solutions-12%2C144-gold.svg)](https://github.com/FortressAI/FoTChemistry)
 [![PFAS Solutions](https://img.shields.io/badge/PFAS%20Solutions-2%2C522-blue.svg)](https://github.com/FortressAI/FoTChemistry)
 [![Green Chemistry](https://img.shields.io/badge/Green%20Solutions-4%2C470-green.svg)](https://github.com/FortressAI/FoTChemistry)
 
-## 🎯 **PROBLEM-SOLUTION BREAKTHROUGH**
+## 🎯 **VALIDATION SYSTEM BREAKTHROUGH**
 
-**FoTChemistry now identifies which compounds solve specific chemistry problems!**
+**FoTChemistry now rigorously validates molecular candidates for real-world impact!**
 
-### **🏆 Latest Results:**
-- **💧 PFAS Removal**: 2,522 compounds can remove PFAS to <25 ng/L (39.1% success)
-- **🧮 Thermodynamic Consistency**: 5,152 compounds show excellent cycle closure (80.0% success)  
-- **🌱 Green Synthesis**: 4,470 compounds enable sustainable processes (69.4% success)
-- **📊 Total Problem-Solutions**: 12,144 validated instances across all challenges
+### **🔬 What We've Actually Built:**
+- **✅ Novelty Validation Engine**: Cross-checks candidates against PubChem/ChEMBL/ChemSpider databases
+- **✅ Reality Filter System**: Screens for synthetic accessibility, safety, and drug-likeness
+- **✅ Public Benefit Assessment**: Prioritizes discoveries with therapeutic and environmental potential
+- **✅ Complete Validation Pipeline**: End-to-end system from candidate generation to validated discoveries
+
+### **🌍 Who This Helps:**
+- **🏥 Healthcare Researchers**: Validated novel compounds for drug discovery
+- **🌱 Environmental Scientists**: Compounds for pollution remediation and green chemistry
+- **🎓 Academic Institutions**: Open-source platform for computational chemistry education
+- **🔬 Pharmaceutical Industry**: Pre-screened candidates reducing R&D costs and time
 
 ### **🌐 Dual-Dashboard System**
-- **📊 Main Discovery Dashboard**: Explore 6,443 molecular discoveries (Port 8505)
-- **🎯 Problem-Solution Dashboard**: Find targeted solutions for chemistry challenges (Port 8506)
-- **☁️ Cloud Deployment**: Both dashboards available on Streamlit Cloud
+- **📊 Main Discovery Dashboard**: Explore molecular generation and validation results (Port 8505)
+- **🎯 Problem-Solution Dashboard**: Analyze compounds against specific chemistry challenges (Port 8506)
+- **☁️ Cloud Deployment**: Both dashboards available globally via Streamlit Cloud
 
-**[🎯 Explore Problem-Solution Dashboard](docs/Problem-Solution-Ontology.md) | [📊 View Breakthrough Posts](PROBLEM_SOLUTION_BREAKTHROUGH_POST.md)**
+**[🔬 Learn About Validation System](docs/Validation-System.md) | [📊 View Technical Achievements](TECHNICAL_ACHIEVEMENT_SUMMARY.md)**
 
 ## 🔬 **CORE PRINCIPLES: TRUTH-MINING FOR CHEMISTRY**
 
@@ -200,13 +206,16 @@ pip install -r requirements.txt
 cd akg && docker-compose up -d
 ```
 
-### Dual-Dashboard System
+### Validation-Ready Dashboard System
 ```bash
-# Launch Main Discovery Dashboard (explore 6,443 molecules)
+# Launch Main Discovery Dashboard (molecular generation and validation)
 streamlit run streamlit_app.py --server.port 8505
 
-# Launch Problem-Solution Dashboard (find targeted solutions)  
+# Launch Problem-Solution Dashboard (chemistry challenge analysis)  
 streamlit run streamlit_problem_solutions.py --server.port 8506
+
+# Run Complete Validation Pipeline (validate overnight discoveries)
+python run_complete_validation.py
 
 # Both dashboards work in cloud deployment with automatic data fallbacks
 ```

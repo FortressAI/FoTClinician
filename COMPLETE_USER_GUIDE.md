@@ -1,8 +1,8 @@
 # 🧬 Complete FoTChemistry User Guide
 
-> **🎯 BREAKTHROUGH**: **6,443 molecular discoveries** with **12,144 problem-solution instances** identified!
+> **🔬 VALIDATION BREAKTHROUGH**: **Rigorous molecular validation system** for transforming candidates into validated discoveries!
 
-Complete guide to using FoTChemistry's dual-dashboard system for molecular discovery and problem-solving analysis.
+Complete guide to using FoTChemistry's validation-ready platform for molecular discovery, validation, and public benefit assessment.
 
 ## 🌐 **Two-Dashboard System Overview**
 
@@ -10,13 +10,18 @@ FoTChemistry provides **two specialized dashboards** for different research work
 
 ### **📊 Main Discovery Dashboard** (Port 8505)
 **URL**: http://localhost:8505  
-**Purpose**: Explore individual molecular discoveries  
-**Best For**: Analyzing specific compounds, visualizing structures, quantum properties
+**Purpose**: Molecular generation and validation workflow  
+**Best For**: Analyzing generated candidates, validation results, quantum properties
 
 ### **🎯 Problem-Solution Dashboard** (Port 8506)  
 **URL**: http://localhost:8506  
-**Purpose**: Find compounds that solve chemistry problems  
-**Best For**: Targeted research, solution identification, performance analysis
+**Purpose**: Chemistry challenge analysis and compound screening  
+**Best For**: Targeted research, problem-specific analysis, performance evaluation
+
+### **🔬 Validation Pipeline** (Command Line)
+**Command**: `python run_complete_validation.py`  
+**Purpose**: Rigorous validation of molecular candidates  
+**Best For**: Converting generated candidates into validated discoveries
 
 ---
 
