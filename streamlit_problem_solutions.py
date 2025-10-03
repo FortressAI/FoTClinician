@@ -67,6 +67,28 @@ def load_problem_specific_data(problem_key):
 def main():
     """Main dashboard function"""
     
+    # Define problem names at the top for global access
+    problem_names = {
+        # Environmental & Climate (3 domains)
+        "PFAS": "💧 PFAS Removal",
+        "CO2": "⚡ CO₂ Electrocatalysis", 
+        "ClimateStorage": "🔋 Climate Energy Storage",
+        
+        # Healthcare & Medicine (4 domains)
+        "Antimicrobial": "🦠 Antimicrobial Resistance",
+        "Cancer": "🎗️ Cancer Therapeutics",
+        "Neurodegeneration": "🧠 Neurodegeneration Treatment",
+        "Pandemic": "🛡️ Pandemic Preparedness",
+        
+        # Food & Water Security (2 domains)
+        "CleanWater": "💧 Clean Water Access",
+        "FoodSecurity": "🌾 Food Security Enhancement",
+        
+        # Technical & Scientific (2 domains)
+        "Thermodynamic": "🧮 Thermodynamic Consistency",
+        "Green": "🌱 Green Synthesis"
+    }
+    
     # Header
     st.markdown("""
     # 🌍 FoTChemistry Public Flourishing Dashboard
@@ -250,28 +272,6 @@ def main():
     # Problem selection sidebar
     st.sidebar.markdown("## 🌍 Critical Global Challenges")
     st.sidebar.markdown("*Molecular solutions for humanity's greatest needs*")
-    
-    # Complete 10-domain ontology ecosystem
-    problem_names = {
-        # Environmental & Climate (3 domains)
-        "PFAS": "💧 PFAS Removal",
-        "CO2": "⚡ CO₂ Electrocatalysis", 
-        "ClimateStorage": "🔋 Climate Energy Storage",
-        
-        # Healthcare & Medicine (4 domains)
-        "Antimicrobial": "🦠 Antimicrobial Resistance",
-        "Cancer": "🎗️ Cancer Therapeutics",
-        "Neurodegeneration": "🧠 Neurodegeneration Treatment",
-        "Pandemic": "🛡️ Pandemic Preparedness",
-        
-        # Food & Water Security (2 domains)
-        "CleanWater": "💧 Clean Water Access",
-        "FoodSecurity": "🌾 Food Security Enhancement",
-        
-        # Technical & Scientific (2 domains)
-        "Thermodynamic": "🧮 Thermodynamic Consistency",
-        "Green": "🌱 Green Synthesis"
-    }
     
     # Global impact descriptions
     problem_impacts = {
