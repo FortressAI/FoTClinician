@@ -142,3 +142,8 @@ results/overnight_discovery_mega_dataset.json
 cloud_data_snapshot*.json
 !cloud_problem_solution_data.json
 cloud_data_snapshot_with_viz.json
+# Large data files - too big for GitHub
+cloud_data_snapshot_with_viz.json
+cloud_problem_solution_data.json
+problem_solution_analysis/
+results/problem_solution_summary.json
