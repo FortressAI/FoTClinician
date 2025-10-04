@@ -10,19 +10,27 @@ fot:ClinicalKnowledgeBase a owl:Ontology ;
     rdfs:label "FoT Clinical Knowledge Base" ;
     rdfs:comment "A quantum-aware clinical decision support ontology with truth-governed claims and collapse policies" .
 
-# Core Clinical Entities
+# Quantum Clinical Entities
 
-fot:Symptom a owl:Class ;
-    rdfs:label "Clinical Symptom" ;
-    rdfs:comment "Patient-reported symptoms and complaints" .
+fot:vQbitClinicalSystem a owl:Class ;
+    rdfs:label "vQbit Clinical Quantum System" ;
+    rdfs:comment "Quantum substrate system for clinical decision support using vQbit superposition" .
 
-fot:Sign a owl:Class ;
-    rdfs:label "Clinical Sign" ;
-    rdfs:comment "Objective clinical findings observable by clinician" .
+fot:QuantumSymptom a owl:Class ;
+    rdfs:label "Quantum Superposed Symptom" ;
+    rdfs:comment "Patient-reported symptoms encoded as quantum superposition states" .
 
-fot:DifferentialDiagnosis a owl:Class ;
-    rdfs:label "Differential Diagnosis" ;
-    rdfs:comment "Superposed diagnostic hypotheses with likelihood weights" .
+fot:QuantumSign a owl:Class ;
+    rdfs:label "Quantum Entangled Clinical Sign" ;
+    rdfs:comment "Clinical findings encoded as quantum bits with entanglement correlations" .
+
+fot:QuantumDifferentialDiagnosis a owl:Class ;
+    rdfs:label "Quantum Superposed Differential Diagnosis" ;
+    rdfs:comment "Multi-hypothesis differential diagnoses existing in quantum superposition until collapse" .
+
+fot:QuantumVirtueSupervisor a owl:Class ;
+    rdfs:label "Quantum Virtue Supervisor" ;
+    rdfs:comment "Quantum subspace supervisor operating virtue-based collapse policies (Honesty, Prudence, Justice, Non-maleficence)" .
 
 fot:RiskScore a owl:Class ;
     rdfs:label "Clinical Risk Score" ;
