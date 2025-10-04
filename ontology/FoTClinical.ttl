@@ -1,0 +1,226 @@
+@prefix fot: <https://fortress.ai/fot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# FoT Clinical Ontology - Truth-Governed Clinical Decision Support
+
+fot:ClinicalKnowledgeBase a owl:Ontology ;
+    rdfs:label "FoT Clinical Knowledge Base" ;
+    rdfs:comment "A quantum-aware clinical decision support ontology with truth-governed claims and collapse policies" .
+
+# Core Clinical Entities
+
+fot:Symptom a owl:Class ;
+    rdfs:label "Clinical Symptom" ;
+    rdfs:comment "Patient-reported symptoms and complaints" .
+
+fot:Sign a owl:Class ;
+    rdfs:label "Clinical Sign" ;
+    rdfs:comment "Objective clinical findings observable by clinician" .
+
+fot:DifferentialDiagnosis a owl:Class ;
+    rdfs:label "Differential Diagnosis" ;
+    rdfs:comment "Superposed diagnostic hypotheses with likelihood weights" .
+
+fot:RiskScore a owl:Class ;
+    rdfs:label "Clinical Risk Score" ;
+    rdfs:comment "Quantified risk assessment with uncertainty bounds" .
+
+fot:Contraindication a owl:Class ;
+    rdfs:label "Clinical Contraindication" ;
+    rdfs:comment "Risk flags for medications, procedures, or activities" .
+
+fot:TriageLevel a owl:Class ;
+    rdfs:label "Clinical Triage Level" ;
+    rdfs:comment "Urgency classification for care prioritization" .
+
+fot:ClinicalAdvice a owl:Class ;
+    rdfs:label "Clinical Advice" ;
+    rdfs:comment "Guidance for clinician - advice-level only, not autonomous treatment" .
+
+# Medication Safety Entities
+
+fot:Medication a owl:Class ;
+    rdfs:label "Medication" ;
+    rdfs:comment "Drug therapy with RxNorm mapping" .
+
+fot:DrugInteraction a owl:Class ;
+    rdfs:label "Drug Interaction" ;
+    rdfs:comment "Interactions between medications with severity grading" .
+
+fot:DoseAdjustment a owl:Class ;
+    rdfs:label "Dose Adjustment" ;
+    rdfs:comment "Modifications needed for renal/hepatic/life-stage considerations" .
+
+fot:AllergyRisk a owl:Class ;
+    rdfs:label "Allergy Risk" ;
+    rdfs:comment "Potential allergic reactions with evidence links" .
+
+# Clinical Reasoning Entities
+
+fot:TwoToolchainAgreement a owl:Class ;
+    rdfs:label "Dual-Toolchain Agreement" ;
+    rdfs:comment "Consensus between symbolic guideline reasoner and statistical model" .
+
+fot:ClinicalNearMiss a owl:Class ;
+    rdfs:label "Clinical Near Miss" ;
+    rdfs:comment "Cases where engines disagree or data insufficient - requires human review" .
+
+fot:CollapsePolicy a owl:Class ;
+    rdfs:label "Clinical Collapse Policy" ;
+    rdfs:comment "Criteria for when system can collapse superposed clinical hypotheses" .
+
+# Virtue-Based Supervisory Entities
+
+fot:ClinicalHonestyRule a fot:VirtueSupervisor ;
+    rdfs:label "Clinical Honesty" ;
+    rdfs:comment "Surface uncertainty and 'unknown unknowns' transparently" .
+
+fot:ClinicalPrudenceRule a fot:VirtueSupervisor ;
+    rdfs:label "Clinical Prudence" ;
+    rdfs:comment "Default to safest diagnostic question/test, not treatment" .
+
+fot:ClinicalJusticeRule a fot:VirtueSupervisor ;
+    rdfs:label "Clinical Justice" ;
+    rdfs:comment "Suggest lower-cost, locally available options when equivalent" .
+
+fot:ClinicalNonMaleficenceRule a fot:VirtueSupervisor ;
+    rdfs:label "Clinical Non-maleficence" ;
+    rdfs:comment "Refuse beyond-scope or high-risk instructions; route to human care" .
+
+# Clinical Data Requirements
+fot:ClinicalDataContract a owl:Class ;
+    rdfs:label "Clinical Data Contract" ;
+    rdfs:comment "Schema defining required clinical data for claims collapse" .
+
+fot:MedicationData a owl:Class ;
+    rdfs:comment "Medication list with RxNorm, dosing, allergies" .
+
+fot:VitalSignsData a owl:Class ;
+    rdfs:comment "Vital signs with BP, HR, RR, temperature, SpO2" .
+
+fot:LaboratoryData a owl:Class ;
+    rdfs:comment "Labs including renal function (eGFR), hepatic panel (AST/ALT)" .
+
+fot:PregnancyData a owl:Class ;
+    rdfs:comment "Pregnancy status when applicable (age 12-55)" .
+
+# Superposed Clinical States
+fot:SuperposedClinicalState a fot:QuantumState ;
+    rdfs:label "Superposed Clinical State" ;
+    rdfs:comment "Quantum superposition of competing clinical hypotheses" .
+
+fot:ClinicalCollapseTrigger a owl:Class ;
+    rdfs:label "Clinical Collapse Trigger" ;
+    rdfs:comment "Conditions that trigger collapse of superposed clinical state" .
+
+# Evidence and Provenance
+fot:ClinicalEvidence a fot:Evidence ;
+    rdfs:label "Clinical Evidence" ;
+    rdfs:comment "Supporting evidence for clinical claims with citations" .
+
+fot:GuidelineReference a owl:Class ;
+    rdfs:label "Guideline Reference" ;
+    rdfs:comment "Reference to medical guidelines, protocols, or standards" .
+
+fot:ClinicalProvenance a fot:Provenance ;
+    rdfs:label "Clinical Provenance" ;
+    rdfs:comment "Audit trail with toolchain hashes and container IDs" .
+
+# Data Properties
+fot:likelihoodScore a owl:DataProperty ;
+    rdfs:label "likelihoodScore" ;
+    rdfs:domain fot:DifferentialDiagnosis ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Probability score for diagnostic hypothesis" .
+
+fot:uncertaintyBounds a owl:DataProperty ;
+    rdfs:label "uncertaintyBounds" ;
+    rdfs:domain fot:RiskScore ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Upper and lower uncertainty intervals" .
+
+fot:severityLevel a owl:DataProperty ;
+    rdfs:label "severityLevel" ;
+    rdfs:domain fot:DrugInteraction ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Severity level (1=mild, 2=moderate, 3=severe)" .
+
+fot:agreementThreshold a owl:DataProperty ;
+    rdfs:label "agreementThreshold" ;
+    rdfs:domain fot:TwoToolchainAgreement ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Required agreement level between toolchains" .
+
+fot:clinicalUrgencyLevel a owl:DataProperty ;
+    rdfs:label "clinicalUrgencyLevel" ;
+    rdfs:domain fot:TriageLevel ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Triage level (1=immediate, 2=urgent, 3=emergent, 4=less urgent)" .
+
+# Object Properties
+fot:hasSymptom a owl:ObjectProperty ;
+    rdfs:domain fot:ClinicalCase ;
+    rdfs:range fot:Symptom ;
+    rdfs:label "hasSymptom" .
+
+fot:hasSign a owl:ObjectProperty ;
+    rdfs:domain fot:ClinicalCase ;
+    rdfs:range fot:Sign ;
+    rdfs:label "hasSign" .
+
+fot:hasDifferential a owl:ObjectProperty ;
+    rdfs:domain fot:ClinicalCase ;
+    rdfs:range fot:DifferentialDiagnosis ;
+    rdfs:label "hasDifferentialDiagnosis" .
+
+fot:recommendsAction a owl:ObjectProperty ;
+    rdfs:domain fot:ClinicalAdvice ;
+    rdfs:range fot:ClinicalAction ;
+    rdfs:label "recommendsAction" .
+
+fot:requiresHumanReview a owl:ObjectProperty ;
+    rdfs:domain fot:ClinicalAdvice ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "requiresHumanReview" ;
+    rdfs:comment "True if advice requires human clinician sign-off" .
+
+# Clinical Collapse Policies
+fot:CollapsePolicy_MedSafety owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        fot:TwoToolchainAgreement
+        [ a owl:Restriction ;
+          owl:onProperty fot:agreementThreshold ;
+          owl:hasValue "0.85"^^xsd:decimal ]
+        [ a owl:Restriction ;
+          owl:onProperty fot:hasEvidence ;
+          owl:someValuesFrom fot:ClinicalEvidence ]
+    )
+] .
+
+fot:CollapsePolicy_Triage owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        fot:TwoToolchainAgreement
+        [ a owl:Restriction ;
+          owl:onProperty fot:agreementThreshold ;
+          owl:hasValue "0.90"^^xsd:decimal ]
+        [ a owl:Restriction ;
+          owl:onProperty fot:isUrgentCase ;
+          owl:hasValue "false"^^xsd:boolean ]
+    )
+] .
+
+fot:CollapsePolicy_GeneralAdvice owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+        fot:ClinicalAdvice
+        [ a owl:Restriction ;
+          owl:onProperty fot:requiresHumanReview ;
+          owl:hasValue "true"^^xsd:boolean ]
+        fot:ClinicalNonMaleficenceRule
+    )
+] .
