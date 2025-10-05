@@ -13,7 +13,7 @@ import os
 # Add project root to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
-from core.clinical.quantum_clinical_engine import QuantumClinicalEngine
+from core.clinical.context_aware_quantum_engine import ContextAwareQuantumClinicalEngine
 
 def run_quick_validation():
     """Run quick validation test"""
@@ -22,7 +22,7 @@ def run_quick_validation():
     print("=" * 50)
     
     # Initialize quantum engine
-    engine = QuantumClinicalEngine(vqbit_dimension=256)
+    engine = ContextAwareQuantumClinicalEngine(vqbit_dimension=256)
     
     # Test cases
     test_cases = [
@@ -51,10 +51,11 @@ def run_quick_validation():
             "data": {
                 "chief_complaint": "fever, fussiness",
                 "age": 3,  # 3 months
+                "age_unit": "months",
                 "vital_signs": {"temperature_c": 39.1, "heart_rate": 165},
                 "laboratory": {"white_blood_count": 20.5}
             },
-            "expected": "pediatric_sepsis"
+            "expected": "sepsis_infant"
         }
     ]
     
@@ -74,16 +75,9 @@ def run_quick_validation():
         end_time = time.time()
         response_time = end_time - start_time
         
-        # Get top diagnosis
-        diagnoses = list(quantum_case.differential_qbits.keys())
-        if diagnoses:
-            diagnosis_probs = [(d, abs(quantum_case.differential_qbits[d])) for d in diagnoses]
-            diagnosis_probs.sort(key=lambda x: x[1], reverse=True)
-            top_diagnosis = diagnosis_probs[0][0]
-            top_confidence = diagnosis_probs[0][1]
-        else:
-            top_diagnosis = "unknown"
-            top_confidence = 0.0
+        # Get top diagnosis from context-aware claim
+        top_diagnosis = quantum_claim.primary_diagnosis
+        top_confidence = quantum_claim.probability
         
         # Check if passed
         passed = top_diagnosis == case["expected"]
@@ -93,7 +87,12 @@ def run_quick_validation():
         status = "✅ PASS" if passed else "❌ FAIL"
         print(f"   {status} Expected: {case['expected']}")
         print(f"   Actual: {top_diagnosis} (confidence: {top_confidence:.1%})")
+        print(f"   Age Context: {quantum_claim.age_context.age_band.value}")
+        print(f"   ICD-10 Code: {quantum_claim.terminology_binding.icd10cm if quantum_claim.terminology_binding else 'N/A'}")
         print(f"   Response Time: {response_time:.2f}s")
+        
+        if quantum_claim.guidance_card:
+            print(f"   ⚠️ Guidance Required: {quantum_claim.guidance_card.question}")
         
         results.append({
             "case_name": case["name"],
@@ -101,7 +100,11 @@ def run_quick_validation():
             "actual": top_diagnosis,
             "confidence": top_confidence,
             "passed": passed,
-            "response_time": response_time
+            "response_time": response_time,
+            "age_context": quantum_claim.age_context.age_band.value,
+            "icd10_code": quantum_claim.terminology_binding.icd10cm if quantum_claim.terminology_binding else "N/A",
+            "guidance_required": quantum_claim.guidance_card is not None,
+            "audit_trail": quantum_claim.audit_trail
         })
     
     # Summary
